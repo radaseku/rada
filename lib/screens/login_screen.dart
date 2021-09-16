@@ -131,10 +131,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                               BorderRadius.circular(5),
                                               child: TextField(
                                                 style: TextStyle(
-                                                    color: Colors.grey[600],
+                                                    color: Colors.lightGreen,
                                                     fontSize: 18),
                                                 controller: emailController,
-                                                cursorColor: Colors.red,
+                                                cursorColor: Colors.black,
                                                 cursorWidth: 3.0,
                                                 keyboardType:
                                                 TextInputType.emailAddress,
@@ -145,11 +145,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   //prefixIcon: Icon(Icons.search,color: Colors.grey[400],size: 27,),
                                                   suffixIcon: Icon(
                                                     Icons.email,
-                                                    color: Colors.grey[400],
+                                                    color: Colors.green[400],
                                                     size: 27,
                                                   ),
                                                   hintStyle: TextStyle(
-                                                      color: Colors.grey[500]),
+                                                      color: Colors.green[500]),
                                                   contentPadding:
                                                   const EdgeInsets.only(
                                                       top: 18,
@@ -186,21 +186,21 @@ class _LoginScreenState extends State<LoginScreen> {
                                               BorderRadius.circular(5),
                                               child: TextField(
                                                 style: TextStyle(
-                                                    color: Colors.grey,
+                                                    color: Colors.lightGreen,
                                                     fontSize: 18),
                                                 controller: passwordController,
                                                 obscureText:
                                                 _passpasswordVisible,
                                                 cursorWidth: 3.0,
-                                                cursorColor: Colors.red,
+                                                cursorColor: Colors.black,
                                                 decoration: InputDecoration(
                                                   filled: true,
                                                   fillColor: Colors.grey[100],
                                                   hintText: 'Password',
                                                   labelStyle: TextStyle(
-                                                      color: Colors.grey),
+                                                      color: Colors.green),
                                                   hintStyle: TextStyle(
-                                                      color: Colors.grey[500]),
+                                                      color: Colors.green[500]),
                                                   contentPadding:
                                                   const EdgeInsets.only(
                                                       top: 18,
@@ -280,7 +280,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     .size
                                                     .width,
                                                 borderRadius: 0.0,
-                                                color: Color(0xff1979A9),
+                                                color: Color(0xff4caf50),
                                                 roundLoadingShape: true,
                                                 elevation: 0,
                                                 child: Text(
@@ -426,7 +426,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 child: Text(
                                                   "FORGOT PASSWORD?",
                                                   style: TextStyle(
-                                                      color: Colors.blue),
+                                                      color: Colors.green),
                                                 ),
                                               ),
                                             ),
@@ -460,7 +460,7 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );

@@ -73,7 +73,7 @@ class CreditCard extends StatelessWidget {
             child: Container(
               height: 25,
               width: 50,
-              color: Colors.pink,
+              color: Colors.red,
               padding: EdgeInsets.all(7),
               child: Image.network(
                 card.logo,

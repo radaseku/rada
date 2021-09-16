@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:rada/model/drugsmodel.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/drugs_helper.dart';
 import 'package:rada/utils/hiv_helper.dart';
 import 'package:rada/utils/safety_helper.dart';
@@ -72,7 +73,7 @@ class _DrugsContentState extends State<DrugsContent> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
             appBar: Platform.isIOS?AppBar(

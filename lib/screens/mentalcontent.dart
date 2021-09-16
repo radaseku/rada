@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:rada/model/mentalmodel.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/mental_helper.dart';
 import 'package:readmore/readmore.dart';
 
@@ -46,7 +47,7 @@ class _MentalContentState extends State<MentalContent> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
             appBar:Platform.isIOS?AppBar(
@@ -226,7 +227,7 @@ class _MentalContentState extends State<MentalContent> {
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -361,7 +362,7 @@ class _MentalContentState extends State<MentalContent> {
                                         child: ReadMoreText(
                                           data[4]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -485,7 +486,7 @@ class _MentalContentState extends State<MentalContent> {
                                         child: ReadMoreText(
                                           data[7]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -613,7 +614,7 @@ class _MentalContentState extends State<MentalContent> {
                                         child: ReadMoreText(
                                           data[12]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -748,7 +749,7 @@ class _MentalContentState extends State<MentalContent> {
                   child: ReadMoreText(
                     content.toString(),
                     trimLines: 5,
-                    colorClickableText: Colors.pink,
+                    colorClickableText: Colors.red,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: '...read more',
                     trimExpandedText: ' show less',

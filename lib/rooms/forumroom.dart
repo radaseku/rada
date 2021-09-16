@@ -554,9 +554,9 @@ class _ForumRoomState extends State<ForumRoom> {
               width: 45,
               margin: EdgeInsets.symmetric(horizontal: 1.0),
               decoration: BoxDecoration(
-                  color: Colors.blue[600],
+                  color: Colors.lightGreenAccent,
                   borderRadius: BorderRadius.circular(100),
-                  border: Border.all(width: 1, color: Colors.blue[600])),
+                  border: Border.all(width: 1, color: Colors.lightGreen)),
               child: Center(
                 child: IconButton(
                   //new
@@ -1004,13 +1004,13 @@ class _ForumRoomState extends State<ForumRoom> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -1124,13 +1124,13 @@ class _ForumRoomState extends State<ForumRoom> {
                                     ? name.substring(0, 5) + ".."
                                     : name,
                                 style: TextStyle(
-                                    color: Colors.blue,
+                                    color: Colors.lightGreen,
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 time,
                                 style: TextStyle(
-                                    color: Colors.green,
+                                    color: Colors.teal[900],
                                     fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -1301,13 +1301,13 @@ class _ForumRoomState extends State<ForumRoom> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -1434,13 +1434,13 @@ class _ForumRoomState extends State<ForumRoom> {
                                     ? name.substring(0, 5) + ".."
                                     : name,
                                 style: TextStyle(
-                                    color: Colors.blue,
+                                    color: Colors.lightGreen,
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 time,
                                 style: TextStyle(
-                                    color: Colors.green,
+                                    color: Colors.teal[900],
                                     fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -1602,7 +1602,7 @@ class _ForumRoomState extends State<ForumRoom> {
           elevation: 0,
           alignment: Alignment.topRight,
           nip: BubbleNip.rightTop,
-          color: Colors.blue[400],
+          color: Colors.green,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1723,7 +1723,7 @@ class _ForumRoomState extends State<ForumRoom> {
             },
             child: Icon(
               Icons.share,
-              color: Colors.blue,
+              color: Colors.green,
             ),
           ),
           Padding(
@@ -1862,7 +1862,7 @@ class _ForumRoomState extends State<ForumRoom> {
                           ? Loading(
                           indicator: BallPulseIndicator(),
                           size: 30.0,
-                          color: Colors.blue)
+                          color: Colors.lightGreen)
                           : SizedBox(
                         height: 0,
                         width: 0,
@@ -2000,7 +2000,7 @@ class _ForumRoomState extends State<ForumRoom> {
                           ? Loading(
                           indicator: BallPulseIndicator(),
                           size: 30.0,
-                          color: Colors.blue)
+                          color: Colors.lightGreen)
                           : SizedBox(
                         height: 0,
                         width: 0,
@@ -2814,7 +2814,7 @@ class _ForumRoomState extends State<ForumRoom> {
               Positioned(
                 child: Icon(
                   Icons.camera_alt,
-                  color: Colors.blue,
+                  color: Colors.green,
                 ),
                 top: 25,
               ),
@@ -3078,7 +3078,7 @@ class _ForumRoomState extends State<ForumRoom> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );
@@ -3266,7 +3266,7 @@ class _ForumRoomState extends State<ForumRoom> {
           elevation: 0,
           alignment: Alignment.topRight,
           nip: BubbleNip.rightTop,
-          color: Colors.blue[400],
+          color: Colors.green[400],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -3359,7 +3359,7 @@ class _ForumRoomState extends State<ForumRoom> {
                     onOpen: _onOpen,
                     text: '$message',
                     style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.green,
                         fontFamily: 'Raleway-regular',
                         fontWeight: FontWeight.w600),
                   ),
@@ -3415,7 +3415,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                 : reply.toString().substring(0, 70) +
                                 "...",
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.green,
                                 fontWeight: FontWeight.w700),
                           )
                               : Row(
@@ -3450,7 +3450,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                   Text(
                                     name,
                                     style: TextStyle(
-                                        color: Colors.blue,
+                                        color: Colors.green,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text("File message"),
@@ -3538,7 +3538,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                 : reply.toString().substring(0, 70) +
                                 "...",
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.green,
                                 fontWeight: FontWeight.w700),
                           )
                               : Row(
@@ -3573,7 +3573,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                   Text(
                                     name,
                                     style: TextStyle(
-                                        color: Colors.blue,
+                                        color: Colors.green,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text("File message"),

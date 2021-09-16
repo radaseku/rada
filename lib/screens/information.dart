@@ -22,6 +22,7 @@ import 'package:rada/screens/hivcontent.dart';
 import 'package:rada/screens/mentalcontent.dart';
 import 'package:rada/screens/otherscontent.dart';
 import 'package:rada/screens/safetycontent.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/details_helper.dart';
 import 'package:rada/utils/drugs_helper.dart';
 import 'package:rada/utils/health_helper.dart';
@@ -251,7 +252,7 @@ class _InformationState extends State<Information> {
             "Rada Information",
             style: NeumorphicStyle(
               depth: 0, //customize depth here
-              color: Colors.blue,
+              color: greenAccentColor,
               shape: NeumorphicShape.convex, //customize color here
             ),
             textStyle: NeumorphicTextStyle(
@@ -290,7 +291,7 @@ class _InformationState extends State<Information> {
             "Rada Information",
             style: NeumorphicStyle(
               depth: 0, //customize depth here
-              color: Colors.blue,
+              color: greenAccentColor,
               shape: NeumorphicShape.convex, //customize color here
             ),
             textStyle: NeumorphicTextStyle(
@@ -315,7 +316,7 @@ class _InformationState extends State<Information> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Container(
-                        color: Colors.blue,
+                        color: Colors.green,
                         child: Center(
                           child: Padding(
                               padding: EdgeInsets.all(5),
@@ -462,7 +463,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),
@@ -514,7 +515,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),
@@ -570,7 +571,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),
@@ -626,7 +627,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),
@@ -682,7 +683,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),
@@ -745,7 +746,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),
@@ -783,7 +784,7 @@ class _InformationState extends State<Information> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Container(
-                          color: Colors.blue,
+                          color: Colors.green,
                           child: Center(
                             child: Padding(
                                 padding: EdgeInsets.all(5),

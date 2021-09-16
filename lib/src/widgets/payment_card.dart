@@ -26,7 +26,7 @@ class _PaymentCardWidgetState extends State<PaymentCardWidget> {
         ),*/
         trailing: Icon(
           widget.payment.amount,
-          color: Colors.blue,
+          color: Colors.green,
           size: 20,
         ),
         leading: Padding(

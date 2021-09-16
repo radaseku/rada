@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
+import 'package:rada/themes.dart';
 import 'package:tts/tts.dart';
 
 class RadaDialogflow extends StatefulWidget {
@@ -112,7 +113,7 @@ class ChatMessage extends StatelessWidget {
             child: new Text('RD',
                 style: new TextStyle(
                     fontWeight: FontWeight.normal, color: Colors.white)),
-            backgroundColor: Colors.blueAccent),
+            backgroundColor: greenAccentColor),
       ),
       new Expanded(
         child: new Column(

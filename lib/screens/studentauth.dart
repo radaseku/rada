@@ -124,7 +124,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                     color: Colors.grey[600],
                                                     fontSize: 18),
                                                 controller: regController,
-                                                cursorColor: Colors.red,
+                                                cursorColor: Colors.black,
                                                 cursorWidth: 3.0,
                                                 decoration: InputDecoration(
                                                   filled: true,
@@ -134,11 +134,11 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   //prefixIcon: Icon(Icons.search,color: Colors.grey[400],size: 27,),
                                                   suffixIcon: Icon(
                                                     Icons.check,
-                                                    color: Colors.grey[400],
+                                                    color: Colors.green[400],
                                                     size: 27,
                                                   ),
                                                   hintStyle: TextStyle(
-                                                      color: Colors.grey[500]),
+                                                      color: Colors.green[500]),
                                                   contentPadding:
                                                   const EdgeInsets.only(
                                                       top: 18,
@@ -150,7 +150,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                     // borderSide: BorderSide(color: Colors.grey[200]),
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -159,7 +159,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   UnderlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -189,7 +189,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   labelStyle: TextStyle(
                                                       color: Colors.grey),
                                                   hintStyle: TextStyle(
-                                                      color: Colors.grey[500]),
+                                                      color: Colors.green[500]),
                                                   contentPadding:
                                                   const EdgeInsets.only(
                                                       top: 18,
@@ -201,7 +201,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                     // borderSide: BorderSide(color: Colors.grey[200]),
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -210,7 +210,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   UnderlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[400]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -269,7 +269,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                     .size
                                                     .width,
                                                 borderRadius: 0.0,
-                                                color: Color(0xff1979A9),
+                                                color: Color(0xff4caf50),
                                                 roundLoadingShape: true,
                                                 elevation: 0,
                                                 child: Text(
@@ -287,7 +287,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   padding:
                                                   EdgeInsets.all(10),
                                                   child: SpinKitDualRing(
-                                                    color: Colors.white,
+                                                    color: Colors.green[100],
                                                   ),
                                                 ),
                                                 onTap: (startLoading,
@@ -322,7 +322,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                       false,
                                                       backgroundColor:
                                                       Colors
-                                                          .redAccent,
+                                                          .red,
                                                     )..show(context);
                                                   } else if (regController
                                                       .text.isEmpty &&
@@ -349,7 +349,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                       false,
                                                       backgroundColor:
                                                       Colors
-                                                          .redAccent,
+                                                          .red,
                                                     )..show(context);
                                                   }
                                                   _authenticate(
@@ -419,7 +419,7 @@ class _StudentAuthState extends State<StudentAuth> {
         ),
         duration: Duration(seconds: 3),
         isDismissible: false,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.red,
       )..show(context);
     } else if (convert["status"] == "NOT CURRENT") {
       setState(() {
@@ -435,7 +435,7 @@ class _StudentAuthState extends State<StudentAuth> {
         ),
         duration: Duration(seconds: 3),
         isDismissible: false,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.red,
       )..show(context);
     }
     //print(convert["status"]);
@@ -454,7 +454,7 @@ class _StudentAuthState extends State<StudentAuth> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );

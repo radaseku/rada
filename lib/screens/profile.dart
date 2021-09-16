@@ -70,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
         PlatformFile file = result.files.first;
         scaffoldKey.currentState.showSnackBar(SnackBar(
           content: Text("Working, please wait...."),
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.green,
         ));
         _uploadFile(file);
       }
@@ -168,7 +168,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           profile_data[0]["name"],
                           style: TextStyle(
                             fontSize: 22.0,
-                            color: Colors.blue,
+                            color: Colors.green,
                           ),
                         ),
                         SizedBox(
@@ -339,11 +339,11 @@ class _ProfilePageState extends State<ProfilePage> {
                               .showSnackBar(SnackBar(
                             content:
                             Text("Working, please wait...."),
-                            backgroundColor: Colors.blue,
+                            backgroundColor: Colors.green,
                           ));
                           changeName(_nameController.text);
                         },
-                        color: Colors.blue,
+                        color: Colors.green,
                         child: Text(
                           "Change Profile",
                           style: TextStyle(color: Colors.white),
@@ -420,7 +420,7 @@ class _ProfilePageState extends State<ProfilePage> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:rada/model/hivmodel.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/hiv_helper.dart';
 import 'package:readmore/readmore.dart';
 
@@ -127,7 +128,7 @@ class _HivContentState extends State<HivContent> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
             appBar: Platform.isIOS?AppBar(

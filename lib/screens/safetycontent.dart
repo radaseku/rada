@@ -49,7 +49,7 @@ class _SafetyContentState extends State<SafetyContent> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
         ),
         home: Scaffold(
             appBar: Platform.isIOS?AppBar(
@@ -387,7 +387,7 @@ class _SafetyContentState extends State<SafetyContent> {
                                         child: ReadMoreText(
                                           data[4]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -522,7 +522,7 @@ class _SafetyContentState extends State<SafetyContent> {
                                         child: ReadMoreText(
                                           data[12]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -663,7 +663,7 @@ class _SafetyContentState extends State<SafetyContent> {
                                         child: ReadMoreText(
                                           data[9]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -796,7 +796,7 @@ class _SafetyContentState extends State<SafetyContent> {
                   child: ReadMoreText(
                     content.toString(),
                     trimLines: 5,
-                    colorClickableText: Colors.pink,
+                    colorClickableText: Colors.red,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: '...read more',
                     trimExpandedText: ' show less',

@@ -219,13 +219,13 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -337,13 +337,13 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -470,9 +470,9 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
               width: 45,
               margin: EdgeInsets.symmetric(horizontal: 1.0),
               decoration: BoxDecoration(
-                  color: Colors.blue[600],
+                  color: Colors.green[600],
                   borderRadius: BorderRadius.circular(100),
-                  border: Border.all(width: 1, color: Colors.blue[600])),
+                  border: Border.all(width: 1, color: Colors.green[600])),
               child: Center(
                 child: IconButton(
                   //new
@@ -989,7 +989,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                             border: Border(
                               left: BorderSide(
                                 //                   <--- left side
-                                color: Colors.blueAccent,
+                                color: Colors.green,
                                 width: 3.0,
                               ),
                               top: BorderSide(
@@ -1008,7 +1008,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                   child: Text(
                                     messager,
                                     style: TextStyle(
-                                        color: Colors.green[400],
+                                        color: Colors.green[300],
                                         fontWeight: FontWeight.bold),
                                   ),
                                   top: 7,
@@ -1118,7 +1118,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                             border: Border(
                               left: BorderSide(
                                 //                   <--- left side
-                                color: Colors.blueAccent,
+                                color: Colors.green,
                                 width: 3.0,
                               ),
                               top: BorderSide(
@@ -1137,7 +1137,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                   child: Text(
                                     messager,
                                     style: TextStyle(
-                                        color: Colors.green[400],
+                                        color: Colors.green[300],
                                         fontWeight: FontWeight.bold),
                                   ),
                                   top: 7,
@@ -1402,7 +1402,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
           elevation: 0,
           alignment: Alignment.topRight,
           nip: BubbleNip.rightTop,
-          color: Colors.blue[400],
+          color: Colors.green[400],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1493,13 +1493,13 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.green,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -1637,13 +1637,13 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.green,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -2332,7 +2332,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                     onOpen: _onOpen,
                     text: '$message',
                     style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.green,
                         fontFamily: 'Raleway-regular',
                         fontWeight: FontWeight.w600),
                   ),
@@ -2386,7 +2386,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 ? reply
                                 : reply.toString().substring(0, 70) + "...",
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.green,
                                 fontWeight: FontWeight.w700),
                           )
                         ],

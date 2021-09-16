@@ -29,7 +29,7 @@ class AddButton extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.add_circle,
-              color: Colors.blue,
+              color: Colors.green,
             ),
             onPressed: () => print("add money"),
             iconSize: 40.0,

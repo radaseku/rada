@@ -31,7 +31,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     SendMenuItems(
         text: "Photos & Videos", icons: Icons.image, color: Colors.amber),
     SendMenuItems(
-        text: "Document", icons: Icons.insert_drive_file, color: Colors.blue),
+        text: "Document", icons: Icons.insert_drive_file, color: Colors.red),
     SendMenuItems(text: "Audio", icons: Icons.music_note, color: Colors.orange),
     SendMenuItems(
         text: "Location", icons: Icons.location_on, color: Colors.green),

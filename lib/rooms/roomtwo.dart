@@ -990,7 +990,7 @@ class _RoomTwoState extends State<RoomTwo> {
           elevation: 0,
           alignment: Alignment.topRight,
           nip: BubbleNip.rightTop,
-          color: Colors.blue[400],
+          color: Colors.green[400],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -1080,9 +1080,9 @@ class _RoomTwoState extends State<RoomTwo> {
               width: 45,
               margin: EdgeInsets.symmetric(horizontal: 1.0),
               decoration: BoxDecoration(
-                  color: Colors.blue[600],
+                  color: Colors.green[600],
                   borderRadius: BorderRadius.circular(100),
-                  border: Border.all(width: 1, color: Colors.blue[600])),
+                  border: Border.all(width: 1, color: Colors.green[600])),
               child: Center(
                 child: IconButton(
                   //new
@@ -1519,7 +1519,7 @@ class _RoomTwoState extends State<RoomTwo> {
                     onOpen: _onOpen,
                     text: '$message',
                     style: TextStyle(
-                        color: Colors.blue,
+                        color: Colors.lightGreen,
                         fontFamily: 'Raleway-regular',
                         fontWeight: FontWeight.w600),
                   ),
@@ -1755,7 +1755,7 @@ class _RoomTwoState extends State<RoomTwo> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );
@@ -1935,13 +1935,13 @@ class _RoomTwoState extends State<RoomTwo> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -2078,7 +2078,7 @@ class _RoomTwoState extends State<RoomTwo> {
       time, reply) =>
       ChatBubble(
         clipper: clipper,
-        backGroundColor: Color(0xff195e83),
+        backGroundColor: Color(0xff00e676),
         elevation: 0,
         margin: EdgeInsets.only(top: 20),
         child: Container(
@@ -2281,13 +2281,13 @@ class _RoomTwoState extends State<RoomTwo> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -2406,13 +2406,13 @@ class _RoomTwoState extends State<RoomTwo> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -2550,13 +2550,13 @@ class _RoomTwoState extends State<RoomTwo> {
                                 ? name.substring(0, 5) + ".."
                                 : name,
                             style: TextStyle(
-                                color: Colors.blue,
+                                color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             time,
                             style: TextStyle(
-                                color: Colors.green,
+                                color: Colors.teal[900],
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -2661,7 +2661,7 @@ class _RoomTwoState extends State<RoomTwo> {
           elevation: 0,
           alignment: Alignment.topRight,
           nip: BubbleNip.rightTop,
-          color: Colors.blue[400],
+          color: Colors.green[400],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -2796,7 +2796,7 @@ class _RoomTwoState extends State<RoomTwo> {
               Positioned(
                 child: Icon(
                   Icons.camera_alt,
-                  color: Colors.blue,
+                  color: Colors.green[800],
                 ),
                 top: 25,
               ),

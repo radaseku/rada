@@ -256,7 +256,7 @@ class _QueryPageState extends State<QueryPage> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );
@@ -294,11 +294,11 @@ class _QueryPageState extends State<QueryPage> {
                   decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                         // borderSide: BorderSide(color: Colors.grey[200]),
-                        borderSide: BorderSide(color: Colors.grey[100]),
+                        borderSide: BorderSide(color: Colors.green[200]),
                         borderRadius: BorderRadius.circular(0),
                       ),
                       enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey[100]),
+                        borderSide: BorderSide(color: Colors.green[200]),
                         borderRadius: BorderRadius.circular(0),
                       ),
                       contentPadding:
@@ -396,11 +396,11 @@ class _QueryPageState extends State<QueryPage> {
                     top: 15, bottom: 15, left: 15, right: 15),
                 focusedBorder: OutlineInputBorder(
                   // borderSide: BorderSide(color: Colors.grey[200]),
-                  borderSide: BorderSide(color: Colors.grey[100]),
+                  borderSide: BorderSide(color: Colors.green[300]),
                   borderRadius: BorderRadius.circular(0),
                 ),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey[100]),
+                  borderSide: BorderSide(color: Colors.green[300]),
                   borderRadius: BorderRadius.circular(0),
                 ),
               ),
@@ -485,11 +485,11 @@ class _QueryPageState extends State<QueryPage> {
                   top: 15, bottom: 15, left: 15, right: 15),
               focusedBorder: OutlineInputBorder(
                 // borderSide: BorderSide(color: Colors.grey[200]),
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
             ),
@@ -506,7 +506,7 @@ class _QueryPageState extends State<QueryPage> {
                   sendRequest(context);
                   sent = true;
                 },
-                color: Colors.blue,
+                color: Colors.green,
                 child: Text(
                   "Submit",
                   style: TextStyle(color: Colors.white),
@@ -550,11 +550,11 @@ class _QueryPageState extends State<QueryPage> {
                     top: 15, bottom: 15, left: 15, right: 15),
                 focusedBorder: OutlineInputBorder(
                   // borderSide: BorderSide(color: Colors.grey[200]),
-                  borderSide: BorderSide(color: Colors.grey[100]),
+                  borderSide: BorderSide(color: Colors.green[300]),
                   borderRadius: BorderRadius.circular(0),
                 ),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey[100]),
+                  borderSide: BorderSide(color: Colors.green[300]),
                   borderRadius: BorderRadius.circular(0),
                 ),
               ),
@@ -665,11 +665,11 @@ class _QueryPageState extends State<QueryPage> {
                   top: 15, bottom: 15, left: 15, right: 15),
               focusedBorder: OutlineInputBorder(
                 // borderSide: BorderSide(color: Colors.grey[200]),
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
             ),
@@ -686,7 +686,7 @@ class _QueryPageState extends State<QueryPage> {
                   sendRequest(context);
                   sent = true;
                 },
-                color: Colors.blue,
+                color: Colors.green,
                 child: Text(
                   'Submit',
                   style: TextStyle(color: Colors.white),
@@ -729,11 +729,11 @@ class _QueryPageState extends State<QueryPage> {
                     top: 18, bottom: 18, left: 15, right: 15),
                 focusedBorder: OutlineInputBorder(
                   // borderSide: BorderSide(color: Colors.grey[200]),
-                  borderSide: BorderSide(color: Colors.grey[100]),
+                  borderSide: BorderSide(color: Colors.green[300]),
                   borderRadius: BorderRadius.circular(0),
                 ),
                 enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey[100]),
+                  borderSide: BorderSide(color: Colors.green[300]),
                   borderRadius: BorderRadius.circular(0),
                 ),
               ),
@@ -814,11 +814,11 @@ class _QueryPageState extends State<QueryPage> {
                   top: 15, bottom: 15, left: 15, right: 15),
               focusedBorder: OutlineInputBorder(
                 // borderSide: BorderSide(color: Colors.grey[200]),
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
             ),
@@ -835,7 +835,7 @@ class _QueryPageState extends State<QueryPage> {
                   sendRequest(context);
                   sent = true;
                 },
-                color: Colors.blue,
+                color: Colors.green,
                 child: Text(
                   "Submit",
                   style: TextStyle(color: Colors.white),
@@ -879,11 +879,11 @@ class _QueryPageState extends State<QueryPage> {
                   top: 15, bottom: 15, left: 15, right: 15),
               focusedBorder: OutlineInputBorder(
                 // borderSide: BorderSide(color: Colors.grey[200]),
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
             ),
@@ -900,7 +900,7 @@ class _QueryPageState extends State<QueryPage> {
                   sendRequest(context);
                   sent = true;
                 },
-                color: Colors.blue,
+                color: Colors.green,
                 child: Text(
                   "Submit",
                   style: TextStyle(color: Colors.white),
@@ -944,11 +944,11 @@ class _QueryPageState extends State<QueryPage> {
                   top: 15, bottom: 15, left: 15, right: 15),
               focusedBorder: OutlineInputBorder(
                 // borderSide: BorderSide(color: Colors.grey[200]),
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
               enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[100]),
+                borderSide: BorderSide(color: Colors.green[300]),
                 borderRadius: BorderRadius.circular(0),
               ),
             ),
@@ -965,7 +965,7 @@ class _QueryPageState extends State<QueryPage> {
                   sendRequest(context);
                   sent = true;
                 },
-                color: Colors.blue,
+                color: Colors.green,
                 child: Text(
                   "Submit",
                   style: TextStyle(color: Colors.white),

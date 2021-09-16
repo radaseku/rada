@@ -50,7 +50,7 @@ class _AcceptRequestsState extends State<AcceptRequests> {
       getId();
     });
     return Scaffold(
-        backgroundColor: Color(0xff1979a9),
+        backgroundColor: Color(0xff2e7d32),
         appBar: Platform.isIOS?AppBar(
           elevation: 0,
           centerTitle: true,
@@ -67,7 +67,7 @@ class _AcceptRequestsState extends State<AcceptRequests> {
             ),
           ),
           leading: Icon(Icons.arrow_back_ios,color: Colors.white,size: 27,),
-          backgroundColor: Color(0xff1979a9),
+          backgroundColor: Color(0xff2e7d32),
           actions: <Widget>[
             Padding(padding: EdgeInsets.only(right: 15),child: Icon(Icons.more_horiz,size: 27,color: Colors.white,)),
           ],
@@ -325,7 +325,7 @@ class _AcceptRequestsState extends State<AcceptRequests> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent
+              color: Colors.lightGreenAccent
           ),
         );
       },

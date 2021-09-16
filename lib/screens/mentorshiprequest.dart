@@ -129,7 +129,7 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
         ),
         title: Text(
           "Mentorship Request",
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
         elevation: 0,
@@ -147,7 +147,7 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
         ),
         title: Text(
           "Mentorship Request",
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
         elevation: 0,
@@ -437,7 +437,7 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
                   onPressed: () {
                     sendRequest();
                   },
-                  color: Colors.blue,
+                  color: Colors.green,
                   elevation: 0,
                   child: Text(
                     "Submit",
@@ -515,7 +515,7 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );

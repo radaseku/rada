@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:rada/model/othersmodel.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/health_helper.dart';
 import 'package:rada/utils/mental_helper.dart';
 import 'package:rada/utils/others_helper.dart';
@@ -216,7 +217,7 @@ class _OthersContentState extends State<OthersContent> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
             appBar: Platform.isIOS?AppBar(
@@ -388,7 +389,7 @@ class _OthersContentState extends State<OthersContent> {
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -518,7 +519,7 @@ class _OthersContentState extends State<OthersContent> {
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
-                                          colorClickableText: Colors.pink,
+                                          colorClickableText: Colors.red,
                                           trimMode: TrimMode.Line,
                                           trimCollapsedText: '...read more',
                                           trimExpandedText: ' show less',
@@ -664,7 +665,7 @@ class _OthersContentState extends State<OthersContent> {
                   child: ReadMoreText(
                     content.toString(),
                     trimLines: 5,
-                    colorClickableText: Colors.pink,
+                    colorClickableText: Colors.red,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: '...read more',
                     trimExpandedText: ' show less',

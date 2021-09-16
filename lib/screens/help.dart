@@ -228,7 +228,7 @@ class _HelpState extends State<Help> {
             height: 45,
             child: OutlineButton(
               child: Text("University Accomodation",
-                  style: TextStyle(color: Colors.blue)),
+                  style: TextStyle(color: Colors.indigo[900])),
               /*width: MediaQuery.of(context).size.width,
               height: 50,
               text: 'University Accomodation',

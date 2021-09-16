@@ -4,6 +4,7 @@ import 'package:rada/screens/dashboard.dart';
 import 'package:rada/screens/login_screen.dart';
 import 'package:rada/screens/signup_screen.dart';
 import 'package:rada/screens/splash.dart';
+import 'package:rada/themes.dart';
 
 void main() {
   /*SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -44,10 +45,11 @@ class WelcomePage extends StatelessWidget {
       title: 'Rada',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       /*home: GettingStartedScreen(),*/
       home: DashBoard(),
+     //TODO: redirect to splash screen
      /* routes: {
         LoginScreen.routeName: (ctx) => LoginScreen(),
         SignupScreen.routeName: (ctx) => SignupScreen(),

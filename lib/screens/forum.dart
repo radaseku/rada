@@ -9,6 +9,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:pusher_websocket_flutter/pusher.dart';
 import 'package:rada/components/chat.dart';
 import 'package:rada/model/chat_users.dart';
+import 'package:rada/themes.dart';
 
 class Forum extends StatefulWidget {
   @override
@@ -85,7 +86,7 @@ class _ForumState extends State<Forum> {
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue),
+                          color: greenAccentColor),
                     ),
                   ],
                 ),
@@ -182,7 +183,7 @@ class _ForumState extends State<Forum> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );

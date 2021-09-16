@@ -67,7 +67,7 @@ class OverviewPage extends StatelessWidget {
           ),
           Row(
             children: <Widget>[
-              colorCard("Cash", 35.170, 1, context, Color(0xFF1b5bff)),
+              colorCard("Cash", 35.170, 1, context, Color(0xFF1b5e20)),
               colorCard("Credit Debt", 4320, -1, context, Color(0xFFff3f5e)),
             ],
           ),
@@ -198,7 +198,7 @@ class OverviewPage extends StatelessWidget {
               lineHeight: 20.0,
               percent: 0.68,
               backgroundColor: Colors.grey.shade300,
-              progressColor: Color(0xFF1b52ff),
+              progressColor: Color(0xFF4caf50),
               animation: true,
               animateFromLastPercent: true,
               alignment: MainAxisAlignment.spaceEvenly,
@@ -228,7 +228,7 @@ class OverviewPage extends StatelessWidget {
             200,
             1,
             Colors.grey.shade100,
-            Color(0xFF716cff),
+            Color(0xFF4caf50),
           ),
           vaweCard(
             context,

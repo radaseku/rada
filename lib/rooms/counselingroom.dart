@@ -13,6 +13,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:rada/rooms/roomtwo.dart';
 import 'package:rada/services/message.dart';
 import 'package:rada/services/user.dart';
+import 'package:rada/themes.dart';
 
 class CounselingRoom extends StatefulWidget {
 
@@ -98,7 +99,7 @@ class _CounselingRoomState extends State<CounselingRoom> {
     return Scaffold(
         appBar: Platform.isIOS?AppBar(
           backgroundColor: Colors.white,
-          leading: Icon(Icons.arrow_back_ios,color: Colors.blueAccent,size: 27,),
+          leading: Icon(Icons.arrow_back_ios,color: greenAccentColor,size: 27,),
           title: Text(
             widget.name,
             style: TextStyle(color: Colors.red),
@@ -106,11 +107,11 @@ class _CounselingRoomState extends State<CounselingRoom> {
           ),
           elevation: 0,
           actions: <Widget>[
-            Padding(padding: EdgeInsets.only(right: 15),child: Icon(Icons.more_horiz,size: 27,color: Colors.blueAccent,)),
+            Padding(padding: EdgeInsets.only(right: 15),child: Icon(Icons.more_horiz,size: 27,color: greenAccentColor,)),
           ],
         ):AppBar(
           backgroundColor: Colors.white,
-          leading: Icon(Icons.arrow_back,color: Colors.blueAccent,size: 27,),
+          leading: Icon(Icons.arrow_back,color: greenAccentColor,size: 27,),
           title: Text(
             widget.name,
             style: TextStyle(color: Colors.red),
@@ -118,7 +119,7 @@ class _CounselingRoomState extends State<CounselingRoom> {
           ),
           elevation: 0,
           actions: <Widget>[
-            Padding(padding: EdgeInsets.only(right: 15),child: Icon(Icons.more_horiz,size: 27,color: Colors.blueAccent,)),
+            Padding(padding: EdgeInsets.only(right: 15),child: Icon(Icons.more_horiz,size: 27,color: greenAccentColor,)),
           ],
         ),
         body: new Container(
@@ -264,9 +265,9 @@ class _CounselingRoomState extends State<CounselingRoom> {
                                     width: 40.0,
                                     height: 40.0,
                                     decoration: BoxDecoration(
-                                        color: Colors.blueAccent,
+                                        color: Colors.lightGreenAccent,
                                         borderRadius: BorderRadius.circular(100),
-                                        border: Border.all(width: 1, color: Colors.blueAccent)),
+                                        border: Border.all(width: 1, color: Colors.lightGreen)),
                                     /*child: Center(
                                       child: new IconButton(
                                           icon: Icon(Icons.send,size: 25,color: Colors.white,),
@@ -388,7 +389,7 @@ class _CounselingRoomState extends State<CounselingRoom> {
 
   getReceiverView(CustomClipper clipper, BuildContext context,message,name,time) => ChatBubble(
     clipper: clipper,
-    backGroundColor: Colors.blueAccent,
+    backGroundColor: Colors.lightGreenAccent,
     margin: EdgeInsets.only(top: 20),
     child: Container(
       constraints: BoxConstraints(
@@ -518,7 +519,7 @@ class _CounselingRoomState extends State<CounselingRoom> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent
+              color: Colors.lightGreenAccent
           ),
         );
       },

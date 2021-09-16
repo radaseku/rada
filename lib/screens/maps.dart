@@ -33,6 +33,7 @@ class _Location extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         /*appBar:Platform.isIOS?AppBar(
           backgroundColor: Colors.grey[100],
@@ -52,7 +53,7 @@ class _Location extends State<Location> {
         body: GoogleMap(
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
-            target: const LatLng(-1.26811428, 36.67296870000001),
+            target: const LatLng(-1.306692803647729, 37.75594341891157),
             zoom: 10,
           ),
           markers: _markers.values.toSet(),

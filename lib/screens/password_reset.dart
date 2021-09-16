@@ -77,11 +77,11 @@ class _ResetState extends State<Reset> {
                       top: 18, bottom: 18, left: 15, right: 15),
                   focusedBorder: OutlineInputBorder(
                     // borderSide: BorderSide(color: Colors.grey[200]),
-                    borderSide: BorderSide(color: Colors.grey[100]),
+                    borderSide: BorderSide(color: Colors.green[600]),
                     borderRadius: BorderRadius.circular(0),
                   ),
                   enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey[100]),
+                    borderSide: BorderSide(color: Colors.green[300]),
                     borderRadius: BorderRadius.circular(0),
                   ),
                 ),
@@ -103,7 +103,7 @@ class _ResetState extends State<Reset> {
                   "Submit",
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Colors.blue,
+                color: Colors.green,
               ),
             ),
           )

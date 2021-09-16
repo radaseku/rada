@@ -11,6 +11,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 import 'package:rada/screens/dashboard.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/details_helper.dart';
 import 'package:toast/toast.dart';
 
@@ -82,7 +83,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
   Widget build(BuildContext context) {
     return new Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xff1979a9),
+      backgroundColor: greenAccentColor,
       appBar: Platform.isIOS?AppBar(
         backgroundColor: Colors.grey[100],
         elevation: 0,
@@ -292,7 +293,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
                         height: 50,
                         width: MediaQuery.of(context).size.width,
                         borderRadius: 0.0,
-                        color: Color(0xff1979A9),
+                        color: Color(0xff43a047),
                         elevation: 0,
                         roundLoadingShape: true,
                         child: Text(
@@ -329,7 +330,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
                                 .showSnackBar(SnackBar(
                               content: Text(
                                   "Passwords do not match or you missed a field"),
-                              backgroundColor: Colors.green,
+                              backgroundColor: Colors.lightGreen,
                             ));
                           }
                         },
@@ -474,7 +475,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent),
+              color: Colors.lightGreenAccent),
         );
       },
     );

@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:rada/themes.dart';
 
 import '../infocard.dart';
 
@@ -78,9 +79,9 @@ class _RequestMentorState extends State<RequestMentor> {
         },
 
         child: Scaffold(
-          backgroundColor: Color(0xff1979a9),
+          backgroundColor: Color(0xff4caf50),
           appBar: Platform.isIOS?AppBar(
-            backgroundColor: Color(0xff1979a9),
+            backgroundColor: Color(0xff4caf50),
             leading: Icon(Icons.arrow_back_ios,color: Colors.white,size: 27,),
             title: Text(
               "Mentorship request",
@@ -92,7 +93,7 @@ class _RequestMentorState extends State<RequestMentor> {
               Padding(padding: EdgeInsets.only(right: 15),child: Icon(Icons.more_horiz,size: 27,color: Colors.white,)),
             ],
           ):AppBar(
-            backgroundColor: Color(0xff1979a9),
+            backgroundColor: greenAccentColor,
             leading: Icon(Icons.arrow_back,color: Colors.white,size: 27,),
             title: Text(
               "Mentorship request",
@@ -255,7 +256,7 @@ class _RequestMentorState extends State<RequestMentor> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.blueAccent
+              color: Colors.lightGreenAccent
           ),
         );
       },

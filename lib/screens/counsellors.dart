@@ -60,7 +60,7 @@ class _CounsellorsState extends State<Counsellors> {
       getId();
     });
     return Scaffold(
-      backgroundColor: Color(0xff1979a9),
+      backgroundColor: Color(0xff66bb6a),
       body: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -69,7 +69,7 @@ class _CounsellorsState extends State<Counsellors> {
             bottom: TabBar(
               isScrollable: false,
               labelColor: Colors.black,
-              indicatorColor: Colors.green,
+              indicatorColor: Colors.green[900],
               tabs: [
                 Tab(text: "Conversations"),
                 Tab(
@@ -583,7 +583,7 @@ class _CounsellorsState extends State<Counsellors> {
                             Flushbar(
                               title: "Success",
                               message: "Counsellor Added To Your Conversations",
-                              backgroundColor: Colors.green,
+                              backgroundColor: Colors.green[900],
                               icon: Icon(
                                 Icons.error_outline,
                                 color: Colors.white,

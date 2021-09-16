@@ -171,11 +171,11 @@ class _SignupScreenState extends State<SignupScreen> {
                             hintText: 'User Name',
                             hintStyle: TextStyle(color: Colors.grey[600]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey[100]),
+                              borderSide: BorderSide(color: Colors.green[300]),
                               borderRadius: BorderRadius.circular(0),
                             ),
                             enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey[100]),
+                              borderSide: BorderSide(color: Colors.green[300]),
                               borderRadius: BorderRadius.circular(0),
                             ),
                           ),
@@ -202,11 +202,11 @@ class _SignupScreenState extends State<SignupScreen> {
                             hintText: 'Email Address',
                             hintStyle: TextStyle(color: Colors.grey[600]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey[100]),
+                              borderSide: BorderSide(color: Colors.green[300]),
                               borderRadius: BorderRadius.circular(0),
                             ),
                             enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey[100]),
+                              borderSide: BorderSide(color: Colors.green[300]),
                               borderRadius: BorderRadius.circular(0),
                             ),
                           ),
@@ -233,11 +233,11 @@ class _SignupScreenState extends State<SignupScreen> {
                             hintText: 'Phone Number',
                             hintStyle: TextStyle(color: Colors.grey[600]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey[100]),
+                              borderSide: BorderSide(color: Colors.green[300]),
                               borderRadius: BorderRadius.circular(0),
                             ),
                             enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey[100]),
+                              borderSide: BorderSide(color: Colors.green[300]),
                               borderRadius: BorderRadius.circular(0),
                             ),
                           ),
@@ -263,13 +263,13 @@ class _SignupScreenState extends State<SignupScreen> {
                                     focusedBorder: OutlineInputBorder(
                                       // borderSide: BorderSide(color: Colors.grey[200]),
                                       borderSide: BorderSide(
-                                          color: Colors.grey[100]),
+                                          color: Colors.green[300]),
                                       borderRadius:
                                       BorderRadius.circular(0),
                                     ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Colors.grey[100]),
+                                          color: Colors.green[300]),
                                       borderRadius:
                                       BorderRadius.circular(0),
                                     ),
@@ -350,13 +350,13 @@ class _SignupScreenState extends State<SignupScreen> {
                                     focusedBorder: OutlineInputBorder(
                                       // borderSide: BorderSide(color: Colors.grey[200]),
                                       borderSide: BorderSide(
-                                          color: Colors.grey[100]),
+                                          color: Colors.green[300]),
                                       borderRadius:
                                       BorderRadius.circular(0),
                                     ),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Colors.grey[100]),
+                                          color: Colors.green[300]),
                                       borderRadius:
                                       BorderRadius.circular(0),
                                     ),
@@ -430,7 +430,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 50,
                             width: MediaQuery.of(context).size.width,
                             borderRadius: 0.0,
-                            color: Color(0xff1979A9),
+                            color: Color(0xff4caf50),
                             roundLoadingShape: true,
                             elevation: 0,
                             child: Text(

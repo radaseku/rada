@@ -9,6 +9,7 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 import 'package:link_text/link_text.dart';
+import 'package:rada/themes.dart';
 
 class Notifications extends StatefulWidget {
   @override
@@ -71,7 +72,7 @@ class _NotificationsState extends State<Notifications> {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: greenAccentColor,
       ),
       home: Scaffold(
           appBar: Platform.isIOS?AppBar(
@@ -93,7 +94,7 @@ class _NotificationsState extends State<Notifications> {
               "Notifications",
               style: NeumorphicStyle(
                 depth: 0, //customize depth here
-                color: Colors.blue,
+                color: greenAccentColor,
                 shape: NeumorphicShape.convex, //customize color here
               ),
               textStyle: NeumorphicTextStyle(
@@ -121,7 +122,7 @@ class _NotificationsState extends State<Notifications> {
               "Notifications",
               style: NeumorphicStyle(
                 depth: 0, //customize depth here
-                color: Colors.blue,
+                color: greenAccentColor,
                 shape: NeumorphicShape.convex, //customize color here
               ),
               textStyle: NeumorphicTextStyle(
@@ -325,7 +326,7 @@ class _NotificationsState extends State<Notifications> {
                                                 letterSpacing: 1,
                                               ),
                                               linkStyle: TextStyle(
-                                                color: Colors.blue,
+                                                color: Colors.green,
                                                 fontWeight: FontWeight.w500,
                                                 letterSpacing: 1,
                                               ),
@@ -398,7 +399,7 @@ class _NotificationsState extends State<Notifications> {
                                                 letterSpacing: 1,
                                               ),
                                               linkStyle: TextStyle(
-                                                color: Colors.blue,
+                                                color: Colors.green,
                                                 fontWeight: FontWeight.w500,
                                                 letterSpacing: 1,
                                               ),
@@ -472,7 +473,7 @@ class _NotificationsState extends State<Notifications> {
                                                   child: Text(
                                                     msgList[index]["title"],
                                                     style: TextStyle(
-                                                        color: Colors.blue,
+                                                        color: Colors.green,
                                                         fontWeight:
                                                         FontWeight.w800,
                                                         fontFamily:
@@ -494,7 +495,7 @@ class _NotificationsState extends State<Notifications> {
                                         child: Icon(
                                           Icons.share,
                                           size: 30,
-                                          color: Colors.blue,
+                                          color: Colors.green,
                                         ),
                                       ),
                                     )

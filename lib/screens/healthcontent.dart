@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:rada/model/healthmodel.dart';
+import 'package:rada/themes.dart';
 import 'package:rada/utils/health_helper.dart';
 import 'package:rada/utils/mental_helper.dart';
 import 'package:readmore/readmore.dart';
@@ -297,7 +298,7 @@ class _HealthContentState extends State<HealthContent> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
             appBar: Platform.isIOS?AppBar(

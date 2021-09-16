@@ -57,9 +57,9 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff1979a9),
+      backgroundColor: Color(0xff66bb6a),
       body: Container(
-        color: Color(0xff1979a9),
+        color: Color(0xff66bb6a),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -115,7 +115,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                     ),
                     padding: const EdgeInsets.all(15),
                     /*color: Theme.of(context).primaryColor,*/
-                    color: Color(0xff195e83),
+                    color: Color(0xff166f4b),
                     textColor: Colors.white,
                     onPressed: () {
                       //Navigator.of(context).pushNamed(SignupScreen.routeName);
