@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/curve.png'),
+                        image: AssetImage('assets/images/seku.jpeg'),
                         fit: BoxFit.cover),
                     //color: Color(0xff195e83),
                     color: Colors.white,
@@ -158,10 +158,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       right: 15),
                                                   focusedBorder:
                                                   OutlineInputBorder(
-                                                    // borderSide: BorderSide(color: Colors.grey[200]),
+                                                     //borderSide: BorderSide(color: Colors.green[500]),
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   UnderlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -212,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     // borderSide: BorderSide(color: Colors.grey[200]),
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -221,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   UnderlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.grey[100]),
+                                                        Colors.green[300]),
                                                     borderRadius:
                                                     BorderRadius.circular(
                                                         0),
@@ -232,7 +232,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       _passpasswordVisible
                                                           ? Icons.visibility_off
                                                           : Icons.visibility,
-                                                      color: Colors.grey,
+                                                      color: Colors.green[400],
                                                     ),
                                                     onPressed: () {
                                                       // Update the state i.e. toogle the state of passwordVisible variable
@@ -394,7 +394,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                               child: Text(
                                                 "CREATE ACCOUNT",
                                                 style: TextStyle(
-                                                    color: Colors.black,
+                                                  fontWeight: FontWeight.bold,
+                                                    color: Colors.green,
                                                     fontSize: 16),
                                               ),
                                             ),
@@ -426,6 +427,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 child: Text(
                                                   "FORGOT PASSWORD?",
                                                   style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
                                                       color: Colors.green),
                                                 ),
                                               ),

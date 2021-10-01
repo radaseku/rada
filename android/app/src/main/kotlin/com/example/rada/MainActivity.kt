@@ -1,4 +1,4 @@
-package com.example.rada
+package com.rada.seku
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -219,6 +219,7 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.green[100],
       body: ListView(
         padding: EdgeInsets.zero,
         physics: BouncingScrollPhysics(),
@@ -226,7 +227,7 @@ class _DashBoardState extends State<DashBoard> {
           Container(
             height: 60,
             width: MediaQuery.of(context).size.width,
-            color: Colors.white,
+            color: Colors.green[100],//white,
             margin: EdgeInsets.only(top: 25),
             child: Padding(
               padding: EdgeInsets.only(left: 22),
@@ -294,7 +295,7 @@ class _DashBoardState extends State<DashBoard> {
             ),
           ),
           Container(
-            color: Colors.grey.shade50,
+            color: Colors.green[50],//grey.shade50,
             width: _media.width,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -308,7 +309,7 @@ class _DashBoardState extends State<DashBoard> {
                   child: Text(
                     "Home",
                     style: TextStyle(
-                      color: Colors.grey,
+                      color: Colors.green[500],
                     ),
                   ),
                 ),

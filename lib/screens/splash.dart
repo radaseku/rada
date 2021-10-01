@@ -1,5 +1,5 @@
 
-/*
+
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigationPage() async {
     await _firebaseAuth.currentUser().then((FirebaseUser user) {
       if (user != null) {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => DashBoard(
@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               )),
         );
       } else {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => LoginScreen()),
         );
@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
         storage: JsonFileStorage(),
         child: new Scaffold(
           //backgroundColor: Color(0xff1979a9),
-          backgroundColor: Colors.white.withAlpha(210),
+          backgroundColor: Colors.green[200],//.withAlpha(210),
           body: new Center(
             child: Image.asset(
               'assets/images/logo.png',
@@ -102,11 +102,11 @@ class _SplashScreenState extends State<SplashScreen> {
           decoration: BoxDecoration(
             /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.amber),
+              color: Colors.green),
         );
       },
     );
 
     //SpinKitThreeBounce
   }
-}*/
+}

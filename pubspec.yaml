@@ -143,8 +143,6 @@ flutter:
     - assets/images/rada1.jpg
     - assets/images/mentorship.png
     - assets/images/intro.jpg
-    - assets/images/curve.png
-    - assets/images/signup.png
     - assets/images/dating.jpg
     - assets/images/romance.jpg
     - assets/images/chat_bg.png
@@ -155,6 +153,8 @@ flutter:
     - assets/images/rada_log.png
     - assets/images/love.png
     - assets/images/couple.png
+    - assets/images/seku.jpeg
+    - assets/images/college.jpeg
 
   #   - images/a_dot_ham.jpeg
 

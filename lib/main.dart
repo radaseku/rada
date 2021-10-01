@@ -17,23 +17,23 @@ void main() {
     DeviceOrientation.portraitDown,
   ]);
   ErrorWidget.builder = (FlutterErrorDetails details) => Scaffold(
-    appBar: AppBar(
-      backgroundColor: Colors.white,
-      elevation: 0,
-    ),
-    body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/error.png'),
-          SizedBox(
-            height: 30,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/error.png'),
+              SizedBox(
+                height: 30,
+              ),
+              Text("Oops!, something went wrong")
+            ],
           ),
-          Text("Oops!, something went wrong")
-        ],
-      ),
-    ),
-  );
+        ),
+      );
   runApp(WelcomePage());
 }
 
@@ -48,9 +48,9 @@ class WelcomePage extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       /*home: GettingStartedScreen(),*/
-      home: DashBoard(),
-     //TODO: redirect to splash screen
-     /* routes: {
+      home: SplashScreen(),
+      //TODO: redirect to splash screen
+      /* routes: {
         LoginScreen.routeName: (ctx) => LoginScreen(),
         SignupScreen.routeName: (ctx) => SignupScreen(),
       },*/

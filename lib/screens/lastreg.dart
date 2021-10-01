@@ -106,7 +106,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/curve.png'),
+                image: AssetImage('assets/images/seku.jpeg'),
                 fit: BoxFit.cover),
             //color: Color(0xff195e83),
             color: Colors.white,

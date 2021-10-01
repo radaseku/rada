@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "511820308287",
+    "project_id": "radaseku-d4a1c",
+    "storage_bucket": "radaseku-d4a1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511820308287:android:be10c22cf31db6c496bd8a",
+        "android_client_info": {
+          "package_name": "com.rada.seku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511820308287-bg6g2scbm5ol0sg01iqrq97c004agil5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPRhnE-s3vDTg1AYilzSLvvN2G0yEDq68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511820308287-bg6g2scbm5ol0sg01iqrq97c004agil5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
