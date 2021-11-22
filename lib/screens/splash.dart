@@ -63,10 +63,11 @@ class _SplashScreenState extends State<SplashScreen> {
         storage: JsonFileStorage(),
         child: new Scaffold(
           //backgroundColor: Color(0xff1979a9),
-          backgroundColor: Colors.green[200],//.withAlpha(210),
+          backgroundColor: Colors.green.withAlpha(210),
+          //backgroundColor: Colors.white,
           body: new Center(
             child: Image.asset(
-              'assets/images/logo.png',
+              'assets/images/selogoho.png',
               width: 100,
               height: 100,
             ),

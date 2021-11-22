@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:rada/screens/contributors.dart';
 import 'package:rada/screens/counsellors.dart';
 import 'package:rada/screens/forum.dart';
@@ -219,7 +220,7 @@ class _DashBoardState extends State<DashBoard> {
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      //backgroundColor: Colors.green[100],
       body: ListView(
         padding: EdgeInsets.zero,
         physics: BouncingScrollPhysics(),
@@ -244,7 +245,7 @@ class _DashBoardState extends State<DashBoard> {
                   PopupMenuButton<String>(
                     icon: Icon(
                       Icons.more_vert,
-                      color: Colors.black,
+                      color: Colors.green,
                     ),
                     enabled: true,
                     onSelected: (str) {
@@ -295,7 +296,7 @@ class _DashBoardState extends State<DashBoard> {
             ),
           ),
           Container(
-            color: Colors.green[50],//grey.shade50,
+            //color: Colors.green[50],//grey.shade50,
             width: _media.width,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -306,12 +307,24 @@ class _DashBoardState extends State<DashBoard> {
                     bottom: 15,
                     top: 15,
                   ),
-                  child: Text(
-                    "Home",
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Welcome To Rada SEKU',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.green[500],
+                      ),
+                    ),
+                  ),
+                  /*child: Text(
+                    "Welcome To Rada SEKU",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.green[500],
                     ),
-                  ),
+                  ),*/
                 ),
                 Column(
                   mainAxisSize: MainAxisSize.min,

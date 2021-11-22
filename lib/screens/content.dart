@@ -198,7 +198,7 @@ class _ContentPageState extends State<ContentPage> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.white),
         );
@@ -212,23 +212,27 @@ class _ContentPageState extends State<ContentPage> {
     width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-
       backgroundColor: Colors.white,
-      appBar:Platform.isIOS?AppBar(
-        backgroundColor: Colors.grey[100],
-        elevation: 0,
-        centerTitle: true,
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 27,
-          ),
-        ),
-      ):SizedBox(height: 0,width: 0,),
+      appBar: Platform.isIOS
+          ? AppBar(
+              backgroundColor: Colors.grey[100],
+              elevation: 0,
+              centerTitle: true,
+              leading: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                  size: 27,
+                ),
+              ),
+            )
+          : SizedBox(
+              height: 0,
+              width: 0,
+            ),
       body: Padding(
         padding: const EdgeInsets.only(top: 0.0),
         child: FutureBuilder(
@@ -450,7 +454,7 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.white,
                                               fontSize: 19,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                         Padding(
                                             padding: EdgeInsets.only(right: 10),
@@ -467,7 +471,7 @@ class _ContentPageState extends State<ContentPage> {
                             ),*/
                             Neumorphic(
                               margin:
-                              EdgeInsets.only(top: 5, right: 5, left: 5),
+                                  EdgeInsets.only(top: 5, right: 5, left: 5),
                               style: NeumorphicStyle(
                                   shape: NeumorphicShape.flat,
                                   boxShape: NeumorphicBoxShape.roundRect(
@@ -487,21 +491,21 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.green,
                                               fontSize: 20,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular',
+                                              fontFamily: 'Ubuntu',
                                               letterSpacing: 1),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, top: 10),
+                                          EdgeInsets.only(left: 0, top: 10),
                                       child: Text(
                                         data[index]["content"].toString(),
                                         style: TextStyle(
                                             color: Colors.grey[800],
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                             letterSpacing: 1),
                                       ),
                                     ),
@@ -532,7 +536,7 @@ class _ContentPageState extends State<ContentPage> {
                                         controller: _controller,
                                         showVideoProgressIndicator: true,
                                         progressIndicatorColor:
-                                        Colors.lightGreenAccent,
+                                            Colors.lightGreenAccent,
                                         topActions: <Widget>[
                                           const SizedBox(width: 8.0),
                                           Expanded(
@@ -565,14 +569,14 @@ class _ContentPageState extends State<ContentPage> {
                                         },
                                       ),
                                       builder: (context, player) => Container(
-                                        height: MediaQuery.of(context)
-                                            .size
-                                            .height,
-                                        width: MediaQuery.of(context)
-                                            .size
-                                            .width,
-                                        child: player,
-                                      )),
+                                            height: MediaQuery.of(context)
+                                                .size
+                                                .height,
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
+                                            child: player,
+                                          )),
                                 ),
                               ),
                             ),
@@ -633,7 +637,7 @@ class _ContentPageState extends State<ContentPage> {
                             ),
                             Neumorphic(
                               margin:
-                              EdgeInsets.only(top: 10, right: 5, left: 5),
+                                  EdgeInsets.only(top: 10, right: 5, left: 5),
                               style: NeumorphicStyle(
                                   shape: NeumorphicShape.flat,
                                   boxShape: NeumorphicBoxShape.roundRect(
@@ -653,13 +657,13 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.green,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, top: 10),
+                                          EdgeInsets.only(left: 0, top: 10),
                                       child: ReadMoreText(
                                         data[1]["content"].toString(),
                                         trimLines: 7,
@@ -671,7 +675,7 @@ class _ContentPageState extends State<ContentPage> {
                                             color: Colors.grey[800],
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                             letterSpacing: 1),
                                       ),
                                     ),
@@ -724,7 +728,7 @@ class _ContentPageState extends State<ContentPage> {
 
                             Neumorphic(
                               margin:
-                              EdgeInsets.only(top: 10, right: 5, left: 5),
+                                  EdgeInsets.only(top: 10, right: 5, left: 5),
                               style: NeumorphicStyle(
                                   shape: NeumorphicShape.flat,
                                   boxShape: NeumorphicBoxShape.roundRect(
@@ -744,14 +748,14 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.green,
                                               fontSize: 18,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular',
+                                              fontFamily: 'Ubuntu',
                                               letterSpacing: 1),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, top: 10),
+                                          EdgeInsets.only(left: 0, top: 10),
                                       child: ReadMoreText(
                                         data[2]["content"].toString(),
                                         trimLines: 3,
@@ -763,7 +767,7 @@ class _ContentPageState extends State<ContentPage> {
                                             color: Colors.grey[800],
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                             letterSpacing: 1),
                                       ),
                                     ),
@@ -857,7 +861,7 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.white,
                                               fontSize: 19,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                         Padding(
                                             padding: EdgeInsets.only(right: 10),
@@ -874,7 +878,7 @@ class _ContentPageState extends State<ContentPage> {
                             ),*/
                             Neumorphic(
                               margin:
-                              EdgeInsets.only(top: 5, right: 5, left: 5),
+                                  EdgeInsets.only(top: 5, right: 5, left: 5),
                               style: NeumorphicStyle(
                                   shape: NeumorphicShape.flat,
                                   boxShape: NeumorphicBoxShape.roundRect(
@@ -894,20 +898,20 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.green,
                                               fontSize: 20,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, top: 10),
+                                          EdgeInsets.only(left: 0, top: 10),
                                       child: Text(
                                         data[6]["content"].toString(),
                                         style: TextStyle(
                                             color: Colors.grey[800],
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                             letterSpacing: 1),
                                       ),
                                     ),
@@ -916,28 +920,28 @@ class _ContentPageState extends State<ContentPage> {
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, right: 0),
+                                          EdgeInsets.only(left: 0, right: 0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(0),
                                         child: Container(
                                           height: 200,
                                           width:
-                                          MediaQuery.of(context).size.width,
+                                              MediaQuery.of(context).size.width,
                                           color: Colors.redAccent,
                                           child: YoutubePlayerBuilder(
                                               onExitFullScreen: () {
                                                 // The player forces portraitUp after exiting fullscreen. This overrides the behaviour.
                                                 SystemChrome
                                                     .setPreferredOrientations(
-                                                    DeviceOrientation
-                                                        .values);
+                                                        DeviceOrientation
+                                                            .values);
                                               },
                                               player: YoutubePlayer(
                                                 controller: _controller2,
                                                 showVideoProgressIndicator:
-                                                true,
+                                                    true,
                                                 progressIndicatorColor:
-                                                Colors.lightGreenAccent,
+                                                    Colors.lightGreenAccent,
                                                 topActions: <Widget>[
                                                   const SizedBox(width: 8.0),
                                                   Expanded(
@@ -949,7 +953,7 @@ class _ContentPageState extends State<ContentPage> {
                                                         fontSize: 18.0,
                                                       ),
                                                       overflow:
-                                                      TextOverflow.ellipsis,
+                                                          TextOverflow.ellipsis,
                                                       maxLines: 1,
                                                     ),
                                                   ),
@@ -974,13 +978,13 @@ class _ContentPageState extends State<ContentPage> {
                                               builder: (context, player) =>
                                                   Container(
                                                     height:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .height,
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height,
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width,
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
                                                     child: player,
                                                   )),
                                         ),
@@ -1040,7 +1044,7 @@ class _ContentPageState extends State<ContentPage> {
                           children: <Widget>[
                             Neumorphic(
                               margin:
-                              EdgeInsets.only(top: 5, right: 5, left: 5),
+                                  EdgeInsets.only(top: 5, right: 5, left: 5),
                               style: NeumorphicStyle(
                                   shape: NeumorphicShape.flat,
                                   boxShape: NeumorphicBoxShape.roundRect(
@@ -1060,20 +1064,20 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.green,
                                               fontSize: 20,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, top: 10),
+                                          EdgeInsets.only(left: 0, top: 10),
                                       child: Text(
                                         data[15]["content"].toString(),
                                         style: TextStyle(
                                             color: Colors.grey[800],
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                             letterSpacing: 1),
                                       ),
                                     ),
@@ -1082,28 +1086,28 @@ class _ContentPageState extends State<ContentPage> {
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, right: 0),
+                                          EdgeInsets.only(left: 0, right: 0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(0),
                                         child: Container(
                                           height: 200,
                                           width:
-                                          MediaQuery.of(context).size.width,
+                                              MediaQuery.of(context).size.width,
                                           color: Colors.redAccent,
                                           child: YoutubePlayerBuilder(
                                               onExitFullScreen: () {
                                                 // The player forces portraitUp after exiting fullscreen. This overrides the behaviour.
                                                 SystemChrome
                                                     .setPreferredOrientations(
-                                                    DeviceOrientation
-                                                        .values);
+                                                        DeviceOrientation
+                                                            .values);
                                               },
                                               player: YoutubePlayer(
                                                 controller: _controller3,
                                                 showVideoProgressIndicator:
-                                                true,
+                                                    true,
                                                 progressIndicatorColor:
-                                                Colors.lightGreenAccent,
+                                                    Colors.lightGreenAccent,
                                                 topActions: <Widget>[
                                                   const SizedBox(width: 8.0),
                                                   Expanded(
@@ -1115,7 +1119,7 @@ class _ContentPageState extends State<ContentPage> {
                                                         fontSize: 18.0,
                                                       ),
                                                       overflow:
-                                                      TextOverflow.ellipsis,
+                                                          TextOverflow.ellipsis,
                                                       maxLines: 1,
                                                     ),
                                                   ),
@@ -1140,13 +1144,13 @@ class _ContentPageState extends State<ContentPage> {
                                               builder: (context, player) =>
                                                   Container(
                                                     height:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .height,
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height,
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width,
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
                                                     child: player,
                                                   )),
                                         ),
@@ -1291,7 +1295,7 @@ class _ContentPageState extends State<ContentPage> {
                                               color: Colors.white,
                                               fontSize: 19,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                         Padding(
                                             padding: EdgeInsets.only(right: 10),
@@ -1308,7 +1312,7 @@ class _ContentPageState extends State<ContentPage> {
                             ),*/
                             Neumorphic(
                               margin:
-                              EdgeInsets.only(top: 5, right: 5, left: 5),
+                                  EdgeInsets.only(top: 5, right: 5, left: 5),
                               style: NeumorphicStyle(
                                   shape: NeumorphicShape.flat,
                                   boxShape: NeumorphicBoxShape.roundRect(
@@ -1328,21 +1332,21 @@ class _ContentPageState extends State<ContentPage> {
                                             color: Colors.green,
                                             fontSize: 20,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                           ),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, top: 10),
+                                          EdgeInsets.only(left: 0, top: 10),
                                       child: Text(
                                         data[24]["content"].toString(),
                                         style: TextStyle(
                                             color: Colors.grey[800],
                                             fontSize: 15,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular',
+                                            fontFamily: 'Ubuntu',
                                             letterSpacing: 1),
                                       ),
                                     ),
@@ -1351,28 +1355,28 @@ class _ContentPageState extends State<ContentPage> {
                                     ),
                                     Padding(
                                       padding:
-                                      EdgeInsets.only(left: 0, right: 0),
+                                          EdgeInsets.only(left: 0, right: 0),
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(0),
                                         child: Container(
                                           height: 200,
                                           width:
-                                          MediaQuery.of(context).size.width,
+                                              MediaQuery.of(context).size.width,
                                           color: Colors.redAccent,
                                           child: YoutubePlayerBuilder(
                                               onExitFullScreen: () {
                                                 // The player forces portraitUp after exiting fullscreen. This overrides the behaviour.
                                                 SystemChrome
                                                     .setPreferredOrientations(
-                                                    DeviceOrientation
-                                                        .values);
+                                                        DeviceOrientation
+                                                            .values);
                                               },
                                               player: YoutubePlayer(
                                                 controller: _controller4,
                                                 showVideoProgressIndicator:
-                                                true,
+                                                    true,
                                                 progressIndicatorColor:
-                                                Colors.lightGreenAccent,
+                                                    Colors.lightGreenAccent,
                                                 topActions: <Widget>[
                                                   const SizedBox(width: 8.0),
                                                   Expanded(
@@ -1384,7 +1388,7 @@ class _ContentPageState extends State<ContentPage> {
                                                         fontSize: 18.0,
                                                       ),
                                                       overflow:
-                                                      TextOverflow.ellipsis,
+                                                          TextOverflow.ellipsis,
                                                       maxLines: 1,
                                                     ),
                                                   ),
@@ -1409,13 +1413,13 @@ class _ContentPageState extends State<ContentPage> {
                                               builder: (context, player) =>
                                                   Container(
                                                     height:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .height,
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height,
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width,
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
                                                     child: player,
                                                   )),
                                         ),
@@ -1533,7 +1537,7 @@ class _ContentPageState extends State<ContentPage> {
                 height: height * .55,
                 child: Padding(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -1549,7 +1553,7 @@ class _ContentPageState extends State<ContentPage> {
                               style: TextStyle(
                                   color: Colors.blueGrey,
                                   fontSize: 20,
-                                  fontFamily: 'Raleway-regular'),
+                                  fontFamily: 'Ubuntu'),
                               textAlign: TextAlign.left,
                             ),
                           ),
@@ -1571,7 +1575,7 @@ class _ContentPageState extends State<ContentPage> {
                         child: Text("Introduction",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'Raleway-regular',
+                                fontFamily: 'Ubuntu',
                                 color: Colors.lightGreen)),
                       ),
                       Divider(),
@@ -1581,17 +1585,17 @@ class _ContentPageState extends State<ContentPage> {
                           /*child: content.length <= 288?Text(content,*/
                           child: content.length <= 225
                               ? Text(content.toString(),
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Raleway-regular',
-                                  fontSize: 16))
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'Ubuntu',
+                                      fontSize: 16))
                               : Text(
-                              content.toString().substring(0, 225) +
-                                  " ....",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: 'Raleway-regular',
-                                  fontSize: 16)),
+                                  content.toString().substring(0, 225) +
+                                      " ....",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'Ubuntu',
+                                      fontSize: 16)),
                         ),
                       ),
                       Center(
@@ -1618,37 +1622,37 @@ class _ContentPageState extends State<ContentPage> {
   }
 
   Widget columnItem(
-      String image,
-      String title,
-      String content,
-      ) {
+    String image,
+    String title,
+    String content,
+  ) {
     return Column(
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -1671,7 +1675,7 @@ class _ContentPageState extends State<ContentPage> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -1691,7 +1695,7 @@ class _ContentPageState extends State<ContentPage> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -1709,29 +1713,29 @@ class _ContentPageState extends State<ContentPage> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -1759,7 +1763,7 @@ class _ContentPageState extends State<ContentPage> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -1779,7 +1783,7 @@ class _ContentPageState extends State<ContentPage> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -1797,29 +1801,29 @@ class _ContentPageState extends State<ContentPage> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -1842,7 +1846,7 @@ class _ContentPageState extends State<ContentPage> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -1862,7 +1866,7 @@ class _ContentPageState extends State<ContentPage> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -1879,29 +1883,29 @@ class _ContentPageState extends State<ContentPage> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -1924,7 +1928,7 @@ class _ContentPageState extends State<ContentPage> {
                               color: Colors.black54,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -1944,7 +1948,7 @@ class _ContentPageState extends State<ContentPage> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),

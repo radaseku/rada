@@ -50,21 +50,26 @@ class _MentalContentState extends State<MentalContent> {
           primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
-            appBar:Platform.isIOS?AppBar(
-              backgroundColor: Colors.grey[100],
-              elevation: 0,
-              centerTitle: true,
-              leading: GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 27,
-                ),
-              ),
-            ):SizedBox(height: 0,width: 0,),
+            appBar: Platform.isIOS
+                ? AppBar(
+                    backgroundColor: Colors.grey[100],
+                    elevation: 0,
+                    centerTitle: true,
+                    leading: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 27,
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    height: 0,
+                    width: 0,
+                  ),
             body: FutureBuilder(
               builder: (context, projectSnap) {
                 return ListView.builder(
@@ -75,12 +80,18 @@ class _MentalContentState extends State<MentalContent> {
 
                     if (widget.itemkey == "7") {
                       var data = [
-                        {"title": "Mental Health", "content": project.mentaldef},
+                        {
+                          "title": "Mental Health",
+                          "content": project.mentaldef
+                        },
                         {
                           "title": "Mental Illness",
                           "content": project.mentalilldef
                         },
-                        {"title": "Risk Factors", "content": project.riskfactors},
+                        {
+                          "title": "Risk Factors",
+                          "content": project.riskfactors
+                        },
                         {
                           "title": "Mental Health Disorders",
                           "content": project.disorders
@@ -182,7 +193,7 @@ class _MentalContentState extends State<MentalContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -198,7 +209,8 @@ class _MentalContentState extends State<MentalContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -218,12 +230,13 @@ class _MentalContentState extends State<MentalContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
@@ -235,7 +248,7 @@ class _MentalContentState extends State<MentalContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -317,7 +330,7 @@ class _MentalContentState extends State<MentalContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -333,7 +346,8 @@ class _MentalContentState extends State<MentalContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -353,12 +367,13 @@ class _MentalContentState extends State<MentalContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[4]["content"].toString(),
                                           trimLines: 5,
@@ -370,7 +385,7 @@ class _MentalContentState extends State<MentalContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -441,7 +456,7 @@ class _MentalContentState extends State<MentalContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -457,7 +472,8 @@ class _MentalContentState extends State<MentalContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -477,12 +493,13 @@ class _MentalContentState extends State<MentalContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[7]["content"].toString(),
                                           trimLines: 5,
@@ -494,7 +511,7 @@ class _MentalContentState extends State<MentalContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -569,7 +586,7 @@ class _MentalContentState extends State<MentalContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -585,7 +602,8 @@ class _MentalContentState extends State<MentalContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -605,12 +623,13 @@ class _MentalContentState extends State<MentalContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[12]["content"].toString(),
                                           trimLines: 5,
@@ -622,7 +641,7 @@ class _MentalContentState extends State<MentalContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -658,14 +677,14 @@ class _MentalContentState extends State<MentalContent> {
         main == ""
             ? SizedBox()
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 170,
-          width: MediaQuery.of(context).size.width,
-          child: Image.network(
-            main,
-            fit: BoxFit.cover,
-          ),
-          /*child: ListView(
+                margin: EdgeInsets.only(top: 10),
+                height: 170,
+                width: MediaQuery.of(context).size.width,
+                child: Image.network(
+                  main,
+                  fit: BoxFit.cover,
+                ),
+                /*child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     SizedBox(
@@ -715,7 +734,7 @@ class _MentalContentState extends State<MentalContent> {
                             ))),
                   ],
                 ),*/
-        ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -738,7 +757,7 @@ class _MentalContentState extends State<MentalContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -757,7 +776,7 @@ class _MentalContentState extends State<MentalContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular'),
+                        fontFamily: 'Ubuntu'),
                   ),
                 ),
               ],

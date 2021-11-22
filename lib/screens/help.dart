@@ -45,11 +45,11 @@ class _HelpState extends State<Help> {
             },
             child: Platform.isAndroid?Icon(
               Icons.arrow_back,
-              color: Colors.black,
+              color: Colors.green,
               size: 27,
             ):Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
+              color: Colors.green,
               size: 27,
             ),
           ),

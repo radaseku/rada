@@ -51,29 +51,29 @@ class _HealthContentState extends State<HealthContent> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -96,7 +96,7 @@ class _HealthContentState extends State<HealthContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -116,7 +116,7 @@ class _HealthContentState extends State<HealthContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -133,29 +133,29 @@ class _HealthContentState extends State<HealthContent> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -178,7 +178,7 @@ class _HealthContentState extends State<HealthContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -198,7 +198,7 @@ class _HealthContentState extends State<HealthContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -216,29 +216,29 @@ class _HealthContentState extends State<HealthContent> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -261,7 +261,7 @@ class _HealthContentState extends State<HealthContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -281,7 +281,7 @@ class _HealthContentState extends State<HealthContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -301,24 +301,25 @@ class _HealthContentState extends State<HealthContent> {
           primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
-            appBar: Platform.isIOS?AppBar(
-              backgroundColor: Colors.grey[100],
-              elevation: 0,
-              leading: GestureDetector(
-                onTap: (){
-
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 27,
-                ),
-              ),
-            ):SizedBox(
-              height: 0,
-              width: 0,
-            ),
+            appBar: Platform.isIOS
+                ? AppBar(
+                    backgroundColor: Colors.grey[100],
+                    elevation: 0,
+                    leading: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 27,
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    height: 0,
+                    width: 0,
+                  ),
             body: FutureBuilder(
               builder: (context, projectSnap) {
                 return ListView.builder(
@@ -479,7 +480,7 @@ class _HealthContentState extends State<HealthContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -495,7 +496,8 @@ class _HealthContentState extends State<HealthContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -515,12 +517,13 @@ class _HealthContentState extends State<HealthContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[0]["content"].toString(),
                                           trimLines: 5,
@@ -532,7 +535,7 @@ class _HealthContentState extends State<HealthContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -621,7 +624,7 @@ class _HealthContentState extends State<HealthContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -637,7 +640,8 @@ class _HealthContentState extends State<HealthContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -657,12 +661,13 @@ class _HealthContentState extends State<HealthContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[7]["content"].toString(),
                                           trimLines: 5,
@@ -674,7 +679,7 @@ class _HealthContentState extends State<HealthContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -715,10 +720,16 @@ class _HealthContentState extends State<HealthContent> {
                                   data[13]["title"],
                                   data[13]["content"],
                                   "http://rada.uonbi.ac.ke/radaweb/appimages/nutrition8.jpg"),
-                              nutritionItem("assets/images/arrow.png",
-                                  data[14]["title"], data[14]["content"], "null"),
-                              nutritionItem("assets/images/arrow.png",
-                                  data[15]["title"], data[15]["content"], "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[14]["title"],
+                                  data[14]["content"],
+                                  "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[15]["title"],
+                                  data[15]["content"],
+                                  "null"),
                             ],
                           ),
                         );
@@ -776,7 +787,7 @@ class _HealthContentState extends State<HealthContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -792,7 +803,8 @@ class _HealthContentState extends State<HealthContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -812,12 +824,13 @@ class _HealthContentState extends State<HealthContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[16]["content"].toString(),
                                           trimLines: 5,
@@ -829,7 +842,7 @@ class _HealthContentState extends State<HealthContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -849,17 +862,32 @@ class _HealthContentState extends State<HealthContent> {
                                   data[18]["title"],
                                   data[18]["content"],
                                   "http://rada.uonbi.ac.ke/radaweb/appimages/hygiene2.jpg"),
-                              nutritionItem("assets/images/arrow.png",
-                                  data[19]["title"], data[19]["content"], "null"),
-                              nutritionItem("assets/images/arrow.png",
-                                  data[20]["title"], data[20]["content"], "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[19]["title"],
+                                  data[19]["content"],
+                                  "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[20]["title"],
+                                  data[20]["content"],
+                                  "null"),
 
-                              nutritionItem("assets/images/arrow.png",
-                                  data[21]["title"], data[21]["content"], "null"),
-                              nutritionItem("assets/images/arrow.png",
-                                  data[22]["title"], data[22]["content"], "null"),
-                              nutritionItem("assets/images/arrow.png",
-                                  data[23]["title"], data[23]["content"], "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[21]["title"],
+                                  data[21]["content"],
+                                  "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[22]["title"],
+                                  data[22]["content"],
+                                  "null"),
+                              nutritionItem(
+                                  "assets/images/arrow.png",
+                                  data[23]["title"],
+                                  data[23]["content"],
+                                  "null"),
                             ],
                           ),
                         );
@@ -917,7 +945,7 @@ class _HealthContentState extends State<HealthContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -933,7 +961,8 @@ class _HealthContentState extends State<HealthContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -953,12 +982,13 @@ class _HealthContentState extends State<HealthContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[24]["content"].toString(),
                                           trimLines: 10,
@@ -970,7 +1000,7 @@ class _HealthContentState extends State<HealthContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -1080,7 +1110,7 @@ class _HealthContentState extends State<HealthContent> {
                               color: Colors.black54,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -1099,7 +1129,7 @@ class _HealthContentState extends State<HealthContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular'),
+                        fontFamily: 'Ubuntu'),
                   ),
                 ),
               ],

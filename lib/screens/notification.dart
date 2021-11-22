@@ -58,7 +58,7 @@ class _NotificationsState extends State<Notifications> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.white),
         );
@@ -75,63 +75,63 @@ class _NotificationsState extends State<Notifications> {
         primarySwatch: greenAccentColor,
       ),
       home: Scaffold(
-          appBar: Platform.isIOS?AppBar(
-            backgroundColor: Colors.grey[100],
-            elevation: 0,
-            centerTitle: true,
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-                size: 27,
-              ),
-            ),
-
-            title: NeumorphicText(
-              "Notifications",
-              style: NeumorphicStyle(
-                depth: 0, //customize depth here
-                color: greenAccentColor,
-                shape: NeumorphicShape.convex, //customize color here
-              ),
-              textStyle: NeumorphicTextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold //customize size here
-                // AND others usual text style properties (fontFamily, fontWeight, ...)
-              ),
-            ),
-          ):AppBar(
-            backgroundColor: Colors.grey[100],
-            elevation: 0,
-            centerTitle: true,
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-                size: 27,
-              ),
-            ),
-
-            title: NeumorphicText(
-              "Notifications",
-              style: NeumorphicStyle(
-                depth: 0, //customize depth here
-                color: greenAccentColor,
-                shape: NeumorphicShape.convex, //customize color here
-              ),
-              textStyle: NeumorphicTextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold //customize size here
-                // AND others usual text style properties (fontFamily, fontWeight, ...)
-              ),
-            ),
-          ),
+          appBar: Platform.isIOS
+              ? AppBar(
+                  backgroundColor: Colors.grey[100],
+                  elevation: 0,
+                  centerTitle: true,
+                  leading: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                      size: 27,
+                    ),
+                  ),
+                  title: NeumorphicText(
+                    "Notifications",
+                    style: NeumorphicStyle(
+                      depth: 0, //customize depth here
+                      color: greenAccentColor,
+                      shape: NeumorphicShape.convex, //customize color here
+                    ),
+                    textStyle: NeumorphicTextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold //customize size here
+                        // AND others usual text style properties (fontFamily, fontWeight, ...)
+                        ),
+                  ),
+                )
+              : AppBar(
+                  backgroundColor: Colors.grey[100],
+                  elevation: 0,
+                  centerTitle: true,
+                  leading: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black,
+                      size: 27,
+                    ),
+                  ),
+                  title: NeumorphicText(
+                    "Notifications",
+                    style: NeumorphicStyle(
+                      depth: 0, //customize depth here
+                      color: greenAccentColor,
+                      shape: NeumorphicShape.convex, //customize color here
+                    ),
+                    textStyle: NeumorphicTextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold //customize size here
+                        // AND others usual text style properties (fontFamily, fontWeight, ...)
+                        ),
+                  ),
+                ),
           body: ListView.builder(
               itemCount: msgList.length,
               scrollDirection: Axis.vertical,
@@ -157,7 +157,7 @@ class _NotificationsState extends State<Notifications> {
                                     Container(
                                         height: 200,
                                         width:
-                                        MediaQuery.of(context).size.width,
+                                            MediaQuery.of(context).size.width,
                                         child: Image.network(
                                           msgList[index]["image"],
                                           fit: BoxFit.cover,
@@ -171,7 +171,7 @@ class _NotificationsState extends State<Notifications> {
                                           ),
                                           //height: 50,
                                           width:
-                                          MediaQuery.of(context).size.width,
+                                              MediaQuery.of(context).size.width,
                                           color: Colors.white.withAlpha(150),
                                           child: Padding(
                                             padding: EdgeInsets.only(
@@ -192,9 +192,8 @@ class _NotificationsState extends State<Notifications> {
                                                     style: TextStyle(
                                                         color: Colors.black,
                                                         fontWeight:
-                                                        FontWeight.w800,
-                                                        fontFamily:
-                                                        'Raleway-regular',
+                                                            FontWeight.w800,
+                                                        fontFamily: 'Ubuntu',
                                                         fontSize: 18),
                                                   ),
                                                 ),
@@ -435,12 +434,12 @@ class _NotificationsState extends State<Notifications> {
                                     Container(
                                         height: 200,
                                         width:
-                                        MediaQuery.of(context).size.width,
+                                            MediaQuery.of(context).size.width,
                                         child: ClipRRect(
                                             borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(0),
                                                 bottomRight:
-                                                Radius.circular(0)),
+                                                    Radius.circular(0)),
                                             child: Image.network(
                                               msgList[index]["image"],
                                               fit: BoxFit.cover,
@@ -454,7 +453,7 @@ class _NotificationsState extends State<Notifications> {
                                           ),
                                           //height: 50,
                                           width:
-                                          MediaQuery.of(context).size.width,
+                                              MediaQuery.of(context).size.width,
                                           color: Colors.white.withAlpha(200),
                                           child: Padding(
                                             padding: EdgeInsets.only(
@@ -475,9 +474,8 @@ class _NotificationsState extends State<Notifications> {
                                                     style: TextStyle(
                                                         color: Colors.green,
                                                         fontWeight:
-                                                        FontWeight.w800,
-                                                        fontFamily:
-                                                        'Raleway-regular',
+                                                            FontWeight.w800,
+                                                        fontFamily: 'Ubuntu',
                                                         fontSize: 19),
                                                   ),
                                                 ),

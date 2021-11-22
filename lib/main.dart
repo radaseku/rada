@@ -45,6 +45,7 @@ class WelcomePage extends StatelessWidget {
       title: 'Rada',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Ubuntu',
         primarySwatch: Colors.green,
       ),
       /*home: GettingStartedScreen(),*/

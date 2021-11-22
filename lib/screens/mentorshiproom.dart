@@ -168,9 +168,9 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url,
-                type: "image",
-              )),
+                    url: url,
+                    type: "image",
+                  )),
         );
       },
       onLongPress: () {
@@ -216,8 +216,8 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                             sender == useruid[0]
                                 ? "You"
                                 : name.length > 7
-                                ? name.substring(0, 5) + ".."
-                                : name,
+                                    ? name.substring(0, 5) + ".."
+                                    : name,
                             style: TextStyle(
                                 color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
@@ -258,12 +258,12 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 placeholder: (context, url) =>
                                     Center(child: circularProgress()),
                                 errorWidget: (context, url, error) =>
-                                const Center(
-                                  child: Icon(
-                                    Icons.error,
-                                    size: 40,
-                                  ),
-                                )),
+                                    const Center(
+                                      child: Icon(
+                                        Icons.error,
+                                        size: 40,
+                                      ),
+                                    )),
                           ],
                         )),
                   ),
@@ -291,9 +291,9 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url,
-                type: "image",
-              )),
+                    url: url,
+                    type: "image",
+                  )),
         );
       },
       onLongPress: () {
@@ -334,8 +334,8 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                             sender == useruid[0]
                                 ? "You"
                                 : name.length > 7
-                                ? name.substring(0, 5) + ".."
-                                : name,
+                                    ? name.substring(0, 5) + ".."
+                                    : name,
                             style: TextStyle(
                                 color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
@@ -376,12 +376,12 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 placeholder: (context, url) =>
                                     Center(child: circularProgress()),
                                 errorWidget: (context, url, error) =>
-                                const Center(
-                                  child: Icon(
-                                    Icons.error,
-                                    size: 40,
-                                  ),
-                                )),
+                                    const Center(
+                                      child: Icon(
+                                        Icons.error,
+                                        size: 40,
+                                      ),
+                                    )),
                           ],
                         )),
                   ),
@@ -417,19 +417,19 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
               color: Colors.white,
               child: _filetype == "image"
                   ? Padding(
-                padding: EdgeInsets.all(7),
-                child: Image.asset(
-                  "assets/images/image.png",
-                  fit: BoxFit.contain,
-                ),
-              )
+                      padding: EdgeInsets.all(7),
+                      child: Image.asset(
+                        "assets/images/image.png",
+                        fit: BoxFit.contain,
+                      ),
+                    )
                   : Padding(
-                padding: EdgeInsets.all(7),
-                child: Image.asset(
-                  "assets/images/video.png",
-                  fit: BoxFit.contain,
-                ),
-              ),
+                      padding: EdgeInsets.all(7),
+                      child: Image.asset(
+                        "assets/images/video.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
             ),
             Container(
               child: Flexible(
@@ -443,12 +443,12 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(0)),
                           borderSide:
-                          BorderSide(width: 1, color: Colors.grey[200]),
+                              BorderSide(width: 1, color: Colors.grey[200]),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(0)),
                           borderSide:
-                          BorderSide(width: 1, color: Colors.grey[200]),
+                              BorderSide(width: 1, color: Colors.grey[200]),
                         ),
                         contentPadding: const EdgeInsets.fromLTRB(50, 9, 1, 1),
                         prefixIcon: Icon(
@@ -475,7 +475,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                   border: Border.all(width: 1, color: Colors.green[600])),
               child: Center(
                 child: IconButton(
-                  //new
+                    //new
                     icon: Icon(
                       Icons.send,
                       size: 22,
@@ -532,165 +532,169 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                 fit: BoxFit.cover)),
         child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: Platform.isIOS?AppBar(
-              elevation: 0,
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.grey[100],
-              flexibleSpace: SafeArea(
-                child: Container(
-                    padding: EdgeInsets.only(right: 16),
-                    child: Row(
-                      children: <Widget>[
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.black,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
-                        Container(
-                          height: 45,
-                          width: 45,
-                          child: Neumorphic(
-                            style: NeumorphicStyle(
-                                shape: NeumorphicShape.flat,
-                                boxShape: NeumorphicBoxShape.circle(),
-                                depth: 0,
-                                lightSource: LightSource.topLeft,
-                                color: Colors.grey[200]),
-                            child: CachedNetworkImage(
-                              imageUrl: widget.image,
-                              /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
-                              placeholder: (context, url) =>
-                                  Center(child: circularProgress()),
-                              errorWidget: (context, url, error) =>
-                                  Icon(Icons.error),
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover,
+            appBar: Platform.isIOS
+                ? AppBar(
+                    elevation: 0,
+                    automaticallyImplyLeading: false,
+                    backgroundColor: Colors.grey[100],
+                    flexibleSpace: SafeArea(
+                      child: Container(
+                          padding: EdgeInsets.only(right: 16),
+                          child: Row(
+                            children: <Widget>[
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                icon: Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 2,
+                              ),
+                              Container(
+                                height: 45,
+                                width: 45,
+                                child: Neumorphic(
+                                  style: NeumorphicStyle(
+                                      shape: NeumorphicShape.flat,
+                                      boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 0,
+                                      lightSource: LightSource.topLeft,
+                                      color: Colors.grey[200]),
+                                  child: CachedNetworkImage(
+                                    imageUrl: widget.image,
+                                    /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
+                                    placeholder: (context, url) =>
+                                        Center(child: circularProgress()),
+                                    errorWidget: (context, url, error) =>
+                                        Icon(Icons.error),
+                                    imageBuilder: (context, imageProvider) =>
+                                        Container(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: imageProvider,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                widget.title,
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
                               ),
                               SizedBox(
-                                height: 6,
+                                width: 12,
                               ),
-                              Text(
-                                "Say something...",
-                                style: TextStyle(
-                                    color: Colors.green, fontSize: 12),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      widget.title,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      "Say something...",
+                                      style: TextStyle(
+                                          color: Colors.green, fontSize: 12),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
                               ),
                             ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    )),
-              ),
-            ):AppBar(
-              elevation: 0,
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.grey[100],
-              flexibleSpace: SafeArea(
-                child: Container(
-                    padding: EdgeInsets.only(right: 16),
-                    child: Row(
-                      children: <Widget>[
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.black,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
-                        Container(
-                          height: 45,
-                          width: 45,
-                          child: Neumorphic(
-                            style: NeumorphicStyle(
-                                shape: NeumorphicShape.flat,
-                                boxShape: NeumorphicBoxShape.circle(),
-                                depth: 0,
-                                lightSource: LightSource.topLeft,
-                                color: Colors.grey[200]),
-                            child: CachedNetworkImage(
-                              imageUrl: widget.image,
-                              /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
-                              placeholder: (context, url) =>
-                                  Center(child: circularProgress()),
-                              errorWidget: (context, url, error) =>
-                                  Icon(Icons.error),
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: imageProvider,
-                                        fit: BoxFit.cover,
+                          )),
+                    ),
+                  )
+                : AppBar(
+                    elevation: 0,
+                    automaticallyImplyLeading: false,
+                    backgroundColor: Colors.grey[100],
+                    flexibleSpace: SafeArea(
+                      child: Container(
+                          padding: EdgeInsets.only(right: 16),
+                          child: Row(
+                            children: <Widget>[
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                icon: Icon(
+                                  Icons.arrow_back,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 2,
+                              ),
+                              Container(
+                                height: 45,
+                                width: 45,
+                                child: Neumorphic(
+                                  style: NeumorphicStyle(
+                                      shape: NeumorphicShape.flat,
+                                      boxShape: NeumorphicBoxShape.circle(),
+                                      depth: 0,
+                                      lightSource: LightSource.topLeft,
+                                      color: Colors.grey[200]),
+                                  child: CachedNetworkImage(
+                                    imageUrl: widget.image,
+                                    /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
+                                    placeholder: (context, url) =>
+                                        Center(child: circularProgress()),
+                                    errorWidget: (context, url, error) =>
+                                        Icon(Icons.error),
+                                    imageBuilder: (context, imageProvider) =>
+                                        Container(
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: imageProvider,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                widget.title,
-                                style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
                               ),
                               SizedBox(
-                                height: 6,
+                                width: 12,
                               ),
-                              Text(
-                                "Say something...",
-                                style: TextStyle(
-                                    color: Colors.green, fontSize: 12),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      widget.title,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    SizedBox(
+                                      height: 6,
+                                    ),
+                                    Text(
+                                      "Say something...",
+                                      style: TextStyle(
+                                          color: Colors.green, fontSize: 12),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
                               ),
                             ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    )),
-              ),
-            ),
+                          )),
+                    ),
+                  ),
             body: Container(
                 width: double.infinity,
                 height: double.infinity,
@@ -703,15 +707,15 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                         flex: 7,
                         child: Container(
                             child: StreamBuilder<QuerySnapshot>(
-                              stream: Firestore.instance
-                                  .collection('Mentors')
-                                  .document(widget.id)
-                                  .collection("messages")
-                                  .orderBy('created_at', descending: false)
-                                  .snapshots(),
-                              builder: (BuildContext context,
-                                  AsyncSnapshot<QuerySnapshot> snapshot) {
-                                /*SchedulerBinding.instance
+                          stream: Firestore.instance
+                              .collection('Mentors')
+                              .document(widget.id)
+                              .collection("messages")
+                              .orderBy('created_at', descending: false)
+                              .snapshots(),
+                          builder: (BuildContext context,
+                              AsyncSnapshot<QuerySnapshot> snapshot) {
+                            /*SchedulerBinding.instance
                                 .addPostFrameCallback((timeStamp) {
                               _scrollController.animateTo(
                                 _scrollController.position.maxScrollExtent,
@@ -719,170 +723,166 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                 duration: const Duration(milliseconds: 300),
                               );
                             });*/
-                                var messageCount = snapshot.data.documents.length;
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: circularProgress(),
-                                  );
-                                }
-                                return Padding(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 3, 2),
-                                  child: ListView.builder(
-                                    reverse: false,
-                                    shrinkWrap: true,
-                                    controller: _scrollController,
-                                    physics: AlwaysScrollableScrollPhysics(),
-                                    itemCount: messageCount,
-                                    itemBuilder: (_, int index) {
-                                      final DocumentSnapshot document =
+                            var messageCount = snapshot.data.documents.length;
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: circularProgress(),
+                              );
+                            }
+                            return Padding(
+                              padding: EdgeInsets.fromLTRB(3, 5, 3, 2),
+                              child: ListView.builder(
+                                reverse: false,
+                                shrinkWrap: true,
+                                controller: _scrollController,
+                                physics: AlwaysScrollableScrollPhysics(),
+                                itemCount: messageCount,
+                                itemBuilder: (_, int index) {
+                                  final DocumentSnapshot document =
                                       snapshot.data.documents[index];
-                                      final dynamic msg = document['message'];
-                                      final dynamic d = document['date'];
-                                      final dynamic t = document['time'];
-                                      final dynamic sender = document['sender'];
-                                      final dynamic name = document['name'];
-                                      final dynamic type = document['type'];
+                                  final dynamic msg = document['message'];
+                                  final dynamic d = document['date'];
+                                  final dynamic t = document['time'];
+                                  final dynamic sender = document['sender'];
+                                  final dynamic name = document['name'];
+                                  final dynamic type = document['type'];
 
-                                      if (type == "message") {
-                                        if (sender == useruid[0]) {
-                                          return SwipeGestureRecognizer(
-                                            onSwipeLeft: () {
-                                              setState(() {
-                                                messager = name;
-                                                reply = msg;
-                                                replytype = type;
-                                                replyimage = "";
-                                                messagetype = "reply";
-                                                h = 55;
-                                              });
-                                            },
-                                            onSwipeRight: () {
-                                              setState(() {
-                                                messager = name;
-                                                reply = msg;
-                                                replytype = type;
-                                                replyimage = "";
-                                                messagetype = "reply";
-                                                h = 55;
-                                              });
-                                            },
-                                            //child: meBubble(msg, name, t),
-                                            child: chatBubble(
-                                                msg,
-                                                sender,
-                                                name,
-                                                type,
-                                                index,
-                                                snapshot,
-                                                document,
-                                                time.toString()),
-                                          );
-                                        } else {
-                                          return SwipeGestureRecognizer(
-                                              onSwipeLeft: () {
-                                                setState(() {
-                                                  messager = name;
-                                                  reply = msg;
-                                                  replytype = type;
-                                                  replyimage = "";
-                                                  messagetype = "reply";
-                                                  h = 55;
-                                                });
-                                                print(replytype);
-                                              },
-                                              onSwipeRight: () {
-                                                setState(() {
-                                                  messager = name;
-                                                  reply = msg;
-                                                  replytype = type;
-                                                  replyimage = "";
-                                                  messagetype = "reply";
-                                                  h = 55;
-                                                });
-                                                print(replytype);
-                                              },
-                                              //child: senderBubble(msg, name, t));
-                                              child: chatBubble(
-                                                  msg,
-                                                  sender,
-                                                  name,
-                                                  type,
-                                                  index,
-                                                  snapshot,
-                                                  document,
-                                                  time.toString()));
-                                        }
+                                  if (type == "message") {
+                                    if (sender == useruid[0]) {
+                                      return SwipeGestureRecognizer(
+                                        onSwipeLeft: () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = "";
+                                            messagetype = "reply";
+                                            h = 55;
+                                          });
+                                        },
+                                        onSwipeRight: () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = "";
+                                            messagetype = "reply";
+                                            h = 55;
+                                          });
+                                        },
+                                        //child: meBubble(msg, name, t),
+                                        child: chatBubble(
+                                            msg,
+                                            sender,
+                                            name,
+                                            type,
+                                            index,
+                                            snapshot,
+                                            document,
+                                            time.toString()),
+                                      );
+                                    } else {
+                                      return SwipeGestureRecognizer(
+                                          onSwipeLeft: () {
+                                            setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = "";
+                                              messagetype = "reply";
+                                              h = 55;
+                                            });
+                                            print(replytype);
+                                          },
+                                          onSwipeRight: () {
+                                            setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = "";
+                                              messagetype = "reply";
+                                              h = 55;
+                                            });
+                                            print(replytype);
+                                          },
+                                          //child: senderBubble(msg, name, t));
+                                          child: chatBubble(
+                                              msg,
+                                              sender,
+                                              name,
+                                              type,
+                                              index,
+                                              snapshot,
+                                              document,
+                                              time.toString()));
+                                    }
 
-                                        //return senderBubble(msg,name,t);
-                                      } else if (type == 'image') {
-                                        //return meImage(document['url']);
+                                    //return senderBubble(msg,name,t);
+                                  } else if (type == 'image') {
+                                    //return meImage(document['url']);
 
-                                        if (document['sender'] == useruid[0]) {
-                                          return SwipeTo(
-                                            //swipeDirection:
-                                            //  SwipeDirection.swipeToLeft,
-                                              onLeftSwipe: () {
-                                                endOffset:
-                                                Offset(-0.3, 0.0);
-                                                callBack:
-                                                    () {
-                                                  setState(() {
-                                                    messager = name;
-                                                    reply = msg;
-                                                    replytype = type;
-                                                    replyimage = document['url'];
-                                                    h = 55;
-                                                  });
-                                                }
-                                                ;
-                                                child: meImage(
-                                                    document['url'],
-                                                    document['imagename'],
-                                                    document['name'],
-                                                    document['time'],
-                                                    document['sender'],
-                                                    snapshot,
-                                                    index
-                                                    ,
-                                                    type
-                                                );
-                                              }
-                                          );
-                                        } else {
-                                          return SwipeTo(
-                                            // swipeDirection:
-                                            //   SwipeDirection.swipeToRight,
-                                              onRightSwipe: () {
-                                                endOffset:
-                                                Offset(0.3, 0.0);
-                                                callBack:
-                                                    () {
-                                                  setState(() {
-                                                    messager = name;
-                                                    reply = msg;
-                                                    replytype = type;
-                                                    replyimage = document['url'];
-                                                    h = 55;
-                                                  });
-                                                };
-                                                child:
-                                                senderImage(
-                                                    document['url'],
-                                                    document['imagename'],
-                                                    document['name'],
-                                                    document['time'],
-                                                    document['sender'],
-                                                    snapshot,
-                                                    index,
-                                                    type);
-                                              }
-                                          );
-                                        }
-                                      } else if (type == "reply") {
-                                        if (sender == useruid[0]) {
-                                          return SwipeGestureRecognizer(
-                                            onSwipeLeft: () {
-                                              /*setState(() {
+                                    if (document['sender'] == useruid[0]) {
+                                      return SwipeTo(
+                                          //swipeDirection:
+                                          //  SwipeDirection.swipeToLeft,
+                                          onLeftSwipe: () {
+                                        endOffset:
+                                        Offset(-0.3, 0.0);
+                                        callBack:
+                                        () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = document['url'];
+                                            h = 55;
+                                          });
+                                        };
+                                        child:
+                                        meImage(
+                                            document['url'],
+                                            document['imagename'],
+                                            document['name'],
+                                            document['time'],
+                                            document['sender'],
+                                            snapshot,
+                                            index,
+                                            type);
+                                      });
+                                    } else {
+                                      return SwipeTo(
+                                          // swipeDirection:
+                                          //   SwipeDirection.swipeToRight,
+                                          onRightSwipe: () {
+                                        endOffset:
+                                        Offset(0.3, 0.0);
+                                        callBack:
+                                        () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = document['url'];
+                                            h = 55;
+                                          });
+                                        };
+                                        child:
+                                        senderImage(
+                                            document['url'],
+                                            document['imagename'],
+                                            document['name'],
+                                            document['time'],
+                                            document['sender'],
+                                            snapshot,
+                                            index,
+                                            type);
+                                      });
+                                    }
+                                  } else if (type == "reply") {
+                                    if (sender == useruid[0]) {
+                                      return SwipeGestureRecognizer(
+                                        onSwipeLeft: () {
+                                          /*setState(() {
                                             messager = name;
                                             reply = msg;
                                             replytype = type;
@@ -890,86 +890,86 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                             h = 55;
                                           });
                                           print(replytype);*/
-                                            },
-                                            onSwipeRight: () {
-                                              /*setState(() {
+                                        },
+                                        onSwipeRight: () {
+                                          /*setState(() {
                                             messager = name;
                                             reply = msg;
                                             replytype = type;
                                             replyimage = "";
                                             h = 55;
                                           });*/
-                                            },
-                                            child: document['url'] == ""
-                                                ? meReply(
+                                        },
+                                        child: document['url'] == ""
+                                            ? meReply(
                                                 msg, name, t, document['reply'])
-                                                : replymeImage(sender,
+                                            : replymeImage(sender,
                                                 document['url'], msg, name),
-                                          );
-                                        } else {
-                                          return SwipeGestureRecognizer(
-                                              onSwipeLeft: () {
-                                                /*setState(() {
-                                              messager = name;
-                                              reply = msg;
-                                              replytype = type;
-                                              replyimage = "";
-                                              h = 55;
-                                            });
-                                            print(replytype);*/
-                                              },
-                                              onSwipeRight: () {
-                                                /*setState(() {
-                                              messager = name;
-                                              reply = msg;
-                                              replytype = type;
-                                              replyimage = "";
-                                              h = 55;
-                                            });
-                                            print(replytype);*/
-                                              },
-                                              child: senderReply(
-                                                  msg, name, t, document['reply']));
-                                          /*child: messageReply(msg, name, t,
-                                              document['reply'], sender));*/
-                                        }
-                                      } else if (type == "video") {
-                                        if (sender == useruid[0]) {
-                                          return meVideo(
-                                            document["url"],
-                                            document["thumb"],
-                                            document["filename"],
-                                            document["name"],
-                                            document["time"],
-                                            sender,
-                                            snapshot,
-                                            index,
-                                            document["type"],
-                                            document["caption"],
-                                          );
-                                        } else {
-                                          return senderVideo(
-                                              document["url"],
-                                              document["thumb"],
-                                              document["filename"],
-                                              document["name"],
-                                              document["time"],
-                                              sender,
-                                              snapshot,
-                                              index,
-                                              document["type"]);
-                                        }
-                                      }
-
-                                      return SizedBox(
-                                        height: 0,
-                                        width: 0,
                                       );
-                                    },
-                                  ),
-                                );
-                              },
-                            )),
+                                    } else {
+                                      return SwipeGestureRecognizer(
+                                          onSwipeLeft: () {
+                                            /*setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = "";
+                                              h = 55;
+                                            });
+                                            print(replytype);*/
+                                          },
+                                          onSwipeRight: () {
+                                            /*setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = "";
+                                              h = 55;
+                                            });
+                                            print(replytype);*/
+                                          },
+                                          child: senderReply(
+                                              msg, name, t, document['reply']));
+                                      /*child: messageReply(msg, name, t,
+                                              document['reply'], sender));*/
+                                    }
+                                  } else if (type == "video") {
+                                    if (sender == useruid[0]) {
+                                      return meVideo(
+                                        document["url"],
+                                        document["thumb"],
+                                        document["filename"],
+                                        document["name"],
+                                        document["time"],
+                                        sender,
+                                        snapshot,
+                                        index,
+                                        document["type"],
+                                        document["caption"],
+                                      );
+                                    } else {
+                                      return senderVideo(
+                                          document["url"],
+                                          document["thumb"],
+                                          document["filename"],
+                                          document["name"],
+                                          document["time"],
+                                          sender,
+                                          snapshot,
+                                          index,
+                                          document["type"]);
+                                    }
+                                  }
+
+                                  return SizedBox(
+                                    height: 0,
+                                    width: 0,
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                        )),
                       ),
 
                       //chat list end
@@ -977,224 +977,224 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                       //Expanded(child: new Divider(height: 0.0)),
                       replytype == "image"
                           ? ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0)),
-                        child: AnimatedContainer(
-                          width: MediaQuery.of(context).size.width,
-                          height: h,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 150),
-                          decoration: BoxDecoration(
-                            border: Border(
-                              left: BorderSide(
-                                //                   <--- left side
-                                color: Colors.green,
-                                width: 3.0,
-                              ),
-                              top: BorderSide(
-                                //                   <--- left side
-                                color: Colors.grey[100],
-                                width: 1.0,
-                              ),
-                            ),
-                            color: Colors.white,
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 5, right: 5),
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned(
-                                  child: Text(
-                                    messager,
-                                    style: TextStyle(
-                                        color: Colors.green[300],
-                                        fontWeight: FontWeight.bold),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(0.0),
+                                  topRight: Radius.circular(0.0)),
+                              child: AnimatedContainer(
+                                width: MediaQuery.of(context).size.width,
+                                height: h,
+                                curve: Curves.easeIn,
+                                duration: Duration(milliseconds: 150),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    left: BorderSide(
+                                      //                   <--- left side
+                                      color: Colors.green,
+                                      width: 3.0,
+                                    ),
+                                    top: BorderSide(
+                                      //                   <--- left side
+                                      color: Colors.grey[100],
+                                      width: 1.0,
+                                    ),
                                   ),
-                                  top: 7,
-                                  left: 5,
+                                  color: Colors.white,
                                 ),
-                                Positioned(
-                                  child: Icon(
-                                    Icons.image,
-                                    color: Colors.grey[600],
-                                  ),
-                                  top: 25,
-                                ),
-                                Positioned(
-                                  child: Text(
-                                    "Image",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  top: 30,
-                                  left: 30,
-                                ),
-                                Positioned(
-                                  right: 0,
-                                  top: 2,
-                                  child: ClipRRect(
-                                    borderRadius:
-                                    BorderRadius.circular(10),
-                                    child: Container(
-                                      height: 45,
-                                      width: 45,
-                                      color: Colors.white,
-                                      child: CachedNetworkImage(
-                                        imageUrl: replyimage,
-                                        imageBuilder:
-                                            (context, imageProvider) =>
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: imageProvider,
-                                                  fit: BoxFit.cover,
-                                                  colorFilter:
-                                                  const ColorFilter.mode(
-                                                    Colors.white,
-                                                    BlendMode.colorBurn,
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 5, right: 5),
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Positioned(
+                                        child: Text(
+                                          messager,
+                                          style: TextStyle(
+                                              color: Colors.green[300],
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        top: 7,
+                                        left: 5,
+                                      ),
+                                      Positioned(
+                                        child: Icon(
+                                          Icons.image,
+                                          color: Colors.grey[600],
+                                        ),
+                                        top: 25,
+                                      ),
+                                      Positioned(
+                                        child: Text(
+                                          "Image",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        top: 30,
+                                        left: 30,
+                                      ),
+                                      Positioned(
+                                        right: 0,
+                                        top: 2,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Container(
+                                            height: 45,
+                                            width: 45,
+                                            color: Colors.white,
+                                            child: CachedNetworkImage(
+                                              imageUrl: replyimage,
+                                              imageBuilder:
+                                                  (context, imageProvider) =>
+                                                      Container(
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: imageProvider,
+                                                    fit: BoxFit.cover,
+                                                    colorFilter:
+                                                        const ColorFilter.mode(
+                                                      Colors.white,
+                                                      BlendMode.colorBurn,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                        placeholder: (context, url) =>
-                                            Center(
-                                                child:
-                                                circularProgress()),
-                                        errorWidget:
-                                            (context, url, error) =>
-                                            Center(
-                                              child: Icon(
-                                                Icons.error,
-                                                size: 40,
+                                              placeholder: (context, url) =>
+                                                  Center(
+                                                      child:
+                                                          circularProgress()),
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Center(
+                                                child: Icon(
+                                                  Icons.error,
+                                                  size: 40,
+                                                ),
                                               ),
                                             ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        h = 0;
-                                      });
-                                    },
-                                    child: Container(
-                                      height: 20,
-                                      width: 20,
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey,
-                                          shape: BoxShape.circle),
-                                      child: Center(
-                                        child: Text(
-                                          '-',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight:
-                                              FontWeight.bold),
+                                          ),
                                         ),
                                       ),
-                                    ),
+                                      Positioned(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              h = 0;
+                                            });
+                                          },
+                                          child: Container(
+                                            height: 20,
+                                            width: 20,
+                                            decoration: BoxDecoration(
+                                                color: Colors.grey,
+                                                shape: BoxShape.circle),
+                                            child: Center(
+                                              child: Text(
+                                                '-',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        right: 0,
+                                        top: 0,
+                                      ),
+                                    ],
                                   ),
-                                  right: 0,
-                                  top: 0,
                                 ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
+                              ),
+                            )
                           : ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(0.0),
-                            topRight: Radius.circular(0.0)),
-                        child: AnimatedContainer(
-                          width: MediaQuery.of(context).size.width,
-                          height: h,
-                          curve: Curves.easeInCubic,
-                          duration: Duration(milliseconds: 150),
-                          decoration: BoxDecoration(
-                            border: Border(
-                              left: BorderSide(
-                                //                   <--- left side
-                                color: Colors.green,
-                                width: 3.0,
-                              ),
-                              top: BorderSide(
-                                //                   <--- left side
-                                color: Colors.grey[100],
-                                width: 1.0,
-                              ),
-                            ),
-                            color: Colors.grey[200],
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 5, right: 5),
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned(
-                                  child: Text(
-                                    messager,
-                                    style: TextStyle(
-                                        color: Colors.green[300],
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  top: 7,
-                                  left: 5,
-                                ),
-                                Positioned(
-                                  child: reply.length > 35
-                                      ? Text(
-                                    reply.substring(0, 35) + "...",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey),
-                                  )
-                                      : Text(
-                                    reply,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey),
-                                  ),
-                                  top: 25,
-                                  left: 5,
-                                ),
-                                Positioned(
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        h = 0;
-                                      });
-                                    },
-                                    child: Container(
-                                      height: 20,
-                                      width: 20,
-                                      decoration: BoxDecoration(
-                                          color: Colors.grey,
-                                          shape: BoxShape.circle),
-                                      child: Center(
-                                        child: Text(
-                                          '-',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight:
-                                              FontWeight.bold),
-                                        ),
-                                      ),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(0.0),
+                                  topRight: Radius.circular(0.0)),
+                              child: AnimatedContainer(
+                                width: MediaQuery.of(context).size.width,
+                                height: h,
+                                curve: Curves.easeInCubic,
+                                duration: Duration(milliseconds: 150),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    left: BorderSide(
+                                      //                   <--- left side
+                                      color: Colors.green,
+                                      width: 3.0,
+                                    ),
+                                    top: BorderSide(
+                                      //                   <--- left side
+                                      color: Colors.grey[100],
+                                      width: 1.0,
                                     ),
                                   ),
-                                  right: 5,
-                                  top: 15,
-                                )
-                              ],
+                                  color: Colors.grey[200],
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 5, right: 5),
+                                  child: Stack(
+                                    children: <Widget>[
+                                      Positioned(
+                                        child: Text(
+                                          messager,
+                                          style: TextStyle(
+                                              color: Colors.green[300],
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        top: 7,
+                                        left: 5,
+                                      ),
+                                      Positioned(
+                                        child: reply.length > 35
+                                            ? Text(
+                                                reply.substring(0, 35) + "...",
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.grey),
+                                              )
+                                            : Text(
+                                                reply,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.grey),
+                                              ),
+                                        top: 25,
+                                        left: 5,
+                                      ),
+                                      Positioned(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              h = 0;
+                                            });
+                                          },
+                                          child: Container(
+                                            height: 20,
+                                            width: 20,
+                                            decoration: BoxDecoration(
+                                                color: Colors.grey,
+                                                shape: BoxShape.circle),
+                                            child: Center(
+                                              child: Text(
+                                                '-',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        right: 5,
+                                        top: 15,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
                       Padding(
                           padding:
-                          EdgeInsets.only(right: 10, left: 10, bottom: 10),
+                              EdgeInsets.only(right: 10, left: 10, bottom: 10),
                           child: !_show
                               ? _buildMessageComposer()
                               : _buildImageComposer()),
@@ -1332,19 +1332,19 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                       ),*/
                       _showEmojiPicker == true
                           ? Container(
-                        height: 250,
-                        width: MediaQuery.of(context).size.width,
-                        child: EmojiKeyboard(
-                          onEmojiPressed: (emoji) {
-                            _textController.text =
-                                _textController.text + emoji.emoji;
-                          },
-                        ),
-                      )
+                              height: 250,
+                              width: MediaQuery.of(context).size.width,
+                              child: EmojiKeyboard(
+                                onEmojiPressed: (emoji) {
+                                  _textController.text =
+                                      _textController.text + emoji.emoji;
+                                },
+                              ),
+                            )
                           : SizedBox(
-                        height: 0,
-                        width: 0,
-                      )
+                              height: 0,
+                              width: 0,
+                            )
                     ],
                   ),
                 ))),
@@ -1356,73 +1356,73 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
       String sender, String image, String message, String name) {
     return sender == useruid[0]
         ? Align(
-      alignment: Alignment.topLeft,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topLeft,
-          nip: BubbleNip.leftTop,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                    color: Colors.red[900], fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 50,
-                child: Row(
+            alignment: Alignment.topLeft,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topLeft,
+                nip: BubbleNip.leftTop,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      children: [Text("Image"), Icon(Icons.image)],
-                    )
+                    Text(
+                      name,
+                      style: TextStyle(
+                          color: Colors.red[900], fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [Text("Image"), Icon(Icons.image)],
+                          )
+                        ],
+                      ),
+                    ),
+                    Text(message)
                   ],
                 ),
               ),
-              Text(message)
-            ],
-          ),
-        ),
-      ),
-    )
+            ),
+          )
         : Align(
-      alignment: Alignment.topRight,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topRight,
-          nip: BubbleNip.rightTop,
-          color: Colors.green[400],
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "You",
-                style: TextStyle(
-                    color: Colors.brown, fontWeight: FontWeight.bold),
+            alignment: Alignment.topRight,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topRight,
+                nip: BubbleNip.rightTop,
+                color: Colors.green[400],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "You",
+                      style: TextStyle(
+                          color: Colors.brown, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      message,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                message,
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
   }
 
   Widget meVideo(
@@ -1442,9 +1442,9 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url.trim(),
-                type: "video",
-              )),
+                    url: url.trim(),
+                    type: "video",
+                  )),
         );
       },
       onLongPress: () {
@@ -1490,8 +1490,8 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                             sender == useruid[0]
                                 ? "You"
                                 : name.length > 7
-                                ? name.substring(0, 5) + ".."
-                                : name,
+                                    ? name.substring(0, 5) + ".."
+                                    : name,
                             style: TextStyle(
                                 color: Colors.green,
                                 fontWeight: FontWeight.bold),
@@ -1508,17 +1508,17 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                   ),
                   caption == null
                       ? SizedBox(
-                    height: 0,
-                    width: 0,
-                  )
+                          height: 0,
+                          width: 0,
+                        )
                       : Row(
-                    children: [
-                      Padding(
-                          padding: EdgeInsets.only(
-                              top: 0, left: 5, right: 5, bottom: 5),
-                          child: Text(caption.toString()))
-                    ],
-                  ),
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    top: 0, left: 5, right: 5, bottom: 5),
+                                child: Text(caption.toString()))
+                          ],
+                        ),
                   Container(
                     margin: EdgeInsets.only(left: 2, right: 2, bottom: 2),
                     height: 220,
@@ -1538,7 +1538,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                               image: imageProvider,
                                               fit: BoxFit.cover,
                                               colorFilter:
-                                              const ColorFilter.mode(
+                                                  const ColorFilter.mode(
                                                 Colors.white,
                                                 BlendMode.colorBurn,
                                               ),
@@ -1548,12 +1548,12 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                     placeholder: (context, url) =>
                                         Center(child: circularProgress()),
                                     errorWidget: (context, url, error) =>
-                                    const Center(
-                                      child: Icon(
-                                        Icons.error,
-                                        size: 40,
-                                      ),
-                                    )),
+                                        const Center(
+                                          child: Icon(
+                                            Icons.error,
+                                            size: 40,
+                                          ),
+                                        )),
                               ],
                             )),
                         Center(
@@ -1591,9 +1591,9 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url,
-                type: "video",
-              )),
+                    url: url,
+                    type: "video",
+                  )),
         );
       },
       onLongPress: () {
@@ -1634,8 +1634,8 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                             sender == useruid[0]
                                 ? "You"
                                 : name.length > 7
-                                ? name.substring(0, 5) + ".."
-                                : name,
+                                    ? name.substring(0, 5) + ".."
+                                    : name,
                             style: TextStyle(
                                 color: Colors.green,
                                 fontWeight: FontWeight.bold),
@@ -1669,7 +1669,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                               image: imageProvider,
                                               fit: BoxFit.cover,
                                               colorFilter:
-                                              const ColorFilter.mode(
+                                                  const ColorFilter.mode(
                                                 Colors.white,
                                                 BlendMode.colorBurn,
                                               ),
@@ -1679,12 +1679,12 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                                     placeholder: (context, url) =>
                                         Center(child: circularProgress()),
                                     errorWidget: (context, url, error) =>
-                                    const Center(
-                                      child: Icon(
-                                        Icons.error,
-                                        size: 40,
-                                      ),
-                                    )),
+                                        const Center(
+                                          child: Icon(
+                                            Icons.error,
+                                            size: 40,
+                                          ),
+                                        )),
                               ],
                             )),
                         Center(
@@ -1709,7 +1709,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
   uploadToFirebase(String url, String type, int size, String name, String thumb,
       String caption) async {
     var documentReference =
-    Firestore.instance.collection('ForumRooms').document(widget.id);
+        Firestore.instance.collection('ForumRooms').document(widget.id);
 
     FirebaseUser user = await _firebaseAuth.currentUser();
 
@@ -1838,9 +1838,9 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                         setState(() {
                           _isShowSticker
                               ? SystemChannels.textInput
-                              .invokeMethod('TextInput.show')
+                                  .invokeMethod('TextInput.show')
                               : SystemChannels.textInput
-                              .invokeMethod('TextInput.hide');
+                                  .invokeMethod('TextInput.hide');
 
                           _isShowSticker = !_isShowSticker;
                         });
@@ -2074,62 +2074,62 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
       String time) {
     return sender != useruid[0]
         ? Align(
-      alignment: Alignment.topLeft,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topLeft,
-          nip: BubbleNip.leftTop,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                    color: Colors.red[900], fontWeight: FontWeight.bold),
+            alignment: Alignment.topLeft,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topLeft,
+                nip: BubbleNip.leftTop,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                          color: Colors.red[900], fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(message)
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(message)
-            ],
-          ),
-        ),
-      ),
-    )
+            ),
+          )
         : Align(
-      alignment: Alignment.topRight,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topRight,
-          nip: BubbleNip.rightTop,
-          color: Colors.teal,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "You",
-                style: TextStyle(
-                    color: Colors.brown, fontWeight: FontWeight.bold),
+            alignment: Alignment.topRight,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topRight,
+                nip: BubbleNip.rightTop,
+                color: Colors.teal,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "You",
+                      style: TextStyle(
+                          color: Colors.brown, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      message,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                message,
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
   }
 
   @override
@@ -2145,7 +2145,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.amber),
         );
@@ -2169,7 +2169,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
     var time = formatTime.format(datetime);
 
     var documentReference =
-    Firestore.instance.collection('Mentors').document(widget.id);
+        Firestore.instance.collection('Mentors').document(widget.id);
 
     await FirebaseAuth.instance.currentUser();
     if (messagetype == "wild") {
@@ -2263,7 +2263,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
   }
 
   getSenderView(CustomClipper clipper, BuildContext context, String message,
-      String name, String time) =>
+          String name, String time) =>
       ChatBubble(
         clipper: clipper,
         alignment: Alignment.topRight,
@@ -2283,7 +2283,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                     text: '$message',
                     style: TextStyle(
                         color: Colors.black,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w600),
                   ),
                 ],
@@ -2296,7 +2296,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                     time,
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w500),
                   ),
                   Icon(
@@ -2312,7 +2312,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
       );
 
   getReceiverView(
-      CustomClipper clipper, BuildContext context, message, name, time) =>
+          CustomClipper clipper, BuildContext context, message, name, time) =>
       ChatBubble(
         clipper: clipper,
         //backGroundColor: Color(0xff195e83),
@@ -2333,7 +2333,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                     text: '$message',
                     style: TextStyle(
                         color: Colors.green,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w600),
                   ),
                 ],
@@ -2346,7 +2346,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                     "$name $time",
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w500),
                   )
                 ],
@@ -2357,7 +2357,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
       );
 
   getSenderReply(CustomClipper clipper, BuildContext context, String message,
-      String name, String time, reply) =>
+          String name, String time, reply) =>
       ChatBubble(
         clipper: clipper,
         alignment: Alignment.topRight,
@@ -2420,7 +2420,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                       "$time",
                       style: TextStyle(
                           color: Colors.red[900],
-                          fontFamily: 'Raleway-regular',
+                          fontFamily: 'Ubuntu',
                           fontWeight: FontWeight.w500),
                     ),
                   )
@@ -2432,7 +2432,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
       );
 
   getReceiverReply(CustomClipper clipper, BuildContext context, message, name,
-      time, reply) =>
+          time, reply) =>
       ChatBubble(
         clipper: clipper,
         backGroundColor: Colors.white,
@@ -2488,7 +2488,7 @@ class _MentorshipRoomState extends State<MentorshipRoom> {
                     "$name $time",
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w500),
                   )
                 ],

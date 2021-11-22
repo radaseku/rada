@@ -135,7 +135,7 @@ class _ForumRoomState extends State<ForumRoom> {
       thumbnailPath: (await getTemporaryDirectory()).path,
       imageFormat: ImageFormat.WEBP,
       maxHeight:
-      350, // specify the height of the thumbnail, let the width auto-scaled to keep the source aspect ratio
+          350, // specify the height of the thumbnail, let the width auto-scaled to keep the source aspect ratio
       quality: 75,
     );
     print(uint8list);
@@ -271,7 +271,7 @@ class _ForumRoomState extends State<ForumRoom> {
     });
 
     var documentReference =
-    Firestore.instance.collection('ForumRooms').document(widget.id);
+        Firestore.instance.collection('ForumRooms').document(widget.id);
 
     FirebaseUser user = await _firebaseAuth.currentUser();
 
@@ -440,7 +440,7 @@ class _ForumRoomState extends State<ForumRoom> {
       });
 
       Response response = await Dio().post(
-        /*"https://mysitemose.000webhostapp.com/uploads.php",*/
+          /*"https://mysitemose.000webhostapp.com/uploads.php",*/
           "http://rada.uonbi.ac.ke/radax/uploads.php",
           data: formData);
 
@@ -496,19 +496,19 @@ class _ForumRoomState extends State<ForumRoom> {
               color: Colors.white,
               child: _filetype == "image"
                   ? Padding(
-                padding: EdgeInsets.all(7),
-                child: Image.asset(
-                  "assets/images/image.png",
-                  fit: BoxFit.contain,
-                ),
-              )
+                      padding: EdgeInsets.all(7),
+                      child: Image.asset(
+                        "assets/images/image.png",
+                        fit: BoxFit.contain,
+                      ),
+                    )
                   : Padding(
-                padding: EdgeInsets.all(7),
-                child: Image.asset(
-                  "assets/images/video.png",
-                  fit: BoxFit.contain,
-                ),
-              ),
+                      padding: EdgeInsets.all(7),
+                      child: Image.asset(
+                        "assets/images/video.png",
+                        fit: BoxFit.contain,
+                      ),
+                    ),
             ),
             Container(
               child: Flexible(
@@ -559,7 +559,7 @@ class _ForumRoomState extends State<ForumRoom> {
                   border: Border.all(width: 1, color: Colors.lightGreen)),
               child: Center(
                 child: IconButton(
-                  //new
+                    //new
                     icon: Icon(
                       Icons.send,
                       size: 22,
@@ -617,9 +617,9 @@ class _ForumRoomState extends State<ForumRoom> {
                         setState(() {
                           _isShowSticker
                               ? SystemChannels.textInput
-                              .invokeMethod('TextInput.show')
+                                  .invokeMethod('TextInput.show')
                               : SystemChannels.textInput
-                              .invokeMethod('TextInput.hide');
+                                  .invokeMethod('TextInput.hide');
 
                           _isShowSticker = !_isShowSticker;
                         });
@@ -776,9 +776,9 @@ class _ForumRoomState extends State<ForumRoom> {
     var time = formatTime.format(datetime);
 
     var documentReference =
-    Firestore.instance.collection('ForumRooms').document(widget.id);
+        Firestore.instance.collection('ForumRooms').document(widget.id);
     var roonsReference =
-    Firestore.instance.collection('Rooms').document(widget.id);
+        Firestore.instance.collection('Rooms').document(widget.id);
 
     var messagetime = DateTime.now().millisecondsSinceEpoch.toString();
 
@@ -835,28 +835,28 @@ class _ForumRoomState extends State<ForumRoom> {
               duration: const Duration(milliseconds: 300),
             );
             http.Response response =
-            await http.post('http://rada.uonbi.ac.ke/radaweb/api/message',
-                /*'http://192.168.8.103/LaravelPusher/public/api/message',*/
-                headers: {
+                await http.post('http://rada.uonbi.ac.ke/radaweb/api/message',
+                    /*'http://192.168.8.103/LaravelPusher/public/api/message',*/
+                    headers: {
                   "Accept": "application/json"
                 }, body: {
-                  'message': message,
-                  'sender_id': useruid[0],
-                  'sender_name': value.data['name'],
-                  'size': "0",
-                  'student_avata': widget.image,
-                  'filename': "",
-                  'thumb': "",
-                  'url': "",
-                  'title': widget.title,
-                  'type': "message",
-                  'imagename': "",
-                  'status': "sending",
-                  'reply': "",
-                  'caption': "",
-                  'channel': widget.id,
-                  'time': messagetime,
-                });
+              'message': message,
+              'sender_id': useruid[0],
+              'sender_name': value.data['name'],
+              'size': "0",
+              'student_avata': widget.image,
+              'filename': "",
+              'thumb': "",
+              'url': "",
+              'title': widget.title,
+              'type': "message",
+              'imagename': "",
+              'status': "sending",
+              'reply': "",
+              'caption': "",
+              'channel': widget.id,
+              'time': messagetime,
+            });
 
             print(response.body);
           });
@@ -914,28 +914,28 @@ class _ForumRoomState extends State<ForumRoom> {
               imagereply = false;
             });
             http.Response response =
-            await http.post('http://rada.uonbi.ac.ke/radaweb/api/message',
-                /*'http://192.168.8.103/LaravelPusher/public/api/message',*/
-                headers: {
+                await http.post('http://rada.uonbi.ac.ke/radaweb/api/message',
+                    /*'http://192.168.8.103/LaravelPusher/public/api/message',*/
+                    headers: {
                   "Accept": "application/json"
                 }, body: {
-                  'message': message,
-                  'sender_id': useruid[0],
-                  'sender_name': value.data['name'],
-                  'size': "0",
-                  'student_avata': widget.image,
-                  'filename': "",
-                  'thumb': replyimage,
-                  'url': replyimage,
-                  'title': widget.title,
-                  'type': "reply",
-                  'imagename': "",
-                  'status': "sending",
-                  'reply': "",
-                  'caption': "",
-                  'channel': widget.id,
-                  'time': messagetime,
-                });
+              'message': message,
+              'sender_id': useruid[0],
+              'sender_name': value.data['name'],
+              'size': "0",
+              'student_avata': widget.image,
+              'filename': "",
+              'thumb': replyimage,
+              'url': replyimage,
+              'title': widget.title,
+              'type': "reply",
+              'imagename': "",
+              'status': "sending",
+              'reply': "",
+              'caption': "",
+              'channel': widget.id,
+              'time': messagetime,
+            });
 
             setState(() {});
             _scrollController.animateTo(
@@ -967,9 +967,9 @@ class _ForumRoomState extends State<ForumRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url,
-                type: "image",
-              )),
+                    url: url,
+                    type: "image",
+                  )),
         );
       },
       child: Padding(
@@ -1001,8 +1001,8 @@ class _ForumRoomState extends State<ForumRoom> {
                             sender == useruid[0]
                                 ? "You"
                                 : name.length > 7
-                                ? name.substring(0, 5) + ".."
-                                : name,
+                                    ? name.substring(0, 5) + ".."
+                                    : name,
                             style: TextStyle(
                                 color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
@@ -1043,12 +1043,12 @@ class _ForumRoomState extends State<ForumRoom> {
                                 placeholder: (context, url) =>
                                     Center(child: circularProgress()),
                                 errorWidget: (context, url, error) =>
-                                const Center(
-                                  child: Icon(
-                                    Icons.error,
-                                    size: 40,
-                                  ),
-                                )),
+                                    const Center(
+                                      child: Icon(
+                                        Icons.error,
+                                        size: 40,
+                                      ),
+                                    )),
                           ],
                         )),
                   ),
@@ -1076,9 +1076,9 @@ class _ForumRoomState extends State<ForumRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url,
-                type: "image",
-              )),
+                    url: url,
+                    type: "image",
+                  )),
         );
       },
       onLongPress: () {
@@ -1121,8 +1121,8 @@ class _ForumRoomState extends State<ForumRoom> {
                                 sender == useruid[0]
                                     ? "You"
                                     : name.length > 7
-                                    ? name.substring(0, 5) + ".."
-                                    : name,
+                                        ? name.substring(0, 5) + ".."
+                                        : name,
                                 style: TextStyle(
                                     color: Colors.lightGreen,
                                     fontWeight: FontWeight.bold),
@@ -1154,7 +1154,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                               image: imageProvider,
                                               fit: BoxFit.cover,
                                               colorFilter:
-                                              const ColorFilter.mode(
+                                                  const ColorFilter.mode(
                                                 Colors.white,
                                                 BlendMode.colorBurn,
                                               ),
@@ -1164,12 +1164,12 @@ class _ForumRoomState extends State<ForumRoom> {
                                     placeholder: (context, url) =>
                                         Center(child: circularProgress()),
                                     errorWidget: (context, url, error) =>
-                                    const Center(
-                                      child: Icon(
-                                        Icons.error,
-                                        size: 40,
-                                      ),
-                                    )),
+                                        const Center(
+                                          child: Icon(
+                                            Icons.error,
+                                            size: 40,
+                                          ),
+                                        )),
                               ],
                             )),
                       ),
@@ -1250,9 +1250,9 @@ class _ForumRoomState extends State<ForumRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url.trim(),
-                type: "video",
-              )),
+                    url: url.trim(),
+                    type: "video",
+                  )),
         );
       },
       /*onLongPress: () {
@@ -1298,8 +1298,8 @@ class _ForumRoomState extends State<ForumRoom> {
                             sender == useruid[0]
                                 ? "You"
                                 : name.length > 7
-                                ? name.substring(0, 5) + ".."
-                                : name,
+                                    ? name.substring(0, 5) + ".."
+                                    : name,
                             style: TextStyle(
                                 color: Colors.lightGreen,
                                 fontWeight: FontWeight.bold),
@@ -1333,7 +1333,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                               image: imageProvider,
                                               fit: BoxFit.cover,
                                               colorFilter:
-                                              const ColorFilter.mode(
+                                                  const ColorFilter.mode(
                                                 Colors.white,
                                                 BlendMode.colorBurn,
                                               ),
@@ -1343,12 +1343,12 @@ class _ForumRoomState extends State<ForumRoom> {
                                     placeholder: (context, url) =>
                                         Center(child: circularProgress()),
                                     errorWidget: (context, url, error) =>
-                                    const Center(
-                                      child: Icon(
-                                        Icons.error,
-                                        size: 40,
-                                      ),
-                                    )),
+                                        const Center(
+                                          child: Icon(
+                                            Icons.error,
+                                            size: 40,
+                                          ),
+                                        )),
                               ],
                             )),
                         Center(
@@ -1386,9 +1386,9 @@ class _ForumRoomState extends State<ForumRoom> {
           context,
           MaterialPageRoute(
               builder: (context) => ImageView(
-                url: url,
-                type: "video",
-              )),
+                    url: url,
+                    type: "video",
+                  )),
         );
       },
       onLongPress: () {
@@ -1431,8 +1431,8 @@ class _ForumRoomState extends State<ForumRoom> {
                                 sender == useruid[0]
                                     ? "You"
                                     : name.length > 7
-                                    ? name.substring(0, 5) + ".."
-                                    : name,
+                                        ? name.substring(0, 5) + ".."
+                                        : name,
                                 style: TextStyle(
                                     color: Colors.lightGreen,
                                     fontWeight: FontWeight.bold),
@@ -1460,14 +1460,14 @@ class _ForumRoomState extends State<ForumRoom> {
                                     CachedNetworkImage(
                                         imageUrl: thumb.trim(),
                                         imageBuilder: (context,
-                                            imageProvider) =>
+                                                imageProvider) =>
                                             Container(
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                   image: imageProvider,
                                                   fit: BoxFit.cover,
                                                   colorFilter:
-                                                  const ColorFilter.mode(
+                                                      const ColorFilter.mode(
                                                     Colors.white,
                                                     BlendMode.colorBurn,
                                                   ),
@@ -1477,12 +1477,12 @@ class _ForumRoomState extends State<ForumRoom> {
                                         placeholder: (context, url) =>
                                             Center(child: circularProgress()),
                                         errorWidget: (context, url, error) =>
-                                        const Center(
-                                          child: Icon(
-                                            Icons.error,
-                                            size: 40,
-                                          ),
-                                        )),
+                                            const Center(
+                                              child: Icon(
+                                                Icons.error,
+                                                size: 40,
+                                              ),
+                                            )),
                                   ],
                                 )),
                             Center(
@@ -1564,68 +1564,68 @@ class _ForumRoomState extends State<ForumRoom> {
       String message, String name, String type, String reply, String sender) {
     return sender == useruid[0]
         ? Align(
-      alignment: Alignment.topLeft,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topLeft,
-          nip: BubbleNip.leftTop,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                    color: Colors.red[900], fontWeight: FontWeight.bold),
+            alignment: Alignment.topLeft,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topLeft,
+                nip: BubbleNip.leftTop,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                          color: Colors.red[900], fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      child: Text(reply),
+                    ),
+                    Text(message)
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Container(
-                child: Text(reply),
-              ),
-              Text(message)
-            ],
-          ),
-        ),
-      ),
-    )
+            ),
+          )
         : Align(
-      alignment: Alignment.topRight,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topRight,
-          nip: BubbleNip.rightTop,
-          color: Colors.green,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "You",
-                style: TextStyle(
-                    color: Colors.brown, fontWeight: FontWeight.bold),
+            alignment: Alignment.topRight,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topRight,
+                nip: BubbleNip.rightTop,
+                color: Colors.green,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "You",
+                      style: TextStyle(
+                          color: Colors.brown, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      child: Text(reply),
+                    ),
+                    Text(
+                      message,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Container(
-                child: Text(reply),
-              ),
-              Text(
-                message,
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
   }
 
   Widget chatBubble(
@@ -1639,62 +1639,62 @@ class _ForumRoomState extends State<ForumRoom> {
       String time) {
     return sender != useruid[0]
         ? Align(
-      alignment: Alignment.topLeft,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topLeft,
-          nip: BubbleNip.leftTop,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                    color: Colors.red[900], fontWeight: FontWeight.bold),
+            alignment: Alignment.topLeft,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topLeft,
+                nip: BubbleNip.leftTop,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                          color: Colors.red[900], fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(message)
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(message)
-            ],
-          ),
-        ),
-      ),
-    )
+            ),
+          )
         : Align(
-      alignment: Alignment.topRight,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topRight,
-          nip: BubbleNip.rightTop,
-          color: Colors.teal,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "You",
-                style: TextStyle(
-                    color: Colors.brown, fontWeight: FontWeight.bold),
+            alignment: Alignment.topRight,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topRight,
+                nip: BubbleNip.rightTop,
+                color: Colors.teal,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "You",
+                      style: TextStyle(
+                          color: Colors.brown, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      message,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                message,
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
   }
 
   Widget _showMenu() {
@@ -1768,85 +1768,90 @@ class _ForumRoomState extends State<ForumRoom> {
                 fit: BoxFit.cover)),
         child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: Platform.isIOS?AppBar(
-              elevation: 0,
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.grey[100],
-              flexibleSpace: SafeArea(
-                child: Container(
-                  padding: EdgeInsets.only(right: 16),
-                  child: !search
-                      ? Row(
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 45,
-                        child: Neumorphic(
-                          style: NeumorphicStyle(
-                              shape: NeumorphicShape.flat,
-                              boxShape: NeumorphicBoxShape.circle(),
-                              depth: 0,
-                              lightSource: LightSource.topLeft,
-                              color: Colors.grey[200]),
-                          child: CachedNetworkImage(
-                            imageUrl: widget.image,
-                            /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
-                            placeholder: (context, url) =>
-                                Center(child: circularProgress()),
-                            errorWidget: (context, url, error) =>
-                                Icon(Icons.error),
-                            imageBuilder: (context, imageProvider) =>
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: imageProvider,
-                                      fit: BoxFit.cover,
+            appBar: Platform.isIOS
+                ? AppBar(
+                    elevation: 0,
+                    automaticallyImplyLeading: false,
+                    backgroundColor: Colors.grey[100],
+                    flexibleSpace: SafeArea(
+                      child: Container(
+                        padding: EdgeInsets.only(right: 16),
+                        child: !search
+                            ? Row(
+                                children: <Widget>[
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    icon: Icon(
+                                      Icons.arrow_back_ios,
+                                      color: Colors.black,
                                     ),
                                   ),
-                                ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              widget.title,
-                              style:
-                              TextStyle(fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(
-                              height: 6,
-                            ),
-                            Text(
-                              "Say something...",
-                              style: TextStyle(
-                                  color: Colors.green, fontSize: 12),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      /*GestureDetector(
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Container(
+                                    height: 45,
+                                    width: 45,
+                                    child: Neumorphic(
+                                      style: NeumorphicStyle(
+                                          shape: NeumorphicShape.flat,
+                                          boxShape: NeumorphicBoxShape.circle(),
+                                          depth: 0,
+                                          lightSource: LightSource.topLeft,
+                                          color: Colors.grey[200]),
+                                      child: CachedNetworkImage(
+                                        imageUrl: widget.image,
+                                        /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
+                                        placeholder: (context, url) =>
+                                            Center(child: circularProgress()),
+                                        errorWidget: (context, url, error) =>
+                                            Icon(Icons.error),
+                                        imageBuilder:
+                                            (context, imageProvider) =>
+                                                Container(
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: imageProvider,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          widget.title,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        Text(
+                                          "Say something...",
+                                          style: TextStyle(
+                                              color: Colors.green,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  /*GestureDetector(
                               onTap: () {
                                 setState(() {
                                   search = true;
@@ -1858,133 +1863,139 @@ class _ForumRoomState extends State<ForumRoom> {
                                 size: 30,
                               ),
                             ),*/
-                      _uploading
-                          ? Loading(
-                          indicator: BallPulseIndicator(),
-                          size: 30.0,
-                          color: Colors.lightGreen)
-                          : SizedBox(
-                        height: 0,
-                        width: 0,
+                                  _uploading
+                                      ? Loading(
+                                          indicator: BallPulseIndicator(),
+                                          size: 30.0,
+                                          color: Colors.lightGreen)
+                                      : SizedBox(
+                                          height: 0,
+                                          width: 0,
+                                        ),
+                                ],
+                              )
+                            : AnimatedContainer(
+                                height: 60,
+                                width: !search
+                                    ? 0
+                                    : MediaQuery.of(context).size.width,
+                                curve: Curves.easeIn,
+                                duration: Duration(milliseconds: 700),
+                                color: Colors.grey[100],
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            search = false;
+                                          });
+                                        },
+                                        child: Padding(
+                                            padding: EdgeInsets.only(left: 3),
+                                            child: Icon(Icons.cancel))),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Flexible(
+                                      child: TextField(
+                                        controller: _searchController,
+                                        decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                            hintText: "Search message...",
+                                            hintStyle:
+                                                TextStyle(color: Colors.black)),
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                       ),
-                    ],
-                  )
-                      : AnimatedContainer(
-                    height: 60,
-                    width:
-                    !search ? 0 : MediaQuery.of(context).size.width,
-                    curve: Curves.easeIn,
-                    duration: Duration(milliseconds: 700),
-                    color: Colors.grey[100],
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                search = false;
-                              });
-                            },
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 3),
-                                child: Icon(Icons.cancel))),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Flexible(
-                          child: TextField(
-                            controller: _searchController,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Search message...",
-                                hintStyle:
-                                TextStyle(color: Colors.black)),
-                            onChanged: (value) {},
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
-                ),
-              ),
-            ):AppBar(
-              elevation: 0,
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.grey[100],
-              flexibleSpace: SafeArea(
-                child: Container(
-                  padding: EdgeInsets.only(right: 16),
-                  child: !search
-                      ? Row(
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 45,
-                        child: Neumorphic(
-                          style: NeumorphicStyle(
-                              shape: NeumorphicShape.flat,
-                              boxShape: NeumorphicBoxShape.circle(),
-                              depth: 0,
-                              lightSource: LightSource.topLeft,
-                              color: Colors.grey[200]),
-                          child: CachedNetworkImage(
-                            imageUrl: widget.image,
-                            /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
-                            placeholder: (context, url) =>
-                                Center(child: circularProgress()),
-                            errorWidget: (context, url, error) =>
-                                Icon(Icons.error),
-                            imageBuilder: (context, imageProvider) =>
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: imageProvider,
-                                      fit: BoxFit.cover,
+                  )
+                : AppBar(
+                    elevation: 0,
+                    automaticallyImplyLeading: false,
+                    backgroundColor: Colors.grey[100],
+                    flexibleSpace: SafeArea(
+                      child: Container(
+                        padding: EdgeInsets.only(right: 16),
+                        child: !search
+                            ? Row(
+                                children: <Widget>[
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    icon: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.black,
                                     ),
                                   ),
-                                ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              widget.title,
-                              style:
-                              TextStyle(fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(
-                              height: 6,
-                            ),
-                            Text(
-                              "Say something...",
-                              style: TextStyle(
-                                  color: Colors.green, fontSize: 12),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      /*GestureDetector(
+                                  SizedBox(
+                                    width: 2,
+                                  ),
+                                  Container(
+                                    height: 45,
+                                    width: 45,
+                                    child: Neumorphic(
+                                      style: NeumorphicStyle(
+                                          shape: NeumorphicShape.flat,
+                                          boxShape: NeumorphicBoxShape.circle(),
+                                          depth: 0,
+                                          lightSource: LightSource.topLeft,
+                                          color: Colors.grey[200]),
+                                      child: CachedNetworkImage(
+                                        imageUrl: widget.image,
+                                        /*placeholder: (context, url) => Center(child: CircularProgressIndicator()),*/
+                                        placeholder: (context, url) =>
+                                            Center(child: circularProgress()),
+                                        errorWidget: (context, url, error) =>
+                                            Icon(Icons.error),
+                                        imageBuilder:
+                                            (context, imageProvider) =>
+                                                Container(
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: imageProvider,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          widget.title,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        SizedBox(
+                                          height: 6,
+                                        ),
+                                        Text(
+                                          "Say something...",
+                                          style: TextStyle(
+                                              color: Colors.green,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  /*GestureDetector(
                               onTap: () {
                                 setState(() {
                                   search = true;
@@ -1996,55 +2007,56 @@ class _ForumRoomState extends State<ForumRoom> {
                                 size: 30,
                               ),
                             ),*/
-                      _uploading
-                          ? Loading(
-                          indicator: BallPulseIndicator(),
-                          size: 30.0,
-                          color: Colors.lightGreen)
-                          : SizedBox(
-                        height: 0,
-                        width: 0,
+                                  _uploading
+                                      ? Loading(
+                                          indicator: BallPulseIndicator(),
+                                          size: 30.0,
+                                          color: Colors.lightGreen)
+                                      : SizedBox(
+                                          height: 0,
+                                          width: 0,
+                                        ),
+                                ],
+                              )
+                            : AnimatedContainer(
+                                height: 60,
+                                width: !search
+                                    ? 0
+                                    : MediaQuery.of(context).size.width,
+                                curve: Curves.easeIn,
+                                duration: Duration(milliseconds: 700),
+                                color: Colors.grey[100],
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            search = false;
+                                          });
+                                        },
+                                        child: Padding(
+                                            padding: EdgeInsets.only(left: 3),
+                                            child: Icon(Icons.cancel))),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Flexible(
+                                      child: TextField(
+                                        controller: _searchController,
+                                        decoration: InputDecoration(
+                                            border: InputBorder.none,
+                                            hintText: "Search message...",
+                                            hintStyle:
+                                                TextStyle(color: Colors.black)),
+                                        onChanged: (value) {},
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                       ),
-                    ],
-                  )
-                      : AnimatedContainer(
-                    height: 60,
-                    width:
-                    !search ? 0 : MediaQuery.of(context).size.width,
-                    curve: Curves.easeIn,
-                    duration: Duration(milliseconds: 700),
-                    color: Colors.grey[100],
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                search = false;
-                              });
-                            },
-                            child: Padding(
-                                padding: EdgeInsets.only(left: 3),
-                                child: Icon(Icons.cancel))),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Flexible(
-                          child: TextField(
-                            controller: _searchController,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Search message...",
-                                hintStyle:
-                                TextStyle(color: Colors.black)),
-                            onChanged: (value) {},
-                          ),
-                        ),
-                      ],
                     ),
                   ),
-                ),
-              ),
-            ),
             body: Container(
                 color: Colors.transparent,
                 width: double.infinity,
@@ -2077,14 +2089,14 @@ class _ForumRoomState extends State<ForumRoom> {
                                   shrinkWrap: true,
                                   controller: _scrollController,
                                   physics:
-                                  const AlwaysScrollableScrollPhysics(),
+                                      const AlwaysScrollableScrollPhysics(),
                                   itemCount: projectSnap.data == null
                                       ? 0
                                       : projectSnap.data.length,
                                   itemBuilder: (_, int index) {
                                     /*_forumHelper.deleteAll();*/
                                     ForumModel project =
-                                    projectSnap.data[index];
+                                        projectSnap.data[index];
 
                                     print(project.url.runtimeType);
 
@@ -2124,8 +2136,8 @@ class _ForumRoomState extends State<ForumRoom> {
                                           //child: meBubble(msg, name, t),
                                           child: FocusedMenuHolder(
                                             menuWidth: MediaQuery.of(context)
-                                                .size
-                                                .width *
+                                                    .size
+                                                    .width *
                                                 0.50,
                                             blurSize: 5.0,
                                             menuItemExtent: 45,
@@ -2134,19 +2146,19 @@ class _ForumRoomState extends State<ForumRoom> {
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(15.0))),
                                             duration:
-                                            Duration(milliseconds: 100),
+                                                Duration(milliseconds: 100),
                                             animateMenuItems: true,
                                             blurBackgroundColor: Colors.black54,
                                             menuOffset:
-                                            10.0, // Offset value to show menuItem from the selected item
+                                                10.0, // Offset value to show menuItem from the selected item
                                             bottomOffsetHeight:
-                                            80.0, // Offset height to consider, for showing the menu item ( for example bottom navigation bar), so that the popup menu will be shown on top of selected item.
+                                                80.0, // Offset height to consider, for showing the menu item ( for example bottom navigation bar), so that the popup menu will be shown on top of selected item.
                                             menuItems: <FocusedMenuItem>[
                                               // Add Each FocusedMenuItem  for Menu Options
                                               FocusedMenuItem(
                                                   title: Text("Share"),
                                                   trailingIcon:
-                                                  Icon(Icons.share),
+                                                      Icon(Icons.share),
                                                   onPressed: () {
                                                     print(project.reply);
                                                     _shareText(project.message);
@@ -2157,7 +2169,7 @@ class _ForumRoomState extends State<ForumRoom> {
                                                     "Delete",
                                                     style: TextStyle(
                                                         color:
-                                                        Colors.redAccent),
+                                                            Colors.redAccent),
                                                   ),
                                                   trailingIcon: Icon(
                                                     Icons.delete,
@@ -2228,8 +2240,8 @@ class _ForumRoomState extends State<ForumRoom> {
                                       if (project.sender_id == useruid[0]) {
                                         return FocusedMenuHolder(
                                           menuWidth: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.50,
                                           blurSize: 5.0,
                                           menuItemExtent: 45,
@@ -2241,14 +2253,14 @@ class _ForumRoomState extends State<ForumRoom> {
                                           animateMenuItems: true,
                                           blurBackgroundColor: Colors.black54,
                                           menuOffset:
-                                          10.0, // Offset value to show menuItem from the selected item
+                                              10.0, // Offset value to show menuItem from the selected item
                                           bottomOffsetHeight: 80.0,
                                           menuItems: <FocusedMenuItem>[
                                             // Add Each FocusedMenuItem  for Menu Options
                                             FocusedMenuItem(
                                                 title: Text("Open"),
                                                 trailingIcon:
-                                                Icon(Icons.open_in_new),
+                                                    Icon(Icons.open_in_new),
                                                 onPressed: () {
                                                   Navigator.push(
                                                     context,
@@ -2299,194 +2311,173 @@ class _ForumRoomState extends State<ForumRoom> {
                                           ],
                                           onPressed: () {},
                                           child: SwipeTo(
-                                            /*swipeDirection:
+                                              /*swipeDirection:
                                                 SwipeDirection.swipeToLeft,*/
                                               onLeftSwipe: () {
-                                                endOffset:
-                                                Offset(0.3, 0.0)
-                                                ;
-                                                callBack: () {
-                                                  //print(project.url);
-                                                  setState(() {
-                                                    messager = name;
-                                                    reply = msg;
-                                                    replytype = type;
-                                                    replyimage = project.url;
-                                                    messagetype = "reply";
-                                                    imagereply = true;
-                                                    h = 55;
-                                                    showKeyboard();
-                                                  });
-                                                };
-                                                child: meImage(
-                                                    project.url,
-                                                    project.imagename,
-                                                    project.sender_name,
-                                                    project.created_at,
-                                                    project.sender_id,
-                                                    /*snapshot,*/
-                                                    index,
-                                                    type);
-                                              }
-                                          ),
+                                            endOffset:
+                                            Offset(0.3, 0.0);
+                                            callBack:
+                                            () {
+                                              //print(project.url);
+                                              setState(() {
+                                                messager = name;
+                                                reply = msg;
+                                                replytype = type;
+                                                replyimage = project.url;
+                                                messagetype = "reply";
+                                                imagereply = true;
+                                                h = 55;
+                                                showKeyboard();
+                                              });
+                                            };
+                                            child:
+                                            meImage(
+                                                project.url,
+                                                project.imagename,
+                                                project.sender_name,
+                                                project.created_at,
+                                                project.sender_id,
+                                                /*snapshot,*/
+                                                index,
+                                                type);
+                                          }),
                                         );
                                       } else {
                                         return SwipeTo(
-                                          /* swipeDirection:
+                                            /* swipeDirection:
                                               SwipeDirection.swipeToRight,*/
                                             onRightSwipe: () {
-                                              endOffset:
-                                              Offset(0.3, 0.0);
-                                              callBack:
-                                                  () {
-                                                setState(() {
-                                                  messager = name;
-                                                  reply = msg;
-                                                  replytype = type;
-                                                  replyimage = project.url;
-                                                  messagetype = "reply";
-                                                  h = 55;
-                                                  imagereply = true;
-                                                  showKeyboard();
-                                                });
-                                              };
-                                              child:
-                                              senderImage(
-                                                  project.url,
-                                                  project.imagename,
-                                                  project.sender_name,
-                                                  project.created_at,
-                                                  project.sender_id,
-                                                  /*snapshot,*/
-                                                  index,
-                                                  type);
-                                            }
-                                        );
+                                          endOffset:
+                                          Offset(0.3, 0.0);
+                                          callBack:
+                                          () {
+                                            setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = project.url;
+                                              messagetype = "reply";
+                                              h = 55;
+                                              imagereply = true;
+                                              showKeyboard();
+                                            });
+                                          };
+                                          child:
+                                          senderImage(
+                                              project.url,
+                                              project.imagename,
+                                              project.sender_name,
+                                              project.created_at,
+                                              project.sender_id,
+                                              /*snapshot,*/
+                                              index,
+                                              type);
+                                        });
                                       }
                                     } else if (type == "reply" &&
                                         project.channel == widget.id) {
                                       if (sender == useruid[0]) {
                                         return SwipeGestureRecognizer(
                                             onSwipeLeft: () {
-                                              setState(() {
-                                                messager = name;
-                                                reply = msg;
-                                                replytype = type;
-                                                replyimage = "";
-                                                h = 55;
-                                              });
-                                              print(replytype);
-                                            },
-                                            onSwipeRight: () {
-                                              setState(() {
-                                                messager = name;
-                                                reply = msg;
-                                                replytype = type;
-                                                replyimage = "";
-                                                h = 55;
-                                              });
-                                              //print(replytype);
-                                            },
-                                            child:
-                                            /*project.url == ""
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = "";
+                                            h = 55;
+                                          });
+                                          print(replytype);
+                                        }, onSwipeRight: () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = "";
+                                            h = 55;
+                                          });
+                                          //print(replytype);
+                                        }, child:
+                                                /*project.url == ""
                                               ? */
-                                            SwipeTo(
-                                              /*swipeDirection:
+                                                SwipeTo(
+                                                    /*swipeDirection:
                                                   SwipeDirection.swipeToLeft,*/
-                                                onLeftSwipe: () {
-                                                  endOffset:
-                                                  Offset(-0.3, 0.0);
-                                                  callBack:
-                                                      () {
-                                                    setState(() {
-                                                      messager = name;
-                                                      reply = msg;
-                                                      replytype = type;
-                                                      replyimage =
-                                                          project.url;
-                                                      h = 55;
-                                                      messagetype = "reply";
-                                                      showKeyboard();
-                                                    });
-                                                  };
-                                                  child:
-                                                  FocusedMenuHolder(
-                                                    menuWidth:
-                                                    MediaQuery
-                                                        .of(context)
-                                                        .size
-                                                        .width *
-                                                        0.50,
-                                                    blurSize: 5.0,
-                                                    menuItemExtent: 45,
-                                                    menuBoxDecoration:
-                                                    BoxDecoration(
-                                                        color: Colors.grey,
-                                                        borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.circular(
-                                                                15.0))),
-                                                    duration:
-                                                    Duration(
-                                                        milliseconds: 100),
-                                                    animateMenuItems: true,
-                                                    blurBackgroundColor:
-                                                    Colors.black54,
-                                                    menuOffset:
-                                                    10.0,
-                                                    // Offset value to show menuItem from the selected item
-                                                    bottomOffsetHeight: 80.0,
-                                                    menuItems: <
-                                                        FocusedMenuItem>[
-                                                      // Add Each FocusedMenuItem  for Menu Options
-                                                      FocusedMenuItem(
-                                                          title: Text(
-                                                              "Share"),
-                                                          trailingIcon:
-                                                          Icon(Icons.share),
-                                                          onPressed: () {
-                                                            //print(project.url);
-                                                            _shareText(
-                                                                project
-                                                                    .message);
-                                                          }),
+                                                    onLeftSwipe: () {
+                                          endOffset:
+                                          Offset(-0.3, 0.0);
+                                          callBack:
+                                          () {
+                                            setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = project.url;
+                                              h = 55;
+                                              messagetype = "reply";
+                                              showKeyboard();
+                                            });
+                                          };
+                                          child:
+                                          FocusedMenuHolder(
+                                            menuWidth: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.50,
+                                            blurSize: 5.0,
+                                            menuItemExtent: 45,
+                                            menuBoxDecoration: BoxDecoration(
+                                                color: Colors.grey,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(15.0))),
+                                            duration:
+                                                Duration(milliseconds: 100),
+                                            animateMenuItems: true,
+                                            blurBackgroundColor: Colors.black54,
+                                            menuOffset: 10.0,
+                                            // Offset value to show menuItem from the selected item
+                                            bottomOffsetHeight: 80.0,
+                                            menuItems: <FocusedMenuItem>[
+                                              // Add Each FocusedMenuItem  for Menu Options
+                                              FocusedMenuItem(
+                                                  title: Text("Share"),
+                                                  trailingIcon:
+                                                      Icon(Icons.share),
+                                                  onPressed: () {
+                                                    //print(project.url);
+                                                    _shareText(project.message);
+                                                  }),
 
-                                                      FocusedMenuItem(
-                                                          title: Text(
-                                                            "Delete",
-                                                            style: TextStyle(
-                                                                color: Colors
-                                                                    .redAccent),
-                                                          ),
-                                                          trailingIcon: Icon(
-                                                            Icons.delete,
-                                                            color: Colors
-                                                                .redAccent,
-                                                          ),
-                                                          onPressed: () {
-                                                            _forumHelper
-                                                                .delete(
-                                                                project.time)
-                                                                .then((
-                                                                value) {
-                                                              setState(() {});
-                                                              deleteMessage(
-                                                                  project
-                                                                      .time);
-                                                            });
-                                                          }),
-                                                    ],
-                                                    child: meReply(
-                                                        msg,
-                                                        name,
-                                                        project.created_at,
-                                                        project.reply,
-                                                        project.url,
-                                                        project.thumb),
-                                                  );
-                                                }
-                                            )
-                                          /*: SwipeTo(
+                                              FocusedMenuItem(
+                                                  title: Text(
+                                                    "Delete",
+                                                    style: TextStyle(
+                                                        color:
+                                                            Colors.redAccent),
+                                                  ),
+                                                  trailingIcon: Icon(
+                                                    Icons.delete,
+                                                    color: Colors.redAccent,
+                                                  ),
+                                                  onPressed: () {
+                                                    _forumHelper
+                                                        .delete(project.time)
+                                                        .then((value) {
+                                                      setState(() {});
+                                                      deleteMessage(
+                                                          project.time);
+                                                    });
+                                                  }),
+                                            ],
+                                            child: meReply(
+                                                msg,
+                                                name,
+                                                project.created_at,
+                                                project.reply,
+                                                project.url,
+                                                project.thumb),
+                                          );
+                                        })
+                                            /*: SwipeTo(
                                                   swipeDirection: SwipeDirection
                                                       .swipeToRight,
                                                   endOffset: Offset(0.3, 0.0),
@@ -2503,107 +2494,104 @@ class _ForumRoomState extends State<ForumRoom> {
                                                   child: replymeImage(sender,
                                                       project.url, msg, name),
                                                 ),*/
-                                        );
+                                            );
                                       } else {
                                         return SwipeGestureRecognizer(
                                             onSwipeLeft: () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = "";
+                                            h = 55;
+                                            messagetype = "reply";
+                                          });
+                                          print(replytype);
+                                        }, onSwipeRight: () {
+                                          setState(() {
+                                            messager = name;
+                                            reply = msg;
+                                            replytype = type;
+                                            replyimage = "";
+                                            h = 55;
+                                            messagetype = "reply";
+                                          });
+                                          print(replytype);
+                                        }, child: SwipeTo(
+                                          // swipeDirection:
+                                          //SwipeDirection.swipeToRight,
+                                          onRightSwipe: () {
+                                            endOffset:
+                                            Offset(-0.3, 0.0);
+                                            callBack:
+                                            () {
                                               setState(() {
                                                 messager = name;
                                                 reply = msg;
                                                 replytype = type;
-                                                replyimage = "";
+                                                replyimage = project.url;
                                                 h = 55;
                                                 messagetype = "reply";
+                                                showKeyboard();
                                               });
-                                              print(replytype);
-                                            },
-                                            onSwipeRight: () {
-                                              setState(() {
-                                                messager = name;
-                                                reply = msg;
-                                                replytype = type;
-                                                replyimage = "";
-                                                h = 55;
-                                                messagetype = "reply";
-                                              });
-                                              print(replytype);
-                                            },
-                                            child: SwipeTo(
-                                              // swipeDirection:
-                                              //SwipeDirection.swipeToRight,
-                                              onRightSwipe: () {
-                                                endOffset:
-                                                Offset(-0.3, 0.0);
-                                                callBack: () {
-                                                  setState(() {
-                                                    messager = name;
-                                                    reply = msg;
-                                                    replytype = type;
-                                                    replyimage = project.url;
-                                                    h = 55;
-                                                    messagetype = "reply";
-                                                    showKeyboard();
-                                                  });
-                                                };
-                                                child: senderReply(
-                                                    msg,
-                                                    name,
-                                                    project.created_at.toString(),
-                                                    project.reply,
-                                                    project
-                                                        .
-                                                    thumb
-                                                );
-                                              },
-                                            ));
+                                            };
+                                            child:
+                                            senderReply(
+                                                msg,
+                                                name,
+                                                project.created_at.toString(),
+                                                project.reply,
+                                                project.thumb);
+                                          },
+                                        ));
                                         /*child: messageReply(msg, name, t,
                                               document['reply'], sender));*/
                                       }
-
                                     } else if (type == "video" &&
                                         project.channel == widget.id) {
                                       if (sender == useruid[0]) {
                                         return SwipeTo(
-                                          // swipeDirection:
-                                          //  SwipeDirection.swipeToLeft,
+                                            // swipeDirection:
+                                            //  SwipeDirection.swipeToLeft,
                                             onLeftSwipe: () {
-                                              endOffset:
-                                              Offset(0.3, 0.0)
-                                              ;
-                                              callBack: () {
-                                                //print(project.url);
-                                                setState(() {
-                                                  messager = name;
-                                                  reply = msg;
-                                                  replytype = type;
-                                                  replyimage = project.thumb;
-                                                  messagetype = "reply";
-                                                  imagereply = true;
-                                                  h = 55;
-                                                  showKeyboard();
-                                                });
-                                              };
-                                              child: FocusedMenuHolder(
-                                                menuWidth: MediaQuery.of(context)
+                                          endOffset:
+                                          Offset(0.3, 0.0);
+                                          callBack:
+                                          () {
+                                            //print(project.url);
+                                            setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = project.thumb;
+                                              messagetype = "reply";
+                                              imagereply = true;
+                                              h = 55;
+                                              showKeyboard();
+                                            });
+                                          };
+                                          child:
+                                          FocusedMenuHolder(
+                                            menuWidth: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.50,
-                                                blurSize: 5.0,
-                                                menuItemExtent: 45,
-                                                menuBoxDecoration: BoxDecoration(
-                                                    color: Colors.grey,
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(15.0))),
-                                                duration:
+                                                0.50,
+                                            blurSize: 5.0,
+                                            menuItemExtent: 45,
+                                            menuBoxDecoration: BoxDecoration(
+                                                color: Colors.grey,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(15.0))),
+                                            duration:
                                                 Duration(milliseconds: 100),
-                                                animateMenuItems: true,
-                                                blurBackgroundColor: Colors.black54,
-                                                menuOffset:
+                                            animateMenuItems: true,
+                                            blurBackgroundColor: Colors.black54,
+                                            menuOffset:
                                                 10.0, // Offset value to show menuItem from the selected item
-                                                bottomOffsetHeight: 80.0,
-                                                menuItems: <FocusedMenuItem>[
-                                                  // Add Each FocusedMenuItem  for Menu Options
-                                                  /*FocusedMenuItem(
+                                            bottomOffsetHeight: 80.0,
+                                            menuItems: <FocusedMenuItem>[
+                                              // Add Each FocusedMenuItem  for Menu Options
+                                              /*FocusedMenuItem(
                                                   title: Text("Open"),
                                                   trailingIcon:
                                                       Icon(Icons.open_in_new),
@@ -2620,83 +2608,74 @@ class _ForumRoomState extends State<ForumRoom> {
                                                     );
                                                   }),*/
 
-                                                  FocusedMenuItem(
-                                                      title: Text(
-                                                        "Delete",
-                                                        style: TextStyle(
-                                                            color:
+                                              FocusedMenuItem(
+                                                  title: Text(
+                                                    "Delete",
+                                                    style: TextStyle(
+                                                        color:
                                                             Colors.redAccent),
-                                                      ),
-                                                      trailingIcon: Icon(
-                                                        Icons.delete,
-                                                        color: Colors.redAccent,
-                                                      ),
-                                                      onPressed: () {
-                                                        print(project.time);
-                                                        _forumHelper
-                                                            .delete(project.time)
-                                                            .then((value) {
-                                                          setState(() {});
-                                                          deleteMessage(
-                                                              project.time);
-                                                        });
-                                                      }),
-                                                ],
-                                                onPressed: () {},
-                                                child: meVideo(
-                                                  project.url,
-                                                  project.thumb,
-                                                  project.filename,
-                                                  project.sender_name,
-                                                  project.created_at.toString(),
-                                                  project.sender_id,
-                                                  index,
-                                                  project.type,
-                                                  project.
-                                                  caption
-                                                  ,
-                                                )
-                                                ,
-                                              );
-                                            }
-                                        );
+                                                  ),
+                                                  trailingIcon: Icon(
+                                                    Icons.delete,
+                                                    color: Colors.redAccent,
+                                                  ),
+                                                  onPressed: () {
+                                                    print(project.time);
+                                                    _forumHelper
+                                                        .delete(project.time)
+                                                        .then((value) {
+                                                      setState(() {});
+                                                      deleteMessage(
+                                                          project.time);
+                                                    });
+                                                  }),
+                                            ],
+                                            onPressed: () {},
+                                            child: meVideo(
+                                              project.url,
+                                              project.thumb,
+                                              project.filename,
+                                              project.sender_name,
+                                              project.created_at.toString(),
+                                              project.sender_id,
+                                              index,
+                                              project.type,
+                                              project.caption,
+                                            ),
+                                          );
+                                        });
                                       } else {
                                         return SwipeTo(
-                                          //swipeDirection:
-                                          //  SwipeDirection.swipeToRight,
+                                            //swipeDirection:
+                                            //  SwipeDirection.swipeToRight,
                                             onRightSwipe: () {
-                                              endOffset:
-                                              Offset(0.3, 0.0)
-                                              ;
-                                              callBack: () {
-                                                //print(project.url);
-                                                setState(() {
-                                                  messager = name;
-                                                  reply = msg;
-                                                  replytype = type;
-                                                  replyimage = project.thumb;
-                                                  messagetype = "reply";
-                                                  imagereply = true;
-                                                  h = 55;
-                                                  showKeyboard();
-                                                });
-                                              };
-                                              child: senderVideo(
-                                                  project.url,
-                                                  project.thumb,
-                                                  project.filename,
-                                                  project.sender_name,
-                                                  project.created_at.toString(),
-                                                  sender,
-                                                  index
-                                                  ,
-                                                  project
-                                                      .
-                                                  type
-                                              )
-                                              ;
-                                            }
-                                        );
+                                          endOffset:
+                                          Offset(0.3, 0.0);
+                                          callBack:
+                                          () {
+                                            //print(project.url);
+                                            setState(() {
+                                              messager = name;
+                                              reply = msg;
+                                              replytype = type;
+                                              replyimage = project.thumb;
+                                              messagetype = "reply";
+                                              imagereply = true;
+                                              h = 55;
+                                              showKeyboard();
+                                            });
+                                          };
+                                          child:
+                                          senderVideo(
+                                              project.url,
+                                              project.thumb,
+                                              project.filename,
+                                              project.sender_name,
+                                              project.created_at.toString(),
+                                              sender,
+                                              index,
+                                              project.type);
+                                        });
                                       }
                                     }
 
@@ -2746,7 +2725,7 @@ class _ForumRoomState extends State<ForumRoom> {
 
                       Padding(
                           padding:
-                          EdgeInsets.only(right: 10, left: 10, bottom: 10),
+                              EdgeInsets.only(right: 10, left: 10, bottom: 10),
                           child: !_show
                               ? _buildMessageComposer()
                               : _buildImageComposer()),
@@ -2754,19 +2733,19 @@ class _ForumRoomState extends State<ForumRoom> {
 
                       _showEmojiPicker == true
                           ? Container(
-                        height: 250,
-                        width: MediaQuery.of(context).size.width,
-                        child: EmojiKeyboard(
-                          onEmojiPressed: (emoji) {
-                            _textController.text =
-                                _textController.text + emoji.emoji;
-                          },
-                        ),
-                      )
+                              height: 250,
+                              width: MediaQuery.of(context).size.width,
+                              child: EmojiKeyboard(
+                                onEmojiPressed: (emoji) {
+                                  _textController.text =
+                                      _textController.text + emoji.emoji;
+                                },
+                              ),
+                            )
                           : SizedBox(
-                        height: 0,
-                        width: 0,
-                      )
+                              height: 0,
+                              width: 0,
+                            )
                     ],
                   ),
                 ))),
@@ -2777,199 +2756,199 @@ class _ForumRoomState extends State<ForumRoom> {
   Widget replyWidget() {
     return replytype == "image"
         ? ClipRRect(
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(0.0), topRight: Radius.circular(0.0)),
-      child: AnimatedContainer(
-        width: MediaQuery.of(context).size.width,
-        height: h,
-        curve: Curves.easeIn,
-        duration: Duration(milliseconds: 500),
-        decoration: BoxDecoration(
-          color: Colors.grey[100],
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 5, right: 5),
-          child: Stack(
-            children: <Widget>[
-              Positioned(
-                child: Row(
-                  children: [
-                    Text(
-                      "Replying to.",
-                      style: TextStyle(
-                        color: Colors.green[400],
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(0.0), topRight: Radius.circular(0.0)),
+            child: AnimatedContainer(
+              width: MediaQuery.of(context).size.width,
+              height: h,
+              curve: Curves.easeIn,
+              duration: Duration(milliseconds: 500),
+              decoration: BoxDecoration(
+                color: Colors.grey[100],
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(left: 5, right: 5),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+                      child: Row(
+                        children: [
+                          Text(
+                            "Replying to.",
+                            style: TextStyle(
+                              color: Colors.green[400],
+                            ),
+                          ),
+                          Text(
+                            "$messager",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
                       ),
+                      top: 7,
+                      left: 5,
                     ),
-                    Text(
-                      "$messager",
-                      style: TextStyle(
-                        color: Colors.black,
+                    Positioned(
+                      child: Icon(
+                        Icons.camera_alt,
+                        color: Colors.green,
                       ),
+                      top: 25,
                     ),
-                  ],
-                ),
-                top: 7,
-                left: 5,
-              ),
-              Positioned(
-                child: Icon(
-                  Icons.camera_alt,
-                  color: Colors.green,
-                ),
-                top: 25,
-              ),
-              Positioned(
-                child: Text(
-                  "Image",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                top: 30,
-                left: 30,
-              ),
-              Positioned(
-                right: 0,
-                top: 2,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    height: 45,
-                    width: 45,
-                    color: Colors.white,
-                    child: CachedNetworkImage(
-                      imageUrl: replyimage,
-                      imageBuilder: (context, imageProvider) => Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: imageProvider,
-                            fit: BoxFit.cover,
-                            colorFilter: const ColorFilter.mode(
-                              Colors.white,
-                              BlendMode.colorBurn,
+                    Positioned(
+                      child: Text(
+                        "Image",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      top: 30,
+                      left: 30,
+                    ),
+                    Positioned(
+                      right: 0,
+                      top: 2,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          color: Colors.white,
+                          child: CachedNetworkImage(
+                            imageUrl: replyimage,
+                            imageBuilder: (context, imageProvider) => Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: imageProvider,
+                                  fit: BoxFit.cover,
+                                  colorFilter: const ColorFilter.mode(
+                                    Colors.white,
+                                    BlendMode.colorBurn,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            placeholder: (context, url) =>
+                                Center(child: circularProgress()),
+                            errorWidget: (context, url, error) => Center(
+                              child: Icon(
+                                Icons.error,
+                                size: 40,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      placeholder: (context, url) =>
-                          Center(child: circularProgress()),
-                      errorWidget: (context, url, error) => Center(
-                        child: Icon(
-                          Icons.error,
-                          size: 40,
+                    ),
+                    Positioned(
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            h = 0;
+                          });
+                        },
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                              color: Colors.redAccent.withAlpha(150),
+                              shape: BoxShape.circle),
+                          child: Center(
+                            child: Text(
+                              'x',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      h = 0;
-                    });
-                  },
-                  child: Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                        color: Colors.redAccent.withAlpha(150),
-                        shape: BoxShape.circle),
-                    child: Center(
-                      child: Text(
-                        'x',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
-                right: 7,
-                top: 10,
-              ),
-            ],
-          ),
-        ),
-      ),
-    )
-        : ClipRRect(
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(0.0), topRight: Radius.circular(0.0)),
-      child: AnimatedContainer(
-        width: MediaQuery.of(context).size.width,
-        height: h,
-        curve: Curves.easeInCubic,
-        duration: Duration(milliseconds: 500),
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 5, right: 5),
-          child: Stack(
-            children: <Widget>[
-              Positioned(
-                child: Row(
-                  children: [
-                    Text(
-                      "Replying to.",
-                      style: TextStyle(
-                        color: Colors.green[400],
-                      ),
-                    ),
-                    Text(
-                      "$messager",
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
+                      right: 7,
+                      top: 10,
                     ),
                   ],
                 ),
-                top: 7,
-                left: 5,
               ),
-              Positioned(
-                child: reply.length > 35
-                    ? Text(
-                  reply.substring(0, 35) + "...",
-                  style: TextStyle(color: Colors.black),
-                )
-                    : Text(
-                  reply,
-                  style: TextStyle(color: Colors.black),
-                ),
-                top: 25,
-                left: 5,
+            ),
+          )
+        : ClipRRect(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(0.0), topRight: Radius.circular(0.0)),
+            child: AnimatedContainer(
+              width: MediaQuery.of(context).size.width,
+              height: h,
+              curve: Curves.easeInCubic,
+              duration: Duration(milliseconds: 500),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
               ),
-              Positioned(
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      h = 0;
-                    });
-                  },
-                  child: Container(
-                    height: 25,
-                    width: 25,
-                    decoration: BoxDecoration(
-                        color: Colors.redAccent, shape: BoxShape.circle),
-                    child: Center(
-                      child: Text(
-                        '-',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: EdgeInsets.only(left: 5, right: 5),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+                      child: Row(
+                        children: [
+                          Text(
+                            "Replying to.",
+                            style: TextStyle(
+                              color: Colors.green[400],
+                            ),
+                          ),
+                          Text(
+                            "$messager",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
                       ),
+                      top: 7,
+                      left: 5,
                     ),
-                  ),
+                    Positioned(
+                      child: reply.length > 35
+                          ? Text(
+                              reply.substring(0, 35) + "...",
+                              style: TextStyle(color: Colors.black),
+                            )
+                          : Text(
+                              reply,
+                              style: TextStyle(color: Colors.black),
+                            ),
+                      top: 25,
+                      left: 5,
+                    ),
+                    Positioned(
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            h = 0;
+                          });
+                        },
+                        child: Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                              color: Colors.redAccent, shape: BoxShape.circle),
+                          child: Center(
+                            child: Text(
+                              '-',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                      right: 5,
+                      top: 15,
+                    )
+                  ],
                 ),
-                right: 5,
-                top: 15,
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+              ),
+            ),
+          );
   }
 
   Widget emojiContainer() {
@@ -3076,7 +3055,7 @@ class _ForumRoomState extends State<ForumRoom> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.lightGreenAccent),
         );
@@ -3100,9 +3079,9 @@ class _ForumRoomState extends State<ForumRoom> {
     var time = formatTime.format(datetime);
 
     var documentReference =
-    Firestore.instance.collection('ForumRooms').document(widget.id);
+        Firestore.instance.collection('ForumRooms').document(widget.id);
     var roonsReference =
-    Firestore.instance.collection('Rooms').document(widget.id);
+        Firestore.instance.collection('Rooms').document(widget.id);
 
     await FirebaseAuth.instance.currentUser();
     if (messagetype == "wild") {
@@ -3220,77 +3199,77 @@ class _ForumRoomState extends State<ForumRoom> {
       String sender, String image, String message, String name) {
     return sender == useruid[0]
         ? Align(
-      alignment: Alignment.topLeft,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topLeft,
-          nip: BubbleNip.leftTop,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                    color: Colors.red[900], fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 50,
-                child: Row(
+            alignment: Alignment.topLeft,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topLeft,
+                nip: BubbleNip.leftTop,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      children: [Text("Image"), Icon(Icons.image)],
-                    )
+                    Text(
+                      name,
+                      style: TextStyle(
+                          color: Colors.red[900], fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [Text("Image"), Icon(Icons.image)],
+                          )
+                        ],
+                      ),
+                    ),
+                    Text(message)
                   ],
                 ),
               ),
-              Text(message)
-            ],
-          ),
-        ),
-      ),
-    )
+            ),
+          )
         : Align(
-      alignment: Alignment.topRight,
-      child: Container(
-        constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
-        child: Bubble(
-          margin: BubbleEdges.only(top: 10),
-          elevation: 0,
-          alignment: Alignment.topRight,
-          nip: BubbleNip.rightTop,
-          color: Colors.green[400],
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "You",
-                style: TextStyle(
-                    color: Colors.brown, fontWeight: FontWeight.bold),
+            alignment: Alignment.topRight,
+            child: Container(
+              constraints: BoxConstraints(minWidth: 100, maxWidth: 260),
+              child: Bubble(
+                margin: BubbleEdges.only(top: 10),
+                elevation: 0,
+                alignment: Alignment.topRight,
+                nip: BubbleNip.rightTop,
+                color: Colors.green[400],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "You",
+                      style: TextStyle(
+                          color: Colors.brown, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      message,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                message,
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          );
   }
 
   getSenderView(CustomClipper clipper, BuildContext context, String message,
-      String name, String time) =>
+          String name, String time) =>
       ChatBubble(
         clipper: clipper,
         alignment: Alignment.topRight,
@@ -3310,7 +3289,7 @@ class _ForumRoomState extends State<ForumRoom> {
                     text: '$message',
                     style: TextStyle(
                         color: Colors.black,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w600),
                   ),
                 ],
@@ -3323,7 +3302,7 @@ class _ForumRoomState extends State<ForumRoom> {
                     time,
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w500),
                   ),
                   Icon(
@@ -3339,7 +3318,7 @@ class _ForumRoomState extends State<ForumRoom> {
       );
 
   getReceiverView(
-      CustomClipper clipper, BuildContext context, message, name, time) =>
+          CustomClipper clipper, BuildContext context, message, name, time) =>
       ChatBubble(
         clipper: clipper,
         //backGroundColor: Color(0xff195e83),
@@ -3360,7 +3339,7 @@ class _ForumRoomState extends State<ForumRoom> {
                     text: '$message',
                     style: TextStyle(
                         color: Colors.green,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w600),
                   ),
                 ],
@@ -3373,7 +3352,7 @@ class _ForumRoomState extends State<ForumRoom> {
                     "$name $time",
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w500),
                   )
                 ],
@@ -3384,7 +3363,7 @@ class _ForumRoomState extends State<ForumRoom> {
       );
 
   getSenderReply(CustomClipper clipper, BuildContext context, String message,
-      String name, String time, reply, url, thumb) =>
+          String name, String time, reply, url, thumb) =>
       ChatBubble(
         clipper: clipper,
         alignment: Alignment.topRight,
@@ -3410,54 +3389,54 @@ class _ForumRoomState extends State<ForumRoom> {
                         children: <Widget>[
                           reply != ""
                               ? Text(
-                            reply.length <= 70
-                                ? reply.toString()
-                                : reply.toString().substring(0, 70) +
-                                "...",
-                            style: TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w700),
-                          )
+                                  reply.length <= 70
+                                      ? reply.toString()
+                                      : reply.toString().substring(0, 70) +
+                                          "...",
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.w700),
+                                )
                               : Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => ImageView(
-                                          url: thumb,
-                                          type: "image",
-                                        )),
-                                  );
-                                },
-                                child: Container(
-                                  color: Colors.grey[100],
-                                  height: 40,
-                                  width: 40,
-                                  child: Image.network(
-                                    thumb,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    name,
-                                    style: TextStyle(
-                                        color: Colors.green,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text("File message"),
-                                ],
-                              )
-                            ],
-                          )
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => ImageView(
+                                                    url: thumb,
+                                                    type: "image",
+                                                  )),
+                                        );
+                                      },
+                                      child: Container(
+                                        color: Colors.grey[100],
+                                        height: 40,
+                                        width: 40,
+                                        child: Image.network(
+                                          thumb,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          name,
+                                          style: TextStyle(
+                                              color: Colors.green,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Text("File message"),
+                                      ],
+                                    )
+                                  ],
+                                )
                         ],
                       ),
                     ),
@@ -3489,7 +3468,7 @@ class _ForumRoomState extends State<ForumRoom> {
                       "$time",
                       style: TextStyle(
                           color: Colors.red[900],
-                          fontFamily: 'Raleway-regular',
+                          fontFamily: 'Ubuntu',
                           fontWeight: FontWeight.w500),
                     ),
                   )
@@ -3509,7 +3488,7 @@ class _ForumRoomState extends State<ForumRoom> {
   }
 
   getReceiverReply(CustomClipper clipper, BuildContext context, message, name,
-      time, reply, thumb) =>
+          time, reply, thumb) =>
       ChatBubble(
         clipper: clipper,
         backGroundColor: Colors.white,
@@ -3533,54 +3512,54 @@ class _ForumRoomState extends State<ForumRoom> {
                         children: <Widget>[
                           reply != ""
                               ? Text(
-                            reply.length <= 70
-                                ? reply.toString()
-                                : reply.toString().substring(0, 70) +
-                                "...",
-                            style: TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w700),
-                          )
+                                  reply.length <= 70
+                                      ? reply.toString()
+                                      : reply.toString().substring(0, 70) +
+                                          "...",
+                                  style: TextStyle(
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.w700),
+                                )
                               : Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => ImageView(
-                                          url: thumb,
-                                          type: "image",
-                                        )),
-                                  );
-                                },
-                                child: Container(
-                                  color: Colors.grey[100],
-                                  height: 40,
-                                  width: 40,
-                                  child: Image.network(
-                                    thumb,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    name,
-                                    style: TextStyle(
-                                        color: Colors.green,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text("File message"),
-                                ],
-                              )
-                            ],
-                          )
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => ImageView(
+                                                    url: thumb,
+                                                    type: "image",
+                                                  )),
+                                        );
+                                      },
+                                      child: Container(
+                                        color: Colors.grey[100],
+                                        height: 40,
+                                        width: 40,
+                                        child: Image.network(
+                                          thumb,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          name,
+                                          style: TextStyle(
+                                              color: Colors.green,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Text("File message"),
+                                      ],
+                                    )
+                                  ],
+                                )
                         ],
                       ),
                     ),
@@ -3606,7 +3585,7 @@ class _ForumRoomState extends State<ForumRoom> {
                     "$time",
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         fontWeight: FontWeight.w500),
                   )
                 ],
@@ -3642,11 +3621,11 @@ class _ForumRoomState extends State<ForumRoom> {
     List<ForumModel> recs = await _forumHelper.getMessages();
     if (recs.length > 0) {
       http.Response response =
-      await http.post('http://rada.uonbi.ac.ke/radaweb/api/getmessages',
-          /*'http://192.168.8.103/LaravelPusher/public/api/getmessages',*/
-          headers: {"Accept": "application/json"},
-          /*body: {'time': recs[recs.length - 1].time});*/
-          body: {'time': recs[recs.length - 1].time});
+          await http.post('http://rada.uonbi.ac.ke/radaweb/api/getmessages',
+              /*'http://192.168.8.103/LaravelPusher/public/api/getmessages',*/
+              headers: {"Accept": "application/json"},
+              /*body: {'time': recs[recs.length - 1].time});*/
+              body: {'time': recs[recs.length - 1].time});
 
       print(response.body);
 
@@ -3718,9 +3697,9 @@ class _ForumRoomState extends State<ForumRoom> {
       }
     } else {
       http.Response response =
-      await http.post('http://rada.uonbi.ac.ke/radaweb/api/getallmessages',
-          /*'http://192.168.8.103/LaravelPusher/public/api/getmessages',*/
-          headers: {"Accept": "application/json"}, body: {'time': "0"});
+          await http.post('http://rada.uonbi.ac.ke/radaweb/api/getallmessages',
+              /*'http://192.168.8.103/LaravelPusher/public/api/getmessages',*/
+              headers: {"Accept": "application/json"}, body: {'time': "0"});
 
       print(response.body);
 
@@ -3765,12 +3744,12 @@ class _ForumRoomState extends State<ForumRoom> {
 
   void deleteMessage(String message_id) async {
     http.Response response =
-    await http.post('http://rada.uonbi.ac.ke/radaweb/api/delete',
-        /*'http://192.168.8.103/LaravelPusher/public/api/delete',*/
-        headers: {
+        await http.post('http://rada.uonbi.ac.ke/radaweb/api/delete',
+            /*'http://192.168.8.103/LaravelPusher/public/api/delete',*/
+            headers: {
           "Accept": "application/json"
         }, body: {
-          'message_id': message_id,
-        });
+      'message_id': message_id,
+    });
   }
 }

@@ -89,7 +89,6 @@ class _MentorsState extends State<Mentors> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-
         appBar: AppBar(
           bottom: TabBar(
             labelColor: Colors.black,
@@ -105,25 +104,27 @@ class _MentorsState extends State<Mentors> {
           backgroundColor: Colors.grey[100],
           elevation: 0,
           centerTitle: false,
-          leading: Platform.isIOS?GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 27,
-            ),
-          ):GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: 27,
-            ),
-          ),
+          leading: Platform.isIOS
+              ? GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.green,
+                    size: 27,
+                  ),
+                )
+              : GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.green,
+                    size: 27,
+                  ),
+                ),
           title: NeumorphicText(
             "Mentors",
             style: NeumorphicStyle(
@@ -133,8 +134,8 @@ class _MentorsState extends State<Mentors> {
             ),
             textStyle: NeumorphicTextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold //customize size here
-              // AND others usual text style properties (fontFamily, fontWeight, ...)
-            ),
+                // AND others usual text style properties (fontFamily, fontWeight, ...)
+                ),
           ),
         ),
         //body: mentorsList(),
@@ -152,7 +153,7 @@ class _MentorsState extends State<Mentors> {
             "Request",
             style: TextStyle(fontSize: 12),
           ),
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.green,
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (ctx) => MentorshipRequest()));
@@ -166,44 +167,44 @@ class _MentorsState extends State<Mentors> {
     /*return newsList.length == 0*/
     return newsList.length == 0
         ? Center(
-      child: Text("No Items"),
-    )
+            child: Text("No Items"),
+          )
         : ListView.builder(
-        physics: const AlwaysScrollableScrollPhysics(),
-        itemCount: newsList.length,
-        itemBuilder: (_, int index) {
-          return Column(
-            children: <Widget>[
-              SizedBox(
-                height: 10,
-              ),
-              index % 2 == 0
-                  ? ListTile(
-                title: Text(
-                  "Mentor: " + newsList[index]["type"],
-                  style: TextStyle(color: Colors.black),
-                ),
-                subtitle: Text(
-                  "Year of study: ${newsList[index]["year_of_study"]}\nStatus: Processing",
-                  style:
-                  TextStyle(color: Colors.black.withAlpha(170)),
-                ),
-              )
-                  : ListTile(
-                title: Text(
-                  "Mentor " + newsList[index]["type"],
-                  style: TextStyle(color: Colors.black),
-                ),
-                subtitle: Text(
-                  "Year of study: ${newsList[index]["year_of_study"]}\nStatus: Processing",
-                  style:
-                  TextStyle(color: Colors.black.withAlpha(170)),
-                ),
-              ),
-              Divider()
-            ],
-          );
-        });
+            physics: const AlwaysScrollableScrollPhysics(),
+            itemCount: newsList.length,
+            itemBuilder: (_, int index) {
+              return Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 10,
+                  ),
+                  index % 2 == 0
+                      ? ListTile(
+                          title: Text(
+                            "Mentor: " + newsList[index]["type"],
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          subtitle: Text(
+                            "Year of study: ${newsList[index]["year_of_study"]}\nStatus: Processing",
+                            style:
+                                TextStyle(color: Colors.black.withAlpha(170)),
+                          ),
+                        )
+                      : ListTile(
+                          title: Text(
+                            "Mentor " + newsList[index]["type"],
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          subtitle: Text(
+                            "Year of study: ${newsList[index]["year_of_study"]}\nStatus: Processing",
+                            style:
+                                TextStyle(color: Colors.black.withAlpha(170)),
+                          ),
+                        ),
+                  Divider()
+                ],
+              );
+            });
   }
 
   void getContacts(String uid) async {
@@ -271,14 +272,14 @@ class _MentorsState extends State<Mentors> {
                         itemCount: snap.data.documents.length,
                         itemBuilder: (_, int index) {
                           final DocumentSnapshot document =
-                          snap.data.documents[index];
+                              snap.data.documents[index];
                           final dynamic title = document['name'];
                           final dynamic image = document['image'];
                           final dynamic status = document['status'.toString()];
                           final dynamic mentees =
-                          document['mentees'].toString();
+                              document['mentees'].toString();
                           final dynamic user_id =
-                          document['user_id'].toString();
+                              document['user_id'].toString();
 
                           if (data.contains(user_id)) {
                             return mentorsCard(title, image, status,
@@ -300,7 +301,7 @@ class _MentorsState extends State<Mentors> {
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
-                            fontFamily: 'Raleway-regular'),
+                            fontFamily: 'Ubuntu'),
                       ),
                     );
                   }
@@ -325,7 +326,7 @@ class _MentorsState extends State<Mentors> {
             style: NeumorphicStyle(
               shape: NeumorphicShape.flat,
               boxShape:
-              NeumorphicBoxShape.roundRect(BorderRadius.circular(5.0)),
+                  NeumorphicBoxShape.roundRect(BorderRadius.circular(5.0)),
               depth: 0,
               lightSource: LightSource.topLeft,
               color: Colors.grey[200],
@@ -338,11 +339,11 @@ class _MentorsState extends State<Mentors> {
                       context,
                       MaterialPageRoute(
                           builder: (ctx) => MentorshipRoom(
-                            id: document.documentID,
-                            title: title,
-                            image: image,
-                            type: widget.type,
-                          )));
+                                id: document.documentID,
+                                title: title,
+                                image: image,
+                                type: widget.type,
+                              )));
                 },
                 isThreeLine: true,
                 contentPadding: EdgeInsets.only(top: 0, right: 10),
@@ -416,7 +417,7 @@ class _MentorsState extends State<Mentors> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.lightGreenAccent),
         );

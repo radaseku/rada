@@ -64,83 +64,85 @@ class _CounsellorsState extends State<Counsellors> {
       body: DefaultTabController(
         length: 2,
         child: Scaffold(
-          appBar: Platform.isIOS?AppBar(
-            backgroundColor: Colors.white,
-            bottom: TabBar(
-              isScrollable: false,
-              labelColor: Colors.black,
-              indicatorColor: Colors.green[900],
-              tabs: [
-                Tab(text: "Conversations"),
-                Tab(
-                  text: "Counsellors",
+          appBar: Platform.isIOS
+              ? AppBar(
+                  backgroundColor: Colors.white,
+                  bottom: TabBar(
+                    isScrollable: false,
+                    labelColor: Colors.black,
+                    indicatorColor: Colors.green[900],
+                    tabs: [
+                      Tab(text: "Conversations"),
+                      Tab(
+                        text: "Counsellors",
+                      ),
+                    ],
+                  ),
+                  title: NeumorphicText(
+                    "Rada Counselling",
+                    style: NeumorphicStyle(
+                      depth: 0, //customize depth here
+                      color: greenAccentColor,
+                      shape: NeumorphicShape.convex, //customize color here
+                    ),
+                    textStyle: NeumorphicTextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold //customize size here
+                        // AND others usual text style properties (fontFamily, fontWeight, ...)
+                        ),
+                  ),
+                  centerTitle: true,
+                  elevation: 0,
+                  leading: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.green,
+                      size: 27,
+                    ),
+                  ),
+                )
+              : AppBar(
+                  backgroundColor: Colors.white,
+                  bottom: TabBar(
+                    isScrollable: false,
+                    labelColor: Colors.black,
+                    indicatorColor: Colors.green,
+                    tabs: [
+                      Tab(text: "Conversations"),
+                      Tab(
+                        text: "Counsellors",
+                      ),
+                    ],
+                  ),
+                  title: NeumorphicText(
+                    "Rada Counselling",
+                    style: NeumorphicStyle(
+                      depth: 0, //customize depth here
+                      color: greenAccentColor,
+                      shape: NeumorphicShape.convex, //customize color here
+                    ),
+                    textStyle: NeumorphicTextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold //customize size here
+                        // AND others usual text style properties (fontFamily, fontWeight, ...)
+                        ),
+                  ),
+                  centerTitle: true,
+                  elevation: 0,
+                  leading: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.green,
+                      size: 27,
+                    ),
+                  ),
                 ),
-              ],
-            ),
-            title: NeumorphicText(
-              "Rada Counselling",
-              style: NeumorphicStyle(
-                depth: 0, //customize depth here
-                color: greenAccentColor,
-                shape: NeumorphicShape.convex, //customize color here
-              ),
-              textStyle: NeumorphicTextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold //customize size here
-                // AND others usual text style properties (fontFamily, fontWeight, ...)
-              ),
-            ),
-            centerTitle: true,
-            elevation: 0,
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-                size: 27,
-              ),
-            ),
-          ):AppBar(
-            backgroundColor: Colors.white,
-            bottom: TabBar(
-              isScrollable: false,
-              labelColor: Colors.black,
-              indicatorColor: Colors.green,
-              tabs: [
-                Tab(text: "Conversations"),
-                Tab(
-                  text: "Counsellors",
-                ),
-              ],
-            ),
-            title: NeumorphicText(
-              "Rada Counselling",
-              style: NeumorphicStyle(
-                depth: 0, //customize depth here
-                color: greenAccentColor,
-                shape: NeumorphicShape.convex, //customize color here
-              ),
-              textStyle: NeumorphicTextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold //customize size here
-                // AND others usual text style properties (fontFamily, fontWeight, ...)
-              ),
-            ),
-            centerTitle: true,
-            elevation: 0,
-            leading: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-                size: 27,
-              ),
-            ),
-          ),
           body: TabBarView(
             children: [
               roomsList(),
@@ -172,9 +174,7 @@ class _CounsellorsState extends State<Counsellors> {
             child: Text(
               "No Conversations",
               style: TextStyle(
-                  color: Colors.green,
-                  fontSize: 20,
-                  fontFamily: 'Raleway-regular'),
+                  color: Colors.green, fontSize: 20, fontFamily: 'Ubuntu'),
             ),
           );
         } else {
@@ -186,7 +186,7 @@ class _CounsellorsState extends State<Counsellors> {
                 itemCount: messageCount,
                 itemBuilder: (_, int index) {
                   final DocumentSnapshot document =
-                  snapshot.data.documents[index];
+                      snapshot.data.documents[index];
 
                   //baaad code
                   if (document["student"] == useruid[0]) {
@@ -217,19 +217,19 @@ class _CounsellorsState extends State<Counsellors> {
                                             builder: (ctx) => RoomTwo(
                                                 id: document.documentID,
                                                 name:
-                                                document["counsellor_name"],
+                                                    document["counsellor_name"],
                                                 image: document[
-                                                "counsellor_image"],
+                                                    "counsellor_image"],
                                                 status: document[
-                                                "counsellor_status"],
+                                                    "counsellor_status"],
                                                 counsellorid:
-                                                document["counsellor"],
+                                                    document["counsellor"],
                                                 studentid:
-                                                document["student"])));
+                                                    document["student"])));
                                   },
                                   isThreeLine: true,
                                   contentPadding:
-                                  EdgeInsets.only(top: 0, right: 10),
+                                      EdgeInsets.only(top: 0, right: 10),
                                   leading: Padding(
                                     padding: EdgeInsets.only(bottom: 5),
                                     child: Container(
@@ -239,27 +239,27 @@ class _CounsellorsState extends State<Counsellors> {
                                         style: NeumorphicStyle(
                                             shape: NeumorphicShape.flat,
                                             boxShape:
-                                            NeumorphicBoxShape.circle(),
+                                                NeumorphicBoxShape.circle(),
                                             depth: 0,
                                             lightSource: LightSource.topLeft,
                                             color: Colors.transparent),
                                         child: CachedNetworkImage(
                                           imageUrl:
-                                          document["counsellor_image"],
+                                              document["counsellor_image"],
                                           placeholder: (context, url) =>
                                               Center(child: circularProgress()),
                                           errorWidget: (context, url, error) =>
                                               Icon(Icons.error),
                                           imageBuilder:
                                               (context, imageProvider) =>
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  image: DecorationImage(
-                                                    image: imageProvider,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
+                                                  Container(
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: imageProvider,
+                                                fit: BoxFit.cover,
                                               ),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -281,7 +281,8 @@ class _CounsellorsState extends State<Counsellors> {
                                         document["counsellor_name"],
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
-                                            color: Color(0xff131D56)),
+                                            //color: Color(0xff131D56)),
+                                        color: Colors.teal),
                                       )),
                                   /*subtitle: Padding(
                                     padding: EdgeInsets.only(bottom: 15),
@@ -298,11 +299,11 @@ class _CounsellorsState extends State<Counsellors> {
                                     child: RichText(
                                       text: TextSpan(
                                         style:
-                                        Theme.of(context).textTheme.body1,
+                                            Theme.of(context).textTheme.body1,
                                         children: [
                                           TextSpan(
                                               text:
-                                              'Campus: ${document["counsellor_campus"].toString()}\n',
+                                                  'Campus: ${document["counsellor_campus"].toString()}\n',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w500,
                                                   color: Colors.black54)),
@@ -314,8 +315,8 @@ class _CounsellorsState extends State<Counsellors> {
                                         ),*/
                                           TextSpan(
                                               text:
-                                              /*'${document["counsellor_status"].toString()}',*/
-                                              'Hello there, say  something to me.',
+                                                  /*'${document["counsellor_status"].toString()}',*/
+                                                  'Hello there, say  something to me.',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w500,
                                                   color: Colors.green[400]))
@@ -363,12 +364,12 @@ class _CounsellorsState extends State<Counsellors> {
                                             image: document["student_image"],
                                             status: document["student_status"],
                                             counsellorid:
-                                            document["counsellor"],
+                                                document["counsellor"],
                                             studentid: document["student"])));
                               },
                               isThreeLine: true,
                               contentPadding:
-                              EdgeInsets.only(top: 0, right: 10),
+                                  EdgeInsets.only(top: 0, right: 10),
                               /*leading: Padding(padding: EdgeInsets.only(top: 10),child: Text(project.id.toString())),*/
                               leading: Padding(
                                 padding: EdgeInsets.only(bottom: 5),
@@ -390,13 +391,13 @@ class _CounsellorsState extends State<Counsellors> {
                                           Icon(Icons.error),
                                       imageBuilder: (context, imageProvider) =>
                                           Container(
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: imageProvider,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: imageProvider,
+                                            fit: BoxFit.cover,
                                           ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -406,7 +407,7 @@ class _CounsellorsState extends State<Counsellors> {
                                   child: Text(
                                     document["student_name"],
                                     style:
-                                    TextStyle(fontWeight: FontWeight.w600),
+                                        TextStyle(fontWeight: FontWeight.w600),
                                   )),
                               subtitle: Padding(
                                   padding: EdgeInsets.only(bottom: 15),
@@ -448,7 +449,7 @@ class _CounsellorsState extends State<Counsellors> {
     return StreamBuilder<QuerySnapshot>(
       stream: firestore
           .where("visible", isEqualTo: true)
-      //.orderBy("created_at", descending: true)
+          //.orderBy("created_at", descending: true)
           .snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (!snapshot.hasData)
@@ -502,7 +503,7 @@ class _CounsellorsState extends State<Counsellors> {
             style: NeumorphicStyle(
                 shape: NeumorphicShape.flat,
                 boxShape:
-                NeumorphicBoxShape.roundRect(BorderRadius.circular(0.0)),
+                    NeumorphicBoxShape.roundRect(BorderRadius.circular(0.0)),
                 depth: 0,
                 lightSource: LightSource.topLeft,
                 color: Colors.white),
@@ -704,7 +705,7 @@ class _CounsellorsState extends State<Counsellors> {
             style: NeumorphicStyle(
               shape: NeumorphicShape.flat,
               boxShape:
-              NeumorphicBoxShape.roundRect(BorderRadius.circular(0.0)),
+                  NeumorphicBoxShape.roundRect(BorderRadius.circular(0.0)),
               depth: 0,
               lightSource: LightSource.topLeft,
               color: Colors.white,
@@ -781,7 +782,7 @@ class _CounsellorsState extends State<Counsellors> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.lightGreenAccent),
         );

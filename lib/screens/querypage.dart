@@ -82,83 +82,83 @@ class _QueryPageState extends State<QueryPage> {
     });
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: Platform.isIOS?AppBar(
-        backgroundColor: Colors.grey[100],
-        leading: GestureDetector(
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 27,
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          widget.name,
-          style: TextStyle(color: Colors.black),
-          textAlign: TextAlign.center,
-        ),
-        elevation: 0,
-        actions: <Widget>[
-          Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => AllIssues()));
-                },
+      appBar: Platform.isIOS
+          ? AppBar(
+              backgroundColor: Colors.grey[100],
+              leading: GestureDetector(
                 child: Icon(
-                  Icons.filter_list,
-                  size: 27,
+                  Icons.arrow_back_ios,
                   color: Colors.black,
+                  size: 27,
                 ),
-              )),
-        ],
-      ):AppBar(
-        backgroundColor: Colors.grey[100],
-        leading: GestureDetector(
-          child: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 27,
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          widget.name,
-          style: TextStyle(color: Colors.black),
-          textAlign: TextAlign.center,
-        ),
-        elevation: 0,
-        actions: <Widget>[
-          Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => AllIssues()));
+                  Navigator.pop(context);
                 },
+              ),
+              title: Text(
+                widget.name,
+                style: TextStyle(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+              elevation: 0,
+              actions: <Widget>[
+                Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => AllIssues()));
+                      },
+                      child: Icon(
+                        Icons.filter_list,
+                        size: 27,
+                        color: Colors.black,
+                      ),
+                    )),
+              ],
+            )
+          : AppBar(
+              backgroundColor: Colors.grey[100],
+              leading: GestureDetector(
                 child: Icon(
-                  Icons.filter_list,
-                  size: 27,
+                  Icons.arrow_back,
                   color: Colors.black,
+                  size: 27,
                 ),
-              )),
-        ],
-      ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              title: Text(
+                widget.name,
+                style: TextStyle(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+              elevation: 0,
+              actions: <Widget>[
+                Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (ctx) => AllIssues()));
+                      },
+                      child: Icon(
+                        Icons.filter_list,
+                        size: 27,
+                        color: Colors.black,
+                      ),
+                    )),
+              ],
+            ),
       body: SingleChildScrollView(
         child: widget.id == 1
             ? justiceForm()
             : widget.id == 2
-            ? academicForm()
-            : widget.id == 3
-            ? academicForm()
-            : widget.id == 4
-            ? appForm()
-            : othersForm(),
+                ? academicForm()
+                : widget.id == 3
+                    ? academicForm()
+                    : widget.id == 4 ? appForm() : othersForm(),
       ),
     );
   }
@@ -254,7 +254,7 @@ class _QueryPageState extends State<QueryPage> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.lightGreenAccent),
         );
@@ -284,7 +284,7 @@ class _QueryPageState extends State<QueryPage> {
             style: NeumorphicStyle(
                 shape: NeumorphicShape.flat,
                 boxShape:
-                NeumorphicBoxShape.roundRect(BorderRadius.circular(0)),
+                    NeumorphicBoxShape.roundRect(BorderRadius.circular(0)),
                 depth: 0,
                 lightSource: LightSource.topLeft,
                 color: Colors.grey[100]),
@@ -302,30 +302,30 @@ class _QueryPageState extends State<QueryPage> {
                         borderRadius: BorderRadius.circular(0),
                       ),
                       contentPadding:
-                      EdgeInsets.only(top: 0, left: 10, bottom: 0)),
+                          EdgeInsets.only(top: 0, left: 10, bottom: 0)),
                   isEmpty: _color == '',
                   child: DropdownButtonHideUnderline(
                     child: DropdownButton(
                       hint: _dropDownValue2 == null
                           ? Text('Anonimity',
-                          style: TextStyle(
-                              color: Colors.grey[600],
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Raleway-regular',
-                              fontSize: 15))
+                              style: TextStyle(
+                                  color: Colors.grey[600],
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Ubuntu',
+                                  fontSize: 15))
                           : Text(
-                        _dropDownValue2,
-                        style: TextStyle(
-                            color: Colors.grey[600],
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Raleway-regular',
-                            fontSize: 15),
-                      ),
+                              _dropDownValue2,
+                              style: TextStyle(
+                                  color: Colors.grey[600],
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Ubuntu',
+                                  fontSize: 15),
+                            ),
                       isExpanded: true,
                       iconSize: 30.0,
                       style: TextStyle(color: Colors.grey[600]),
                       items: ['Anonymous', 'Open'].map(
-                            (val) {
+                        (val) {
                           return DropdownMenuItem<String>(
                             value: val,
                             child: Text(
@@ -378,93 +378,93 @@ class _QueryPageState extends State<QueryPage> {
         _dropDownValue2 == 'Anonymous'
             ? SizedBox()
             : Padding(
-          padding: EdgeInsets.only(left: 10, right: 10, top: 10),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(0),
-            child: TextField(
-              style: TextStyle(color: Colors.black, fontSize: 15),
-              controller: regController,
-              cursorColor: Colors.grey[600],
-              cursorWidth: 3.0,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[100],
-                hintText: 'Registration Number',
-                hintStyle: TextStyle(color: Colors.grey[500]),
-                contentPadding: const EdgeInsets.only(
-                    top: 15, bottom: 15, left: 15, right: 15),
-                focusedBorder: OutlineInputBorder(
-                  // borderSide: BorderSide(color: Colors.grey[200]),
-                  borderSide: BorderSide(color: Colors.green[300]),
+                padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(0),
-                ),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green[300]),
-                  borderRadius: BorderRadius.circular(0),
-                ),
-              ),
-            ),
-          ),
-        ),
-        _dropDownValue2 == 'Anonymous'
-            ? SizedBox()
-            : Padding(
-          padding: EdgeInsets.only(left: 10, right: 10, top: 10),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(0),
-            child: Container(
-              color: Colors.grey[100],
-              child: Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton(
-                    focusColor: Colors.grey[100],
-                    hint: _dropDownValue == null
-                        ? Text(
-                      'Select Faculty',
-                      style: TextStyle(
-                          color: Colors.grey[600],
-                          fontFamily: 'Raleway-regular',
-                          fontSize: 15),
-                    )
-                        : Text(
-                      _dropDownValue,
-                      style: TextStyle(
-                          color: Colors.grey[600],
-                          fontFamily: 'Raleway-regular',
-                          fontSize: 18),
+                  child: TextField(
+                    style: TextStyle(color: Colors.black, fontSize: 15),
+                    controller: regController,
+                    cursorColor: Colors.grey[600],
+                    cursorWidth: 3.0,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                      hintText: 'Registration Number',
+                      hintStyle: TextStyle(color: Colors.grey[500]),
+                      contentPadding: const EdgeInsets.only(
+                          top: 15, bottom: 15, left: 15, right: 15),
+                      focusedBorder: OutlineInputBorder(
+                        // borderSide: BorderSide(color: Colors.grey[200]),
+                        borderSide: BorderSide(color: Colors.green[300]),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green[300]),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
                     ),
-                    isExpanded: true,
-                    iconSize: 30.0,
-                    style: TextStyle(color: Colors.grey[600]),
-                    items: newsList.map(
-                          (val) {
-                        return DropdownMenuItem<String>(
-                          value: val["id"].toString(),
-                          child: Text(val["name"]),
-                        );
-                      },
-                    ).toList(),
-                    onChanged: (val) {
-                      //getCampuses(int.parse(val));
-                      newsList.forEach((element) {
-                        if (element["id"].toString() == val) {
-                          setState(() {
-                            _dropDownValue = element["name"];
-                          });
-                        }
-                      });
-                      /*setState(() {
-                                                  _dropDownValue = val;
-                                                });*/
-                    },
                   ),
                 ),
               ),
-            ),
-          ),
-        ),
+        _dropDownValue2 == 'Anonymous'
+            ? SizedBox()
+            : Padding(
+                padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(0),
+                  child: Container(
+                    color: Colors.grey[100],
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: DropdownButtonHideUnderline(
+                        child: DropdownButton(
+                          focusColor: Colors.grey[100],
+                          hint: _dropDownValue == null
+                              ? Text(
+                                  'Select Faculty',
+                                  style: TextStyle(
+                                      color: Colors.grey[600],
+                                      fontFamily: 'Ubuntu',
+                                      fontSize: 15),
+                                )
+                              : Text(
+                                  _dropDownValue,
+                                  style: TextStyle(
+                                      color: Colors.grey[600],
+                                      fontFamily: 'Ubuntu',
+                                      fontSize: 18),
+                                ),
+                          isExpanded: true,
+                          iconSize: 30.0,
+                          style: TextStyle(color: Colors.grey[600]),
+                          items: newsList.map(
+                            (val) {
+                              return DropdownMenuItem<String>(
+                                value: val["id"].toString(),
+                                child: Text(val["name"]),
+                              );
+                            },
+                          ).toList(),
+                          onChanged: (val) {
+                            //getCampuses(int.parse(val));
+                            newsList.forEach((element) {
+                              if (element["id"].toString() == val) {
+                                setState(() {
+                                  _dropDownValue = element["name"];
+                                });
+                              }
+                            });
+                            /*setState(() {
+                                                  _dropDownValue = val;
+                                                });*/
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         Padding(
           padding: EdgeInsets.only(left: 10, right: 10, top: 10),
           child: TextFormField(
@@ -532,35 +532,35 @@ class _QueryPageState extends State<QueryPage> {
         ),
         _switcher == 0
             ? Padding(
-          padding: EdgeInsets.only(left: 10, right: 10, top: 10),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(0),
-            child: TextField(
-              style: TextStyle(color: Colors.black, fontSize: 15),
-              controller: regController,
-              cursorColor: Colors.grey[600],
-              cursorWidth: 3.0,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[100],
-                hintText: 'Registration Number',
-                hintStyle: TextStyle(color: Colors.grey[500]),
-                contentPadding: const EdgeInsets.only(
-                    top: 15, bottom: 15, left: 15, right: 15),
-                focusedBorder: OutlineInputBorder(
-                  // borderSide: BorderSide(color: Colors.grey[200]),
-                  borderSide: BorderSide(color: Colors.green[300]),
+                padding: EdgeInsets.only(left: 10, right: 10, top: 10),
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(0),
+                  child: TextField(
+                    style: TextStyle(color: Colors.black, fontSize: 15),
+                    controller: regController,
+                    cursorColor: Colors.grey[600],
+                    cursorWidth: 3.0,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                      hintText: 'Registration Number',
+                      hintStyle: TextStyle(color: Colors.grey[500]),
+                      contentPadding: const EdgeInsets.only(
+                          top: 15, bottom: 15, left: 15, right: 15),
+                      focusedBorder: OutlineInputBorder(
+                        // borderSide: BorderSide(color: Colors.grey[200]),
+                        borderSide: BorderSide(color: Colors.green[300]),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green[300]),
+                        borderRadius: BorderRadius.circular(0),
+                      ),
+                    ),
+                  ),
                 ),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green[300]),
-                  borderRadius: BorderRadius.circular(0),
-                ),
-              ),
-            ),
-          ),
-        )
+              )
             : SizedBox(),
         /*Padding(
           padding: EdgeInsets.only(left: 10, right: 10, top: 10),
@@ -602,24 +602,24 @@ class _QueryPageState extends State<QueryPage> {
                     focusColor: Colors.grey[100],
                     hint: _dropDownValue == null
                         ? Text(
-                      'Select Faculty',
-                      style: TextStyle(
-                          color: Colors.grey[600],
-                          fontFamily: 'Raleway-regular',
-                          fontSize: 15),
-                    )
+                            'Select Faculty',
+                            style: TextStyle(
+                                color: Colors.grey[600],
+                                fontFamily: 'Ubuntu',
+                                fontSize: 15),
+                          )
                         : Text(
-                      _dropDownValue,
-                      style: TextStyle(
-                          color: Colors.grey[600],
-                          fontFamily: 'Raleway-regular',
-                          fontSize: 18),
-                    ),
+                            _dropDownValue,
+                            style: TextStyle(
+                                color: Colors.grey[600],
+                                fontFamily: 'Ubuntu',
+                                fontSize: 18),
+                          ),
                     isExpanded: true,
                     iconSize: 30.0,
                     style: TextStyle(color: Colors.grey[600]),
                     items: newsList.map(
-                          (val) {
+                      (val) {
                         return DropdownMenuItem<String>(
                           value: val["id"].toString(),
                           child: Text(val["name"]),

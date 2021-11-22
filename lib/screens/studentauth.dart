@@ -63,32 +63,33 @@ class _StudentAuthState extends State<StudentAuth> {
       child: Container(
         child: Builder(builder: (ctx) {
           return Scaffold(
-            //backgroundColor: Color(0xff195e83),
+              //backgroundColor: Color(0xff195e83),
               backgroundColor: Colors.white,
-              appBar: Platform.isIOS?AppBar(
-                backgroundColor: Colors.grey[100],
-                elevation: 0,
-                leading: GestureDetector(
-                  onTap: (){
-
-                    Navigator.pop(context);
-                  },
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.black,
-                    size: 27,
-                  ),
-                ),
-              ):SizedBox(
-                height: 0,
-                width: 0,
-              ),
+              appBar: Platform.isIOS
+                  ? AppBar(
+                      backgroundColor: Colors.grey[100],
+                      elevation: 0,
+                      leading: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.black,
+                          size: 27,
+                        ),
+                      ),
+                    )
+                  : SizedBox(
+                      height: 0,
+                      width: 0,
+                    ),
               body: SingleChildScrollView(
                 child: Container(
                   height: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/seku.jpeg'),
+                        image: AssetImage('assets/images/serada.jpeg'),
                         fit: BoxFit.cover),
                     //color: Color(0xff195e83),
                     color: Colors.white,
@@ -106,7 +107,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                       key: _formKey,
                                       child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.end,
+                                              MainAxisAlignment.end,
                                           children: <Widget>[
                                             SizedBox(
                                               height: 50,
@@ -118,7 +119,7 @@ class _StudentAuthState extends State<StudentAuth> {
 
                                             ClipRRect(
                                               borderRadius:
-                                              BorderRadius.circular(5),
+                                                  BorderRadius.circular(5),
                                               child: TextField(
                                                 style: TextStyle(
                                                     color: Colors.grey[600],
@@ -130,7 +131,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   filled: true,
                                                   fillColor: Colors.grey[100],
                                                   hintText:
-                                                  'Registration Number',
+                                                      'Registration Number',
                                                   //prefixIcon: Icon(Icons.search,color: Colors.grey[400],size: 27,),
                                                   suffixIcon: Icon(
                                                     Icons.check,
@@ -140,29 +141,29 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   hintStyle: TextStyle(
                                                       color: Colors.green[500]),
                                                   contentPadding:
-                                                  const EdgeInsets.only(
-                                                      top: 18,
-                                                      bottom: 18,
-                                                      left: 15,
-                                                      right: 15),
+                                                      const EdgeInsets.only(
+                                                          top: 18,
+                                                          bottom: 18,
+                                                          left: 15,
+                                                          right: 15),
                                                   focusedBorder:
-                                                  OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                     // borderSide: BorderSide(color: Colors.grey[200]),
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.green[300]),
+                                                            Colors.green[300]),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.circular(
+                                                            0),
                                                   ),
                                                   enabledBorder:
-                                                  UnderlineInputBorder(
+                                                      UnderlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.green[300]),
+                                                            Colors.green[300]),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.circular(
+                                                            0),
                                                   ),
                                                 ),
                                               ),
@@ -172,14 +173,14 @@ class _StudentAuthState extends State<StudentAuth> {
                                             ),
                                             ClipRRect(
                                               borderRadius:
-                                              BorderRadius.circular(5),
+                                                  BorderRadius.circular(5),
                                               child: TextField(
                                                 style: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 18),
                                                 controller: passwordController,
                                                 obscureText:
-                                                _passpasswordVisible,
+                                                    _passpasswordVisible,
                                                 cursorWidth: 3.0,
                                                 cursorColor: Colors.red,
                                                 decoration: InputDecoration(
@@ -191,29 +192,29 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   hintStyle: TextStyle(
                                                       color: Colors.green[500]),
                                                   contentPadding:
-                                                  const EdgeInsets.only(
-                                                      top: 18,
-                                                      bottom: 18,
-                                                      left: 15,
-                                                      right: 15),
+                                                      const EdgeInsets.only(
+                                                          top: 18,
+                                                          bottom: 18,
+                                                          left: 15,
+                                                          right: 15),
                                                   focusedBorder:
-                                                  OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                     // borderSide: BorderSide(color: Colors.grey[200]),
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.green[300]),
+                                                            Colors.green[300]),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.circular(
+                                                            0),
                                                   ),
                                                   enabledBorder:
-                                                  UnderlineInputBorder(
+                                                      UnderlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                        Colors.green[400]),
+                                                            Colors.green[400]),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.circular(
+                                                            0),
                                                   ),
                                                   //labelText: 'Password',
                                                   suffixIcon: IconButton(
@@ -228,10 +229,10 @@ class _StudentAuthState extends State<StudentAuth> {
                                                       setState(() {
                                                         if (!_passpasswordVisible) {
                                                           _passpasswordVisible =
-                                                          true;
+                                                              true;
                                                         } else if (_passpasswordVisible) {
                                                           _passpasswordVisible =
-                                                          false;
+                                                              false;
                                                         }
                                                       });
                                                     },
@@ -247,7 +248,7 @@ class _StudentAuthState extends State<StudentAuth> {
                                                   textAlign: TextAlign.right,
                                                   style: TextStyle(
                                                       fontSize: 16,
-                                                      fontFamily:'Raleway-regular',
+                                                      fontFamily:'Ubuntu',
                                                       fontWeight: FontWeight.w700,
                                                       color: Colors.white
                                                   ),
@@ -259,110 +260,109 @@ class _StudentAuthState extends State<StudentAuth> {
 
                                             _showButton
                                                 ? ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.circular(
-                                                  5),
-                                              child: ArgonButton(
-                                                height: 50,
-                                                width:
-                                                MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                borderRadius: 0.0,
-                                                color: Color(0xff4caf50),
-                                                roundLoadingShape: true,
-                                                elevation: 0,
-                                                child: Text(
-                                                  "Authenticate",
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontFamily:
-                                                      'Raleway-regular',
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold),
-                                                ),
-                                                loader: Container(
-                                                  padding:
-                                                  EdgeInsets.all(10),
-                                                  child: SpinKitDualRing(
-                                                    color: Colors.green[100],
-                                                  ),
-                                                ),
-                                                onTap: (startLoading,
-                                                    stopLoading,
-                                                    btnState) {
-                                                  setState(() {
-                                                    _showButton = false;
-                                                  });
-                                                  //startLoading();
-                                                  if (regController
-                                                      .text.isEmpty ||
-                                                      passwordController
-                                                          .text.isEmpty) {
-                                                    setState(() {
-                                                      _showButton = true;
-                                                    });
-                                                    Flushbar(
-                                                      title:
-                                                      "Authentication Failed",
-                                                      message:
-                                                      "All fields are required",
-                                                      icon: Icon(
-                                                        Icons
-                                                            .error_outline,
-                                                        color:
-                                                        Colors.white,
-                                                        size: 30,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                    child: ArgonButton(
+                                                      height: 50,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                              .size
+                                                              .width,
+                                                      borderRadius: 0.0,
+                                                      color: Color(0xff4caf50),
+                                                      roundLoadingShape: true,
+                                                      elevation: 0,
+                                                      child: Text(
+                                                        "Authenticate",
+                                                        style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontFamily:
+                                                                'Ubuntu',
+                                                            color: Colors.white,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
                                                       ),
-                                                      duration: Duration(
-                                                          seconds: 3),
-                                                      isDismissible:
-                                                      false,
-                                                      backgroundColor:
-                                                      Colors
-                                                          .red,
-                                                    )..show(context);
-                                                  } else if (regController
-                                                      .text.isEmpty &&
-                                                      passwordController
-                                                          .text.isEmpty) {
-                                                    setState(() {
-                                                      _showButton = true;
-                                                    });
-                                                    Flushbar(
-                                                      title:
-                                                      "Login Failed",
-                                                      message:
-                                                      "All fields are required",
-                                                      icon: Icon(
-                                                        Icons
-                                                            .error_outline,
-                                                        color:
-                                                        Colors.white,
-                                                        size: 30,
+                                                      loader: Container(
+                                                        padding:
+                                                            EdgeInsets.all(10),
+                                                        child: SpinKitDualRing(
+                                                          color:
+                                                              Colors.green[100],
+                                                        ),
                                                       ),
-                                                      duration: Duration(
-                                                          seconds: 3),
-                                                      isDismissible:
-                                                      false,
-                                                      backgroundColor:
-                                                      Colors
-                                                          .red,
-                                                    )..show(context);
-                                                  }
-                                                  _authenticate(
-                                                      regController.text
-                                                          .trim(),
-                                                      passwordController
-                                                          .text
-                                                          .trim());
+                                                      onTap: (startLoading,
+                                                          stopLoading,
+                                                          btnState) {
+                                                        setState(() {
+                                                          _showButton = false;
+                                                        });
+                                                        //startLoading();
+                                                        if (regController
+                                                                .text.isEmpty ||
+                                                            passwordController
+                                                                .text.isEmpty) {
+                                                          setState(() {
+                                                            _showButton = true;
+                                                          });
+                                                          Flushbar(
+                                                            title:
+                                                                "Authentication Failed",
+                                                            message:
+                                                                "All fields are required",
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .error_outline,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: 30,
+                                                            ),
+                                                            duration: Duration(
+                                                                seconds: 3),
+                                                            isDismissible:
+                                                                false,
+                                                            backgroundColor:
+                                                                Colors.red,
+                                                          )..show(context);
+                                                        } else if (regController
+                                                                .text.isEmpty &&
+                                                            passwordController
+                                                                .text.isEmpty) {
+                                                          setState(() {
+                                                            _showButton = true;
+                                                          });
+                                                          Flushbar(
+                                                            title:
+                                                                "Login Failed",
+                                                            message:
+                                                                "All fields are required",
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .error_outline,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: 30,
+                                                            ),
+                                                            duration: Duration(
+                                                                seconds: 3),
+                                                            isDismissible:
+                                                                false,
+                                                            backgroundColor:
+                                                                Colors.red,
+                                                          )..show(context);
+                                                        }
+                                                        _authenticate(
+                                                            regController.text
+                                                                .trim(),
+                                                            passwordController
+                                                                .text
+                                                                .trim());
 
-                                                  //stopLoading();
-                                                },
-                                              ),
-                                            )
+                                                        //stopLoading();
+                                                      },
+                                                    ),
+                                                  )
                                                 : circularProgress(),
                                             SizedBox(
                                               height: 25,
@@ -452,7 +452,7 @@ class _StudentAuthState extends State<StudentAuth> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.lightGreenAccent),
         );

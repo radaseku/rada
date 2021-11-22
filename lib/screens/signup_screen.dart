@@ -114,30 +114,31 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       key: scaffoldKey,
       //backgroundColor: Color(0xff1979a9),
-      appBar: Platform.isIOS?AppBar(
-        backgroundColor: Colors.grey[100],
-        elevation: 0,
-        leading: GestureDetector(
-          onTap: (){
-
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 27,
-          ),
-        ),
-      ):SizedBox(
-        height: 0,
-        width: 0,
-      ),
+      appBar: Platform.isIOS
+          ? AppBar(
+              backgroundColor: Colors.grey[100],
+              elevation: 0,
+              leading: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
+                  size: 27,
+                ),
+              ),
+            )
+          : SizedBox(
+              height: 0,
+              width: 0,
+            ),
       body: SingleChildScrollView(
         child: Container(
             height: MediaQuery.of(context).size.height,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/seku.jpeg'),
+                  image: AssetImage('assets/images/serada.jpeg'),
                   fit: BoxFit.cover),
               //color: Color(0xff195e83),
               color: Colors.white,
@@ -161,7 +162,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             color: Colors.grey[100]),
                         child: TextField(
                           style:
-                          TextStyle(fontSize: 18, color: Colors.grey[600]),
+                              TextStyle(fontSize: 18, color: Colors.grey[600]),
                           controller: nameController,
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.only(
@@ -171,12 +172,14 @@ class _SignupScreenState extends State<SignupScreen> {
                             hintText: 'User Name',
                             hintStyle: TextStyle(color: Colors.grey[600]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green[300]),
-                              borderRadius: BorderRadius.circular(0),
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(32.0)),
                             ),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green[300]),
-                              borderRadius: BorderRadius.circular(0),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(32.0)),
                             ),
                           ),
                         ),
@@ -192,7 +195,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             color: Colors.grey),
                         child: TextField(
                           style:
-                          TextStyle(fontSize: 18, color: Colors.grey[600]),
+                              TextStyle(fontSize: 18, color: Colors.grey[600]),
                           controller: emailController,
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.only(
@@ -202,12 +205,14 @@ class _SignupScreenState extends State<SignupScreen> {
                             hintText: 'Email Address',
                             hintStyle: TextStyle(color: Colors.grey[600]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green[300]),
-                              borderRadius: BorderRadius.circular(0),
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(32.0)),
                             ),
-                            enabledBorder: UnderlineInputBorder(
+                            enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.green[300]),
-                              borderRadius: BorderRadius.circular(0),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(32.0)),
                             ),
                           ),
                         ),
@@ -223,7 +228,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             color: Colors.grey[100]),
                         child: TextField(
                           style:
-                          TextStyle(fontSize: 18, color: Colors.grey[600]),
+                              TextStyle(fontSize: 18, color: Colors.grey[600]),
                           controller: phoneController,
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.only(
@@ -233,11 +238,11 @@ class _SignupScreenState extends State<SignupScreen> {
                             hintText: 'Phone Number',
                             hintStyle: TextStyle(color: Colors.grey[600]),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green[300]),
+                              borderSide: BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(0),
                             ),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.green[300]),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(0),
                             ),
                           ),
@@ -246,238 +251,235 @@ class _SignupScreenState extends State<SignupScreen> {
                       fetched == false
                           ? SizedBox()
                           : Container(
-                        height: 60,
-                        child: Neumorphic(
-                          margin: EdgeInsets.only(top: 7),
-                          style: NeumorphicStyle(
-                              shape: NeumorphicShape.flat,
-                              boxShape: NeumorphicBoxShape.roundRect(
-                                  BorderRadius.circular(5)),
-                              depth: 0,
-                              lightSource: LightSource.topLeft,
-                              color: Colors.grey[100]),
-                          child: FormField(
-                            builder: (FormFieldState state) {
-                              return InputDecorator(
-                                decoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder(
-                                      // borderSide: BorderSide(color: Colors.grey[200]),
-                                      borderSide: BorderSide(
-                                          color: Colors.green[300]),
-                                      borderRadius:
-                                      BorderRadius.circular(0),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Colors.green[300]),
-                                      borderRadius:
-                                      BorderRadius.circular(0),
-                                    ),
-                                    contentPadding: EdgeInsets.only(
-                                        top: 5, left: 10, bottom: 5)),
-                                isEmpty: _color == '',
-                                child: new DropdownButtonHideUnderline(
-                                  child: DropdownButton(
-                                    focusColor: Colors.grey[100],
-                                    hint: _dropDownValue == null
-                                        ? Text(
-                                      'Select University',
-                                      style: TextStyle(
-                                          color: Colors.grey[600],
-                                          fontFamily:
-                                          'Raleway-regular',
-                                          fontSize: 18),
-                                    )
-                                        : Text(
-                                      _dropDownValue,
-                                      style: TextStyle(
-                                          color: Colors.grey[600],
-                                          fontFamily:
-                                          'Raleway-regular',
-                                          fontSize: 18),
-                                    ),
-                                    isExpanded: true,
-                                    iconSize: 30.0,
-                                    style: TextStyle(
-                                        color: Colors.grey[600]),
-                                    items: newsList.map(
-                                          (val) {
-                                        return DropdownMenuItem<String>(
-                                          value: val["id"].toString(),
-                                          child: Text(val["name"]),
-                                        );
-                                      },
-                                    ).toList(),
-                                    onChanged: (val) {
-                                      getCampuses(int.parse(val));
-                                      newsList.forEach((element) {
-                                        if (element["id"].toString() ==
-                                            val) {
-                                          setState(() {
-                                            _dropDownValue =
-                                            element["name"];
-                                          });
-                                        }
-                                      });
-                                      /*setState(() {
+                              height: 60,
+                              child: Neumorphic(
+                                margin: EdgeInsets.only(top: 7),
+                                style: NeumorphicStyle(
+                                    shape: NeumorphicShape.flat,
+                                    boxShape: NeumorphicBoxShape.roundRect(
+                                        BorderRadius.circular(5)),
+                                    depth: 0,
+                                    lightSource: LightSource.topLeft,
+                                    color: Colors.grey[100]),
+                                child: FormField(
+                                  builder: (FormFieldState state) {
+                                    return InputDecorator(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            // borderSide: BorderSide(color: Colors.grey[200]),
+                                            borderSide:
+                                                BorderSide(color: Colors.black),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(32.0)),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: Colors.black),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(32.0)),
+                                          ),
+                                          contentPadding: EdgeInsets.only(
+                                              top: 5, left: 10, bottom: 5)),
+                                      isEmpty: _color == '',
+                                      child: new DropdownButtonHideUnderline(
+                                        child: DropdownButton(
+                                          focusColor: Colors.grey[100],
+                                          hint: _dropDownValue == null
+                                              ? Text(
+                                                  'Select University',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontFamily: 'Ubuntu',
+                                                      fontSize: 18),
+                                                )
+                                              : Text(
+                                                  _dropDownValue,
+                                                  style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontFamily: 'Ubuntu',
+                                                      fontSize: 18),
+                                                ),
+                                          isExpanded: true,
+                                          iconSize: 30.0,
+                                          style: TextStyle(
+                                              color: Colors.grey[600]),
+                                          items: newsList.map(
+                                            (val) {
+                                              return DropdownMenuItem<String>(
+                                                value: val["id"].toString(),
+                                                child: Text(val["name"]),
+                                              );
+                                            },
+                                          ).toList(),
+                                          onChanged: (val) {
+                                            getCampuses(int.parse(val));
+                                            newsList.forEach((element) {
+                                              if (element["id"].toString() ==
+                                                  val) {
+                                                setState(() {
+                                                  _dropDownValue =
+                                                      element["name"];
+                                                });
+                                              }
+                                            });
+                                            /*setState(() {
                                               _dropDownValue = val;
                                             });*/
-                                    },
-                                  ),
+                                          },
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
+                              ),
+                            ),
                       campusfetched == false
                           ? SizedBox()
                           : Container(
-                        height: 60,
-                        child: Neumorphic(
-                          margin: EdgeInsets.only(top: 7),
-                          style: NeumorphicStyle(
-                              shape: NeumorphicShape.flat,
-                              boxShape: NeumorphicBoxShape.roundRect(
-                                  BorderRadius.circular(5)),
-                              depth: 0,
-                              lightSource: LightSource.topLeft,
-                              color: Colors.grey[100]),
-                          child: FormField(
-                            builder: (FormFieldState state) {
-                              return InputDecorator(
-                                decoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder(
-                                      // borderSide: BorderSide(color: Colors.grey[200]),
-                                      borderSide: BorderSide(
-                                          color: Colors.green[300]),
-                                      borderRadius:
-                                      BorderRadius.circular(0),
-                                    ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Colors.green[300]),
-                                      borderRadius:
-                                      BorderRadius.circular(0),
-                                    ),
-                                    contentPadding: EdgeInsets.only(
-                                        top: 5, left: 10, bottom: 5)),
-                                isEmpty: _color == '',
-                                child: new DropdownButtonHideUnderline(
-                                  child: DropdownButton(
-                                    hint: _dropDownValue3 == null
-                                        ? Text(
-                                      'Select Campus',
-                                      style: TextStyle(
-                                          color: Colors.grey[600],
-                                          fontFamily:
-                                          'Raleway-regular',
-                                          fontSize: 18),
-                                    )
-                                        : Text(
-                                      _dropDownValue3,
-                                      style: TextStyle(
-                                          color: Colors.grey[600],
-                                          fontFamily:
-                                          'Raleway-regular',
-                                          fontSize: 18),
-                                    ),
-                                    isExpanded: true,
-                                    iconSize: 30.0,
-                                    style: TextStyle(color: Colors.black),
-                                    items: newsList1.map(
-                                          (val) {
-                                        return DropdownMenuItem<String>(
-                                          value: val['id'].toString(),
-                                          child: Text(val["name"]),
-                                        );
-                                      },
-                                    ).toList(),
-                                    onChanged: (val) {
-                                      newsList1.forEach((element) {
-                                        if (element["id"].toString() ==
-                                            val) {
-                                          setState(() {
-                                            _dropDownValue3 =
-                                            element["name"];
-                                          });
+                              height: 60,
+                              child: Neumorphic(
+                                margin: EdgeInsets.only(top: 7),
+                                style: NeumorphicStyle(
+                                    shape: NeumorphicShape.flat,
+                                    boxShape: NeumorphicBoxShape.roundRect(
+                                        BorderRadius.all(
+                                            Radius.circular(32.0))),
+                                    depth: 0,
+                                    lightSource: LightSource.topLeft,
+                                    color: Colors.grey[100]),
+                                child: FormField(
+                                  builder: (FormFieldState state) {
+                                    return InputDecorator(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            // borderSide: BorderSide(color: Colors.grey[200]),
+                                            borderSide:
+                                                BorderSide(color: Colors.black),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(32.0)),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: Colors.black),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(32.0)),
+                                          ),
+                                          contentPadding: EdgeInsets.only(
+                                              top: 5, left: 10, bottom: 5)),
+                                      isEmpty: _color == '',
+                                      child: new DropdownButtonHideUnderline(
+                                        child: DropdownButton(
+                                          hint: _dropDownValue3 == null
+                                              ? Text(
+                                                  'Select Campus',
+                                                  style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontFamily: 'Ubuntu',
+                                                      fontSize: 18),
+                                                )
+                                              : Text(
+                                                  _dropDownValue3,
+                                                  style: TextStyle(
+                                                      color: Colors.grey[600],
+                                                      fontFamily: 'Ubuntu',
+                                                      fontSize: 18),
+                                                ),
+                                          isExpanded: true,
+                                          iconSize: 30.0,
+                                          style: TextStyle(color: Colors.black),
+                                          items: newsList1.map(
+                                            (val) {
+                                              return DropdownMenuItem<String>(
+                                                value: val['id'].toString(),
+                                                child: Text(val["name"]),
+                                              );
+                                            },
+                                          ).toList(),
+                                          onChanged: (val) {
+                                            newsList1.forEach((element) {
+                                              if (element["id"].toString() ==
+                                                  val) {
+                                                setState(() {
+                                                  _dropDownValue3 =
+                                                      element["name"];
+                                                });
 
-                                          setState(() {
-                                            campus_id = val;
-                                          });
-                                        }
-                                      });
-                                      /*setState(() {
+                                                setState(() {
+                                                  campus_id = val;
+                                                });
+                                              }
+                                            });
+                                            /*setState(() {
                                               _dropDownValue3 = val;
                                             });*/
-                                    },
-                                  ),
+                                          },
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
+                              ),
+                            ),
                       SizedBox(
                         height: 10,
                       ),
                       campusfetched == false
                           ? SizedBox()
                           : ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Container(
-                          child: ArgonButton(
-                            height: 50,
-                            width: MediaQuery.of(context).size.width,
-                            borderRadius: 0.0,
-                            color: Color(0xff4caf50),
-                            roundLoadingShape: true,
-                            elevation: 0,
-                            child: Text(
-                              "Next",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontFamily: 'Raleway-regular',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            loader: Container(
-                              padding: EdgeInsets.all(10),
-                              child: SpinKitRipple(
-                                color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                              child: Container(
+                                child: ArgonButton(
+                                  height: 50,
+                                  width: MediaQuery.of(context).size.width,
+                                  borderRadius: 0.0,
+                                  color: Color(0xff4caf50),
+                                  roundLoadingShape: true,
+                                  elevation: 0,
+                                  child: Text(
+                                    "Next",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontFamily: 'Ubuntu',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  loader: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: SpinKitRipple(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  onTap: (startLoading, stopLoading, btnState) {
+                                    startLoading();
+                                    if (nameController.text.isNotEmpty &&
+                                        emailController.text.isNotEmpty &&
+                                        phoneController.text.isNotEmpty &&
+                                        _dropDownValue != null &&
+                                        _dropDownValue3 != null) {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => SignupScreen2(
+                                                name: nameController.text,
+                                                email: emailController.text,
+                                                phone: phoneController.text,
+                                                university: _dropDownValue,
+                                                campus: campus_id)),
+                                      );
+                                    } else {
+                                      scaffoldKey.currentState
+                                          .showSnackBar(SnackBar(
+                                        content:
+                                            Text("All fields are required"),
+                                        backgroundColor: Colors.green,
+                                      ));
+                                    }
+
+                                    stopLoading();
+                                  },
+                                ),
                               ),
                             ),
-                            onTap: (startLoading, stopLoading, btnState) {
-                              startLoading();
-                              if (nameController.text.isNotEmpty &&
-                                  emailController.text.isNotEmpty &&
-                                  phoneController.text.isNotEmpty &&
-                                  _dropDownValue != null &&
-                                  _dropDownValue3 != null) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignupScreen2(
-                                          name: nameController.text,
-                                          email: emailController.text,
-                                          phone: phoneController.text,
-                                          university: _dropDownValue,
-                                          campus: campus_id)),
-                                );
-                              } else {
-                                scaffoldKey.currentState
-                                    .showSnackBar(SnackBar(
-                                  content:
-                                  Text("All fields are required"),
-                                  backgroundColor: Colors.green,
-                                ));
-                              }
-
-                              stopLoading();
-                            },
-                          ),
-                        ),
-                      ),
                     ],
                   )),
             )),

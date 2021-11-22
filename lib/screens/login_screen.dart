@@ -91,14 +91,14 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Container(
         child: Builder(builder: (ctx) {
           return Scaffold(
-            //backgroundColor: Color(0xff195e83),
+              //backgroundColor: Color(0xff195e83),
               backgroundColor: Colors.white,
               body: SingleChildScrollView(
                 child: Container(
                   height: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/seku.jpeg'),
+                        image: AssetImage('assets/images/serada.jpeg'),
                         fit: BoxFit.cover),
                     //color: Color(0xff195e83),
                     color: Colors.white,
@@ -116,11 +116,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                       key: _formKey,
                                       child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.end,
+                                              MainAxisAlignment.end,
                                           children: <Widget>[
                                             SizedBox(
-                                              height: 50,
+                                              height: 15,
                                             ),
+
 
                                             SizedBox(
                                               height: 155,
@@ -128,52 +129,60 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                             ClipRRect(
                                               borderRadius:
-                                              BorderRadius.circular(5),
+                                                  BorderRadius.circular(5),
                                               child: TextField(
                                                 style: TextStyle(
-                                                    color: Colors.lightGreen,
+                                                    color: Colors.black,
+                                                    //color: Colors.lightGreen,
                                                     fontSize: 18),
                                                 controller: emailController,
                                                 cursorColor: Colors.black,
                                                 cursorWidth: 3.0,
                                                 keyboardType:
-                                                TextInputType.emailAddress,
+                                                    TextInputType.emailAddress,
                                                 decoration: InputDecoration(
                                                   filled: true,
                                                   fillColor: Colors.grey[100],
                                                   hintText: 'Email Address',
                                                   //prefixIcon: Icon(Icons.search,color: Colors.grey[400],size: 27,),
                                                   suffixIcon: Icon(
-                                                    Icons.email,
-                                                    color: Colors.green[400],
+                                                    Icons.mail_outline,
+                                                    color: Color(0xff4caf50),
+                                                    //color: Colors.green,
+                                                    //color: Colors.grey[600],
+                                                    //color: Colors.green[400],
                                                     size: 27,
                                                   ),
                                                   hintStyle: TextStyle(
-                                                      color: Colors.green[500]),
+                                                      color: Color(0xff4caf50),
+                                                    //color: Colors.green,
+                                                    //color: Colors.grey[600],
+                                                    //color: Colors.green[500]
+                                                  ),
                                                   contentPadding:
-                                                  const EdgeInsets.only(
-                                                      top: 18,
-                                                      bottom: 18,
-                                                      left: 15,
-                                                      right: 15),
+                                                      const EdgeInsets.only(
+                                                          top: 18,
+                                                          bottom: 18,
+                                                          left: 15,
+                                                          right: 15),
                                                   focusedBorder:
-                                                  OutlineInputBorder(
-                                                     //borderSide: BorderSide(color: Colors.green[500]),
+                                                      OutlineInputBorder(
+                                                    //borderSide: BorderSide(color: Colors.green[500]),
                                                     borderSide: BorderSide(
-                                                        color:
-                                                        Colors.green[300]),
+                                                        color: Color(0xff4caf50)),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                32.0)),
                                                   ),
                                                   enabledBorder:
-                                                  UnderlineInputBorder(
+                                                      OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                        color:
-                                                        Colors.green[300]),
+                                                        color: Color(0xff4caf50)),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                32.0)),
                                                   ),
                                                 ),
                                               ),
@@ -183,14 +192,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                             ),
                                             ClipRRect(
                                               borderRadius:
-                                              BorderRadius.circular(5),
+                                                  BorderRadius.circular(5),
                                               child: TextField(
                                                 style: TextStyle(
-                                                    color: Colors.lightGreen,
+                                                    color: Colors.black,
                                                     fontSize: 18),
                                                 controller: passwordController,
                                                 obscureText:
-                                                _passpasswordVisible,
+                                                    _passpasswordVisible,
                                                 cursorWidth: 3.0,
                                                 cursorColor: Colors.black,
                                                 decoration: InputDecoration(
@@ -198,33 +207,33 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   fillColor: Colors.grey[100],
                                                   hintText: 'Password',
                                                   labelStyle: TextStyle(
-                                                      color: Colors.green),
+                                                      color: Color(0xff4caf50)),
                                                   hintStyle: TextStyle(
-                                                      color: Colors.green[500]),
+                                                      color: Color(0xff4caf50)),
                                                   contentPadding:
-                                                  const EdgeInsets.only(
-                                                      top: 18,
-                                                      bottom: 18,
-                                                      left: 15,
-                                                      right: 15),
+                                                      const EdgeInsets.only(
+                                                          top: 18,
+                                                          bottom: 18,
+                                                          left: 15,
+                                                          right: 15),
                                                   focusedBorder:
-                                                  OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                     // borderSide: BorderSide(color: Colors.grey[200]),
                                                     borderSide: BorderSide(
-                                                        color:
-                                                        Colors.green[300]),
+                                                        color: Color(0xff4caf50)),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                32.0)),
                                                   ),
                                                   enabledBorder:
-                                                  UnderlineInputBorder(
+                                                      OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                        color:
-                                                        Colors.green[300]),
+                                                        color: Color(0xff4caf50)),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        0),
+                                                        BorderRadius.all(
+                                                            Radius.circular(
+                                                                32.0)),
                                                   ),
                                                   //labelText: 'Password',
                                                   suffixIcon: IconButton(
@@ -232,17 +241,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                                       _passpasswordVisible
                                                           ? Icons.visibility_off
                                                           : Icons.visibility,
-                                                      color: Colors.green[400],
+                                                      //color: Colors.grey[600],
+                                                      color: Color(0xff4caf50),
                                                     ),
                                                     onPressed: () {
                                                       // Update the state i.e. toogle the state of passwordVisible variable
                                                       setState(() {
                                                         if (!_passpasswordVisible) {
                                                           _passpasswordVisible =
-                                                          true;
+                                                              true;
                                                         } else if (_passpasswordVisible) {
                                                           _passpasswordVisible =
-                                                          false;
+                                                              false;
                                                         }
                                                       });
                                                     },
@@ -258,7 +268,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   textAlign: TextAlign.right,
                                                   style: TextStyle(
                                                       fontSize: 16,
-                                                      fontFamily:'Raleway-regular',
+                                                      fontFamily:'Ubuntu',
                                                       fontWeight: FontWeight.w700,
                                                       color: Colors.white
                                                   ),
@@ -270,135 +280,134 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                             _showButton
                                                 ? ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.circular(
-                                                  5),
-                                              child: ArgonButton(
-                                                height: 50,
-                                                width:
-                                                MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                borderRadius: 0.0,
-                                                color: Color(0xff4caf50),
-                                                roundLoadingShape: true,
-                                                elevation: 0,
-                                                child: Text(
-                                                  "LOGIN",
-                                                  style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontFamily:
-                                                      'Raleway-regular',
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                      FontWeight
-                                                          .bold),
-                                                ),
-                                                loader: Container(
-                                                  padding:
-                                                  EdgeInsets.all(10),
-                                                  child: SpinKitDualRing(
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
-                                                onTap: (startLoading,
-                                                    stopLoading,
-                                                    btnState) {
-                                                  setState(() {
-                                                    _showButton = false;
-                                                  });
-                                                  //startLoading();
-                                                  if (emailController
-                                                      .text.isEmpty ||
-                                                      passwordController
-                                                          .text.isEmpty) {
-                                                    setState(() {
-                                                      _showButton = true;
-                                                    });
-                                                    Flushbar(
-                                                      title:
-                                                      "Login Failed",
-                                                      message:
-                                                      "All fields are required",
-                                                      icon: Icon(
-                                                        Icons
-                                                            .error_outline,
-                                                        color:
-                                                        Colors.white,
-                                                        size: 30,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                    child: ArgonButton(
+                                                      height: 50,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                              .size
+                                                              .width,
+                                                      borderRadius: 32.0,
+                                                      color: Color(0xff4caf50),
+                                                      roundLoadingShape: true,
+                                                      elevation: 0,
+                                                      child: Text(
+                                                        "LOGIN",
+                                                        style: TextStyle(
+                                                            fontSize: 18,
+                                                            fontFamily:
+                                                                'Ubuntu',
+                                                            color: Colors.white,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
                                                       ),
-                                                      duration: Duration(
-                                                          seconds: 3),
-                                                      isDismissible:
-                                                      false,
-                                                      backgroundColor:
-                                                      Colors
-                                                          .redAccent,
-                                                    )..show(context);
-                                                  } else if (emailController
-                                                      .text.isEmpty &&
-                                                      passwordController
-                                                          .text.isEmpty) {
-                                                    setState(() {
-                                                      _showButton = true;
-                                                    });
-                                                    Flushbar(
-                                                      title:
-                                                      "Login Failed",
-                                                      message:
-                                                      "All fields are required",
-                                                      icon: Icon(
-                                                        Icons
-                                                            .error_outline,
-                                                        color:
-                                                        Colors.white,
-                                                        size: 30,
+                                                      loader: Container(
+                                                        padding:
+                                                            EdgeInsets.all(10),
+                                                        child: SpinKitDualRing(
+                                                          color: Colors.white,
+                                                        ),
                                                       ),
-                                                      duration: Duration(
-                                                          seconds: 3),
-                                                      isDismissible:
-                                                      false,
-                                                      backgroundColor:
-                                                      Colors
-                                                          .redAccent,
-                                                    )..show(context);
-                                                  }
-                                                  _login(
-                                                      emailController.text
-                                                          .trim(),
-                                                      passwordController
-                                                          .text
-                                                          .trim());
+                                                      onTap: (startLoading,
+                                                          stopLoading,
+                                                          btnState) {
+                                                        setState(() {
+                                                          _showButton = false;
+                                                        });
+                                                        //startLoading();
+                                                        if (emailController
+                                                                .text.isEmpty ||
+                                                            passwordController
+                                                                .text.isEmpty) {
+                                                          setState(() {
+                                                            _showButton = true;
+                                                          });
+                                                          Flushbar(
+                                                            title:
+                                                                "Login Failed",
+                                                            message:
+                                                                "All fields are required",
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .error_outline,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: 30,
+                                                            ),
+                                                            duration: Duration(
+                                                                seconds: 3),
+                                                            isDismissible:
+                                                                false,
+                                                            backgroundColor:
+                                                                Colors.red,
+                                                          )..show(context);
+                                                        } else if (emailController
+                                                                .text.isEmpty &&
+                                                            passwordController
+                                                                .text.isEmpty) {
+                                                          setState(() {
+                                                            _showButton = true;
+                                                          });
+                                                          Flushbar(
+                                                            title:
+                                                                "Login Failed",
+                                                            message:
+                                                                "All fields are required",
+                                                            icon: Icon(
+                                                              Icons
+                                                                  .error_outline,
+                                                              color:
+                                                                  Colors.white,
+                                                              size: 30,
+                                                            ),
+                                                            duration: Duration(
+                                                                seconds: 3),
+                                                            isDismissible:
+                                                                false,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .redAccent,
+                                                          )..show(context);
+                                                        }
+                                                        _login(
+                                                            emailController.text
+                                                                .trim(),
+                                                            passwordController
+                                                                .text
+                                                                .trim());
 
-                                                  //stopLoading();
-                                                },
-                                              ),
-                                            )
+                                                        //stopLoading();
+                                                      },
+                                                    ),
+                                                  )
                                                 : circularProgress(),
                                             SizedBox(
                                               height: 25,
                                             ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                /*Navigator.of(context).push(
-                                                    PageTransition(
-                                                        type: PageTransitionType
-                                                            .slideInRight,
-                                                        child: SignupScreen()));*/
-                                                Navigator.of(context).push(
-                                                    PageTransition(
-                                                        type: PageTransitionType
-                                                            .slideInRight,
-                                                        child: StudentAuth()));
-                                              },
-                                              child: Text(
-                                                "CREATE ACCOUNT",
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                    color: Colors.green,
-                                                    fontSize: 16),
+                                               GestureDetector(
+                                                onTap: () {
+                                                  /*Navigator.of(context).push(
+                                                      PageTransition(
+                                                          type: PageTransitionType
+                                                              .slideInRight,
+                                                          child: SignupScreen()));*/
+                                                  Navigator.of(context).push(
+                                                      PageTransition(
+                                                          type: PageTransitionType
+                                                              .slideInRight,
+                                                          child: StudentAuth()));
+                                                },
+                                                child: Text(
+                                                  "CREATE ACCOUNT",
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Colors.green,
+                                                      fontSize: 18),
+                                                ),
                                               ),
-                                            ),
                                             SizedBox(
                                               height: 20,
                                             ),
@@ -427,7 +436,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                                 child: Text(
                                                   "FORGOT PASSWORD?",
                                                   style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                       color: Colors.green),
                                                 ),
                                               ),
@@ -460,9 +470,9 @@ class _LoginScreenState extends State<LoginScreen> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.lightGreenAccent),
+              color: Colors.green),
         );
       },
     );
@@ -535,7 +545,7 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } catch (e) {
       setState(() {
-        _showButton=true;
+        _showButton = true;
       });
       if (e.toString() ==
           "PlatformException(ERROR_USER_NOT_FOUND, There is no user record corresponding to this identifier. The user may have been deleted., null)") {
@@ -543,7 +553,7 @@ class _LoginScreenState extends State<LoginScreen> {
           _showButton = true;
         });
 
-        if(Platform.isIOS){
+        if (Platform.isIOS) {
           FToast.toast(
             context,
             msg: "User does not exist",
@@ -568,7 +578,7 @@ class _LoginScreenState extends State<LoginScreen> {
           _showButton = true;
         });
 
-        if(Platform.isIOS){
+        if (Platform.isIOS) {
           FToast.toast(
             context,
             msg: "No internet connection",
@@ -590,13 +600,11 @@ class _LoginScreenState extends State<LoginScreen> {
         //BotToast.showSimpleNotification(title: "No internet connection");
       } else if (e.toString() ==
           "PlatformException(ERROR_WRONG_PASSWORD, The password is invalid or the user does not have a password., null)") {
-
-
         setState(() {
           _showButton = true;
         });
 
-        if(Platform.isIOS){
+        if (Platform.isIOS) {
           FToast.toast(
             context,
             msg: "You entered the wrong password",
@@ -619,12 +627,11 @@ class _LoginScreenState extends State<LoginScreen> {
         )..show(context);
       } else if (e.toString() ==
           "PlatformException(ERROR_USER_NOT_FOUND, There is no user record corresponding to this identifier. The user may have been deleted., null)") {
-
         setState(() {
           _showButton = true;
         });
 
-        if(Platform.isIOS){
+        if (Platform.isIOS) {
           FToast.toast(
             context,
             msg: "You entered the wrong email",

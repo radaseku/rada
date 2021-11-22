@@ -50,7 +50,7 @@ class _MentorShipLandingState extends State<MentorShipLanding> {
           leading: Platform.isAndroid?GestureDetector(
             child: Icon(
               Icons.arrow_back,
-              color: Colors.black,
+              color: Colors.green,
               size: 27,
             ),
             onTap: () {
@@ -59,7 +59,7 @@ class _MentorShipLandingState extends State<MentorShipLanding> {
           ):GestureDetector(
             child: Icon(
               Icons.arrow_back_ios,
-              color: Colors.black,
+              color: Colors.green,
               size: 27,
             ),
             onTap: () {
@@ -120,6 +120,10 @@ class _MentorShipLandingState extends State<MentorShipLanding> {
                     height: 48,
                     width: MediaQuery.of(context).size.width,
                     child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(32.0),
+                        ),
+                      ),
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -129,7 +133,7 @@ class _MentorShipLandingState extends State<MentorShipLanding> {
                                   type: widget.usertype,
                                 )));
                       },
-                      color: Colors.redAccent,
+                      color: Colors.green,
                       child: Text(
                         "Get Started",
                         style: TextStyle(

@@ -46,29 +46,29 @@ class _HivContentState extends State<HivContent> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -91,7 +91,7 @@ class _HivContentState extends State<HivContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -111,7 +111,7 @@ class _HivContentState extends State<HivContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -131,24 +131,25 @@ class _HivContentState extends State<HivContent> {
           primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
-            appBar: Platform.isIOS?AppBar(
-              backgroundColor: Colors.grey[100],
-              elevation: 0,
-              leading: GestureDetector(
-                onTap: (){
-
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 27,
-                ),
-              ),
-            ):SizedBox(
-              height: 0,
-              width: 0,
-            ),
+            appBar: Platform.isIOS
+                ? AppBar(
+                    backgroundColor: Colors.grey[100],
+                    elevation: 0,
+                    leading: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 27,
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    height: 0,
+                    width: 0,
+                  ),
             body: FutureBuilder(
               builder: (context, projectSnap) {
                 return ListView.builder(
@@ -239,7 +240,7 @@ class _HivContentState extends State<HivContent> {
                                         color: Colors.white,
                                         fontSize: 19,
                                         fontWeight: FontWeight.w600,
-                                        fontFamily: 'Raleway-regular'),
+                                        fontFamily: 'Ubuntu'),
                                   ),
                                   Padding(
                                       padding: EdgeInsets.only(right: 10),
@@ -275,7 +276,7 @@ class _HivContentState extends State<HivContent> {
                                             color: Colors.green,
                                             fontSize: 20,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                     ],
                                   ),
@@ -292,7 +293,7 @@ class _HivContentState extends State<HivContent> {
                                           color: Colors.grey[800],
                                           fontSize: 15,
                                           fontWeight: FontWeight.w600,
-                                          fontFamily: 'Raleway-regular'),
+                                          fontFamily: 'Ubuntu'),
                                     ),
                                   ),
                                 ],
@@ -429,7 +430,7 @@ class _HivContentState extends State<HivContent> {
                               color: Colors.black54,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -448,7 +449,7 @@ class _HivContentState extends State<HivContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular'),
+                        fontFamily: 'Ubuntu'),
                   ),
                 ),
               ],

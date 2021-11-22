@@ -76,24 +76,25 @@ class _DrugsContentState extends State<DrugsContent> {
           primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
-            appBar: Platform.isIOS?AppBar(
-              backgroundColor: Colors.grey[100],
-              elevation: 0,
-              leading: GestureDetector(
-                onTap: (){
-
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 27,
-                ),
-              ),
-            ):SizedBox(
-              height: 0,
-              width: 0,
-            ),
+            appBar: Platform.isIOS
+                ? AppBar(
+                    backgroundColor: Colors.grey[100],
+                    elevation: 0,
+                    leading: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 27,
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    height: 0,
+                    width: 0,
+                  ),
             body: FutureBuilder(
               builder: (context, projectSnap) {
                 return ListView.builder(
@@ -133,7 +134,10 @@ class _DrugsContentState extends State<DrugsContent> {
                           "content": project.alcoholvideo
                         },
 
-                        {"title": "Introduction", "content": project.heroineintro},
+                        {
+                          "title": "Introduction",
+                          "content": project.heroineintro
+                        },
                         {
                           "title": "Effects Of Heroine",
                           "content": project.heroineeffects
@@ -220,7 +224,7 @@ class _DrugsContentState extends State<DrugsContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                     ],
                                   ),
@@ -229,7 +233,8 @@ class _DrugsContentState extends State<DrugsContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -254,12 +259,13 @@ class _DrugsContentState extends State<DrugsContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
@@ -271,7 +277,7 @@ class _DrugsContentState extends State<DrugsContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -280,15 +286,24 @@ class _DrugsContentState extends State<DrugsContent> {
                               ),
                               //Images part
 
-                              columnItem("assets/images/arrow.png",
-                                  data[1]["title"], data[1]["content"], alcohol[0]),
+                              columnItem(
+                                  "assets/images/arrow.png",
+                                  data[1]["title"],
+                                  data[1]["content"],
+                                  alcohol[0]),
                               columnItem("assets/images/arrow.png",
                                   data[2]["title"], data[2]["content"], ""),
 
-                              columnItem("assets/images/arrow.png",
-                                  data[3]["title"], data[3]["content"], alcohol[2]),
-                              columnItem("assets/images/arrow.png",
-                                  data[4]["title"], data[4]["content"], alcohol[3]),
+                              columnItem(
+                                  "assets/images/arrow.png",
+                                  data[3]["title"],
+                                  data[3]["content"],
+                                  alcohol[2]),
+                              columnItem(
+                                  "assets/images/arrow.png",
+                                  data[4]["title"],
+                                  data[4]["content"],
+                                  alcohol[3]),
                               columnItem("assets/images/arrow.png",
                                   data[5]["title"], data[5]["content"], ""),
 
@@ -346,7 +361,7 @@ class _DrugsContentState extends State<DrugsContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -362,7 +377,8 @@ class _DrugsContentState extends State<DrugsContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -382,12 +398,13 @@ class _DrugsContentState extends State<DrugsContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[7]["content"].toString(),
                                           trimLines: 5,
@@ -399,7 +416,7 @@ class _DrugsContentState extends State<DrugsContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -476,7 +493,7 @@ class _DrugsContentState extends State<DrugsContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -492,7 +509,8 @@ class _DrugsContentState extends State<DrugsContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -512,12 +530,13 @@ class _DrugsContentState extends State<DrugsContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[12]["content"].toString(),
                                           trimLines: 5,
@@ -529,7 +548,7 @@ class _DrugsContentState extends State<DrugsContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -538,20 +557,29 @@ class _DrugsContentState extends State<DrugsContent> {
                               ),
                               //Images part
 
-                              columnItem("assets/images/couple.png",
-                                  data[13]["title"], data[13]["content"], weed[0]),
+                              columnItem(
+                                  "assets/images/couple.png",
+                                  data[13]["title"],
+                                  data[13]["content"],
+                                  weed[0]),
                               columnItem("assets/images/couple.png",
                                   data[14]["title"], data[14]["content"], ""),
 
-                              columnItem("assets/images/couple.png",
-                                  data[15]["title"], data[15]["content"], weed[2]),
+                              columnItem(
+                                  "assets/images/couple.png",
+                                  data[15]["title"],
+                                  data[15]["content"],
+                                  weed[2]),
                               columnItem("assets/images/couple.png",
                                   data[16]["title"], data[16]["content"], ""),
                               columnItem("assets/images/couple.png",
                                   data[17]["title"], data[17]["content"], ""),
 
-                              columnItem("assets/images/couple.png",
-                                  data[18]["title"], data[18]["content"], weed[5]),
+                              columnItem(
+                                  "assets/images/couple.png",
+                                  data[18]["title"],
+                                  data[18]["content"],
+                                  weed[5]),
                               columnItem("assets/images/couple.png",
                                   data[19]["title"], data[19]["content"], ""),
                             ],
@@ -573,7 +601,7 @@ class _DrugsContentState extends State<DrugsContent> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.amber),
         );
@@ -587,39 +615,39 @@ class _DrugsContentState extends State<DrugsContent> {
       children: <Widget>[
         mainimage == ""
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10, left: 10, right: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(top: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                  height: 150,
-                  width: 200,
-                  color: Colors.grey[200],
-                  child: Image.network(
-                    mainimage,
-                    fit: BoxFit.cover,
-                    loadingBuilder: (BuildContext context, Widget child,
-                        ImageChunkEvent loadingProgress) {
-                      if (loadingProgress == null) return child;
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes !=
-                              null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                              loadingProgress.expectedTotalBytes
-                              : null,
+                margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: Container(
+                        height: 150,
+                        width: 200,
+                        color: Colors.grey[200],
+                        child: Image.network(
+                          mainimage,
+                          fit: BoxFit.cover,
+                          loadingBuilder: (BuildContext context, Widget child,
+                              ImageChunkEvent loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes !=
+                                        null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        loadingProgress.expectedTotalBytes
+                                    : null,
+                              ),
+                            );
+                          },
                         ),
-                      );
-                    },
-                  ),
-                  /*child: CachedNetworkImage(
+                        /*child: CachedNetworkImage(
                       imageUrl: mainimage,
                       imageBuilder: (context, imageProvider) => Container(
                             decoration: BoxDecoration(
@@ -641,9 +669,9 @@ class _DrugsContentState extends State<DrugsContent> {
                               size: 40,
                             ),
                           )),*/
-                )),
-          ),
-        ),
+                      )),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -674,7 +702,7 @@ class _DrugsContentState extends State<DrugsContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -693,7 +721,7 @@ class _DrugsContentState extends State<DrugsContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular'),
+                        fontFamily: 'Ubuntu'),
                   ),
                 ),
               ],

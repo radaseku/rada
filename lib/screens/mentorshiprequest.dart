@@ -115,43 +115,47 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
     getTypes();*/
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: Platform.isIOS?AppBar(
-        backgroundColor: Colors.grey[100],
-        leading: GestureDetector(
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 27,
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          "Mentorship Request",
-          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        elevation: 0,
-      ):AppBar(
-        backgroundColor: Colors.grey[100],
-        leading: GestureDetector(
-          child: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 27,
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          "Mentorship Request",
-          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-        elevation: 0,
-      ),
+      appBar: Platform.isIOS
+          ? AppBar(
+              backgroundColor: Colors.grey[100],
+              leading: GestureDetector(
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
+                  size: 27,
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              title: Text(
+                "Mentorship Request",
+                style:
+                    TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              elevation: 0,
+            )
+          : AppBar(
+              backgroundColor: Colors.grey[100],
+              leading: GestureDetector(
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.black,
+                  size: 27,
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              title: Text(
+                "Mentorship Request",
+                style:
+                    TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              elevation: 0,
+            ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -253,31 +257,31 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
                               borderRadius: BorderRadius.circular(0),
                             ),
                             contentPadding:
-                            EdgeInsets.only(top: 5, left: 10, bottom: 5)),
+                                EdgeInsets.only(top: 5, left: 10, bottom: 5)),
                         isEmpty: _color == '',
                         child: new DropdownButtonHideUnderline(
                           child: DropdownButton(
                             focusColor: Colors.grey[100],
                             hint: _dropDownValue1 == null
                                 ? Text(
-                              'Select Mentor Type',
-                              style: TextStyle(
-                                  color: Colors.grey[600],
-                                  fontFamily: 'Raleway-regular',
-                                  fontSize: 15),
-                            )
+                                    'Select Mentor Type',
+                                    style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontFamily: 'Ubuntu',
+                                        fontSize: 15),
+                                  )
                                 : Text(
-                              _dropDownValue1,
-                              style: TextStyle(
-                                  color: Colors.grey[600],
-                                  fontFamily: 'Raleway-regular',
-                                  fontSize: 18),
-                            ),
+                                    _dropDownValue1,
+                                    style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontFamily: 'Ubuntu',
+                                        fontSize: 18),
+                                  ),
                             isExpanded: true,
                             iconSize: 30.0,
                             style: TextStyle(color: Colors.grey[600]),
                             items: newsList1.map(
-                                  (val) {
+                              (val) {
                                 return DropdownMenuItem<String>(
                                   value: newsList1.length > 0
                                       ? val["id"].toString()
@@ -317,24 +321,24 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
                         focusColor: Colors.grey[100],
                         hint: _dropDownValue == null
                             ? Text(
-                          'Select Faculty',
-                          style: TextStyle(
-                              color: Colors.grey[600],
-                              fontFamily: 'Raleway-regular',
-                              fontSize: 15),
-                        )
+                                'Select Faculty',
+                                style: TextStyle(
+                                    color: Colors.grey[600],
+                                    fontFamily: 'Ubuntu',
+                                    fontSize: 15),
+                              )
                             : Text(
-                          _dropDownValue,
-                          style: TextStyle(
-                              color: Colors.grey[600],
-                              fontFamily: 'Raleway-regular',
-                              fontSize: 18),
-                        ),
+                                _dropDownValue,
+                                style: TextStyle(
+                                    color: Colors.grey[600],
+                                    fontFamily: 'Ubuntu',
+                                    fontSize: 18),
+                              ),
                         isExpanded: true,
                         iconSize: 30.0,
                         style: TextStyle(color: Colors.grey[600]),
                         items: newsList.map(
-                              (val) {
+                          (val) {
                             return DropdownMenuItem<String>(
                               value: val["name"].toString(),
                               child: Text(val["name"]),
@@ -429,23 +433,23 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
             sending
                 ? circularProgress()
                 : Padding(
-              padding: EdgeInsets.all(10),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 49,
-                child: RaisedButton(
-                  onPressed: () {
-                    sendRequest();
-                  },
-                  color: Colors.green,
-                  elevation: 0,
-                  child: Text(
-                    "Submit",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            )
+                    padding: EdgeInsets.all(10),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 49,
+                      child: RaisedButton(
+                        onPressed: () {
+                          sendRequest();
+                        },
+                        color: Colors.green,
+                        elevation: 0,
+                        child: Text(
+                          "Submit",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  )
           ],
         ),
       ),
@@ -496,9 +500,9 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
             context,
             MaterialPageRoute(
                 builder: (ctx) => Mentors(
-                  id: useruid[0],
-                  type: "user",
-                )));
+                      id: useruid[0],
+                      type: "user",
+                    )));
       });
     }
 
@@ -513,7 +517,7 @@ class _MentorshipRequestState extends State<MentorshipRequest> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
               color: Colors.lightGreenAccent),
         );

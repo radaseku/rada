@@ -53,29 +53,29 @@ class _OthersContentState extends State<OthersContent> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -98,7 +98,7 @@ class _OthersContentState extends State<OthersContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -118,7 +118,7 @@ class _OthersContentState extends State<OthersContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -135,29 +135,29 @@ class _OthersContentState extends State<OthersContent> {
       children: <Widget>[
         image == "null"
             ? SizedBox(
-          height: 0,
-          width: 0,
-        )
+                height: 0,
+                width: 0,
+              )
             : Container(
-          margin: EdgeInsets.only(top: 10),
-          height: 200,
-          width: MediaQuery.of(context).size.width,
-          child: Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Image.network(
-                      image,
-                      height: 200,
-                      width: 200,
-                      fit: BoxFit.cover,
-                    ))),
-          ),
-        ),
+                margin: EdgeInsets.only(top: 10),
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.white,
+                          child: Image.network(
+                            image,
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ))),
+                ),
+              ),
         Neumorphic(
           margin: EdgeInsets.only(top: 10, right: 5, left: 5),
           style: NeumorphicStyle(
@@ -180,7 +180,7 @@ class _OthersContentState extends State<OthersContent> {
                               color: Colors.green,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -200,7 +200,7 @@ class _OthersContentState extends State<OthersContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular',
+                        fontFamily: 'Ubuntu',
                         letterSpacing: 1),
                   ),
                 ),
@@ -220,24 +220,25 @@ class _OthersContentState extends State<OthersContent> {
           primarySwatch: greenAccentColor,
         ),
         home: Scaffold(
-            appBar: Platform.isIOS?AppBar(
-              backgroundColor: Colors.grey[100],
-              elevation: 0,
-              leading: GestureDetector(
-                onTap: (){
-
-                  Navigator.pop(context);
-                },
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.black,
-                  size: 27,
-                ),
-              ),
-            ):SizedBox(
-              height: 0,
-              width: 0,
-            ),
+            appBar: Platform.isIOS
+                ? AppBar(
+                    backgroundColor: Colors.grey[100],
+                    elevation: 0,
+                    leading: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                        size: 27,
+                      ),
+                    ),
+                  )
+                : SizedBox(
+                    height: 0,
+                    width: 0,
+                  ),
             body: FutureBuilder(
               builder: (context, projectSnap) {
                 return ListView.builder(
@@ -248,12 +249,18 @@ class _OthersContentState extends State<OthersContent> {
 
                     if (widget.itemkey == "9") {
                       var data = [
-                        {"title": "Introduction", "content": project.introduction},
+                        {
+                          "title": "Introduction",
+                          "content": project.introduction
+                        },
                         {
                           "title": "7 Tips To Earn in College",
                           "content": project.seventips
                         },
-                        {"title": "Saving Money", "content": project.savingmoney},
+                        {
+                          "title": "Saving Money",
+                          "content": project.savingmoney
+                        },
                         {"title": "Take Action", "content": project.takeaction},
                         {
                           "title": "Money Saving Tips",
@@ -271,7 +278,10 @@ class _OthersContentState extends State<OthersContent> {
                           "title": "Campus Career Resources",
                           "content": project.careerresourses
                         },
-                        {"title": "Internships", "content": project.internships},
+                        {
+                          "title": "Internships",
+                          "content": project.internships
+                        },
                         {
                           "title": "CV and Cover Letter",
                           "content": project.cvletter
@@ -280,7 +290,10 @@ class _OthersContentState extends State<OthersContent> {
                           "title": "Professional Job Sites",
                           "content": project.professionaljobs
                         },
-                        {"title": "Alumni Association", "content": project.alumni},
+                        {
+                          "title": "Alumni Association",
+                          "content": project.alumni
+                        },
                         {
                           "title": "Talk to Recent Graduates",
                           "content": project.recentgratuates
@@ -344,7 +357,7 @@ class _OthersContentState extends State<OthersContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -360,7 +373,8 @@ class _OthersContentState extends State<OthersContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -380,12 +394,13 @@ class _OthersContentState extends State<OthersContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
@@ -397,7 +412,7 @@ class _OthersContentState extends State<OthersContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -474,7 +489,7 @@ class _OthersContentState extends State<OthersContent> {
                                             color: Colors.white,
                                             fontSize: 19,
                                             fontWeight: FontWeight.w600,
-                                            fontFamily: 'Raleway-regular'),
+                                            fontFamily: 'Ubuntu'),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(right: 10),
@@ -490,7 +505,8 @@ class _OthersContentState extends State<OthersContent> {
                             ],
                           ),*/
                               Neumorphic(
-                                margin: EdgeInsets.only(top: 5, right: 5, left: 5),
+                                margin:
+                                    EdgeInsets.only(top: 5, right: 5, left: 5),
                                 style: NeumorphicStyle(
                                     shape: NeumorphicShape.flat,
                                     boxShape: NeumorphicBoxShape.roundRect(
@@ -510,12 +526,13 @@ class _OthersContentState extends State<OthersContent> {
                                                 color: Colors.green,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.w600,
-                                                fontFamily: 'Raleway-regular'),
+                                                fontFamily: 'Ubuntu'),
                                           ),
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 0, top: 7),
+                                        padding:
+                                            EdgeInsets.only(left: 0, top: 7),
                                         child: ReadMoreText(
                                           data[index]["content"].toString(),
                                           trimLines: 5,
@@ -527,7 +544,7 @@ class _OthersContentState extends State<OthersContent> {
                                               color: Colors.grey[800],
                                               fontSize: 15,
                                               fontWeight: FontWeight.w600,
-                                              fontFamily: 'Raleway-regular'),
+                                              fontFamily: 'Ubuntu'),
                                         ),
                                       ),
                                     ],
@@ -545,13 +562,22 @@ class _OthersContentState extends State<OthersContent> {
                                   data[8]["title"], data[8]["content"], "null"),
                               careerItem("assets/images/couple.png",
                                   data[9]["title"], data[9]["content"], "null"),
-                              careerItem("assets/images/couple.png",
-                                  data[10]["title"], data[10]["content"], "null"),
+                              careerItem(
+                                  "assets/images/couple.png",
+                                  data[10]["title"],
+                                  data[10]["content"],
+                                  "null"),
 
-                              careerItem("assets/images/couple.png",
-                                  data[11]["title"], data[11]["content"], "null"),
-                              careerItem("assets/images/couple.png",
-                                  data[13]["title"], data[13]["content"], "null"),
+                              careerItem(
+                                  "assets/images/couple.png",
+                                  data[11]["title"],
+                                  data[11]["content"],
+                                  "null"),
+                              careerItem(
+                                  "assets/images/couple.png",
+                                  data[13]["title"],
+                                  data[13]["content"],
+                                  "null"),
                             ],
                           ),
                         );
@@ -654,7 +680,7 @@ class _OthersContentState extends State<OthersContent> {
                               color: Colors.black54,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              fontFamily: 'Raleway-regular'),
+                              fontFamily: 'Ubuntu'),
                         ),
                       ],
                     ),
@@ -673,7 +699,7 @@ class _OthersContentState extends State<OthersContent> {
                         color: Colors.grey[800],
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
-                        fontFamily: 'Raleway-regular'),
+                        fontFamily: 'Ubuntu'),
                   ),
                 ),
               ],

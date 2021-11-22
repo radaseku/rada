@@ -26,11 +26,11 @@ class SignupScreen2 extends StatefulWidget {
 
   SignupScreen2(
       {Key key,
-        @required this.name,
-        this.email,
-        this.phone,
-        this.university,
-        this.campus})
+      @required this.name,
+      this.email,
+      this.phone,
+      this.university,
+      this.campus})
       : super(key: key);
 
   @override
@@ -84,29 +84,30 @@ class _SignupScreen2State extends State<SignupScreen2> {
     return new Scaffold(
       key: scaffoldKey,
       backgroundColor: greenAccentColor,
-      appBar: Platform.isIOS?AppBar(
-        backgroundColor: Colors.grey[100],
-        elevation: 0,
-        leading: GestureDetector(
-          onTap: (){
-
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-            size: 27,
-          ),
-        ),
-      ):SizedBox(
-        height: 0,
-        width: 0,
-      ),
+      appBar: Platform.isIOS
+          ? AppBar(
+              backgroundColor: Colors.grey[100],
+              elevation: 0,
+              leading: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
+                  size: 27,
+                ),
+              ),
+            )
+          : SizedBox(
+              height: 0,
+              width: 0,
+            ),
       body: Container(
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/seku.jpeg'),
+                image: AssetImage('assets/images/serada.jpeg'),
                 fit: BoxFit.cover),
             //color: Color(0xff195e83),
             color: Colors.white,
@@ -126,7 +127,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
                         style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 16,
-                            fontFamily: 'Raleway-regular'),
+                            fontFamily: 'Ubuntu'),
                       ),
                     ),
                     Neumorphic(
@@ -143,18 +144,19 @@ class _SignupScreen2State extends State<SignupScreen2> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 0),
                           child: DatePickerWidget(
-                            looping: false, // default is not looping
+                            looping: false,
+                            // default is not looping
                             firstDate: DateTime(1960),
                             lastDate: DateTime(2020, 1, 1),
                             initialDate: DateTime(1990, 2, 2),
                             dateFormat: "dd-MMMM-yyyy",
                             onChange: (DateTime newDate, _) =>
-                            _selectedDate = newDate,
+                                _selectedDate = newDate,
                             pickerTheme: DateTimePickerTheme(
                                 itemTextStyle: TextStyle(
                                     color: Colors.grey[600],
                                     fontSize: 19,
-                                    fontFamily: 'Raleway-regular')),
+                                    fontFamily: 'Ubuntu')),
                           ),
                         ),
                       ),
@@ -174,14 +176,14 @@ class _SignupScreen2State extends State<SignupScreen2> {
                             decoration: InputDecoration(
                                 focusedBorder: OutlineInputBorder(
                                   // borderSide: BorderSide(color: Colors.grey[200]),
-                                  borderSide:
-                                  BorderSide(color: Colors.grey[100]),
-                                  borderRadius: BorderRadius.circular(0),
+                                  borderSide: BorderSide(color: Colors.black),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(32.0)),
                                 ),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide:
-                                  BorderSide(color: Colors.grey[100]),
-                                  borderRadius: BorderRadius.circular(0),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.black),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(32.0)),
                                 ),
                                 contentPadding: EdgeInsets.only(
                                     top: 5, left: 10, bottom: 5)),
@@ -190,24 +192,24 @@ class _SignupScreen2State extends State<SignupScreen2> {
                               child: DropdownButton(
                                 hint: _dropDownValue2 == null
                                     ? Text('Select Gender',
-                                    style: TextStyle(
-                                        color: Colors.grey[600],
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Raleway-regular',
-                                        fontSize: 18))
+                                        style: TextStyle(
+                                            color: Colors.grey[600],
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Ubuntu',
+                                            fontSize: 18))
                                     : Text(
-                                  _dropDownValue2,
-                                  style: TextStyle(
-                                      color: Colors.grey[600],
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Raleway-regular',
-                                      fontSize: 18),
-                                ),
+                                        _dropDownValue2,
+                                        style: TextStyle(
+                                            color: Colors.grey[600],
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Ubuntu',
+                                            fontSize: 18),
+                                      ),
                                 isExpanded: true,
                                 iconSize: 30.0,
                                 style: TextStyle(color: Colors.grey[600]),
                                 items: ['Male', 'Female', 'unspecified'].map(
-                                      (val) {
+                                  (val) {
                                     return DropdownMenuItem<String>(
                                       value: val,
                                       child: Text(
@@ -247,13 +249,13 @@ class _SignupScreen2State extends State<SignupScreen2> {
                           hintStyle: TextStyle(color: Colors.grey[600]),
                           contentPadding: const EdgeInsets.all(15),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey[100]),
+                            borderSide: BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(0),
                           ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey[100]),
-                            borderRadius: BorderRadius.circular(0),
-                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(32.0))),
                         ),
                       ),
                     ),
@@ -273,15 +275,17 @@ class _SignupScreen2State extends State<SignupScreen2> {
                           filled: true,
                           fillColor: Colors.grey[100],
                           hintText: 'Confirm Password',
-                          hintStyle: TextStyle(color: Colors.grey[600]),
+                          hintStyle: TextStyle(color: Colors.black),
                           contentPadding: const EdgeInsets.all(15),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.grey[100]),
-                            borderRadius: BorderRadius.circular(0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(32.0)),
                           ),
-                          enabledBorder: UnderlineInputBorder(
+                          enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.grey[100]),
-                            borderRadius: BorderRadius.circular(0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(32.0)),
                           ),
                         ),
                       ),
@@ -290,51 +294,51 @@ class _SignupScreen2State extends State<SignupScreen2> {
                       margin: EdgeInsets.only(top: 7, left: 10, right: 10),
                       child: _showButton
                           ? ArgonButton(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width,
-                        borderRadius: 0.0,
-                        color: Color(0xff43a047),
-                        elevation: 0,
-                        roundLoadingShape: true,
-                        child: Text(
-                          "SignUp",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontFamily: 'Raleway-regular',
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        loader: Container(
-                          padding: EdgeInsets.all(10),
-                          child: SpinKitRipple(
-                            color: Colors.white,
-                          ),
-                        ),
-                        onTap: (startLoading, stopLoading, btnState) {
-                          setState(() {
-                            _showButton = false;
-                          });
-                          //startLoading();
-                          /*if(passwordController.text==confirmController.text){
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              borderRadius: 0.0,
+                              color: Color(0xff43a047),
+                              elevation: 0,
+                              roundLoadingShape: true,
+                              child: Text(
+                                "SignUp",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontFamily: 'Ubuntu',
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              loader: Container(
+                                padding: EdgeInsets.all(10),
+                                child: SpinKitRipple(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              onTap: (startLoading, stopLoading, btnState) {
+                                setState(() {
+                                  _showButton = false;
+                                });
+                                //startLoading();
+                                /*if(passwordController.text==confirmController.text){
                             _signup(widget.email, passwordController.text);
                           }else{
                             print("Passwords do not match");
                           }*/
-                          if (confirmController.text ==
-                              passwordController.text &&
-                              _dropDownValue2 != null) {
-                            _signup(widget.email.trim(),
-                                passwordController.text.trim());
-                          } else {
-                            scaffoldKey.currentState
-                                .showSnackBar(SnackBar(
-                              content: Text(
-                                  "Passwords do not match or you missed a field"),
-                              backgroundColor: Colors.lightGreen,
-                            ));
-                          }
-                        },
-                      )
+                                if (confirmController.text ==
+                                        passwordController.text &&
+                                    _dropDownValue2 != null) {
+                                  _signup(widget.email.trim(),
+                                      passwordController.text.trim());
+                                } else {
+                                  scaffoldKey.currentState
+                                      .showSnackBar(SnackBar(
+                                    content: Text(
+                                        "Passwords do not match or you missed a field"),
+                                    backgroundColor: Colors.lightGreen,
+                                  ));
+                                }
+                              },
+                            )
                           : circularProgress(),
                     ),
                   ],
@@ -350,10 +354,10 @@ class _SignupScreen2State extends State<SignupScreen2> {
       FirebaseUser user = result.user;
       if (result != null) {
         var documentReference =
-        Firestore.instance.collection('Users').document(user.uid);
+            Firestore.instance.collection('Users').document(user.uid);
 
         var tokensReference =
-        Firestore.instance.collection('DeviceTokens').document(user.uid);
+            Firestore.instance.collection('DeviceTokens').document(user.uid);
 
         await Firestore.instance.runTransaction((transaction) async {
           await transaction.set(
@@ -445,7 +449,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
       "campus_id": widget.campus,
       "joined": DateTime.now().toString(),
       "phone_id":
-      "SCVBSCBW8E8R9EWRF8R8FUSDJSKVPOXDBUR8EREBVUDFYEUREFYRREUREFHBD8E89E",
+          "SCVBSCBW8E8R9EWRF8R8FUSDJSKVPOXDBUR8EREBVUDFYEUREFYRREUREFHBD8E89E",
       "phone": widget.phone.toString(),
       "gender": _dropDownValue2.toString(),
       "mentorship_status": "false"
@@ -473,9 +477,9 @@ class _SignupScreen2State extends State<SignupScreen2> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.lightGreenAccent),
+              color: Colors.green),
         );
       },
     );

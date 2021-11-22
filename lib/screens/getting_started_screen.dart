@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:awesome_page_transitions/awesome_page_transitions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_page_transition/flutter_page_transition.dart';
 import 'package:flutter_page_transition/page_transition_type.dart';
 
@@ -111,7 +112,7 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                       ),
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
+                      borderRadius: BorderRadius.all(Radius.circular(32.0)),
                     ),
                     padding: const EdgeInsets.all(15),
                     /*color: Theme.of(context).primaryColor,*/

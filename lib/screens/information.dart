@@ -140,9 +140,9 @@ class _InformationState extends State<Information> {
       itemBuilder: (BuildContext context, int index) {
         return DecoratedBox(
           decoration: BoxDecoration(
-            /*color: index.isEven ? Colors.blue : Colors.white,*/
+              /*color: index.isEven ? Colors.blue : Colors.white,*/
               shape: BoxShape.circle,
-              color: Colors.white),
+              color: Colors.lightGreenAccent),
         );
       },
     );
@@ -174,7 +174,7 @@ class _InformationState extends State<Information> {
           ),
           duration: Duration(seconds: 3),
           isDismissible: false,
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.red,
         )..show(context);
       } else {
         await updateContent(synced);
@@ -221,85 +221,89 @@ class _InformationState extends State<Information> {
       storage: JsonFileStorage(),
       child: Scaffold(
         backgroundColor: Colors.grey[200],
-        appBar: Platform.isAndroid?AppBar(
-          backgroundColor: Colors.grey[100],
-          elevation: 0,
-          centerTitle: true,
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-              size: 27,
-            ),
-          ),
-          actions: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(right: 15),
-                child: GestureDetector(
-                    onTap: () {
-                      fetchData();
-                    },
-                    child: Icon(
-                      Icons.sync,
-                      size: 27,
-                      color: Colors.black,
-                    )))
-          ],
-          title: NeumorphicText(
-            "Rada Information",
-            style: NeumorphicStyle(
-              depth: 0, //customize depth here
-              color: greenAccentColor,
-              shape: NeumorphicShape.convex, //customize color here
-            ),
-            textStyle: NeumorphicTextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold //customize size here
-              // AND others usual text style properties (fontFamily, fontWeight, ...)
-            ),
-          ),
-        ):AppBar(
-          backgroundColor: Colors.grey[100],
-          elevation: 0,
-          centerTitle: true,
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 27,
-            ),
-          ),
-          actions: <Widget>[
-            Padding(
-                padding: EdgeInsets.only(right: 15),
-                child: GestureDetector(
-                    onTap: () {
-                      fetchData();
-                    },
-                    child: Icon(
-                      Icons.sync,
-                      size: 27,
-                      color: Colors.black,
-                    )))
-          ],
-          title: NeumorphicText(
-            "Rada Information",
-            style: NeumorphicStyle(
-              depth: 0, //customize depth here
-              color: greenAccentColor,
-              shape: NeumorphicShape.convex, //customize color here
-            ),
-            textStyle: NeumorphicTextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold //customize size here
-              // AND others usual text style properties (fontFamily, fontWeight, ...)
-            ),
-          ),
-        ),
+        appBar: Platform.isAndroid
+            ? AppBar(
+                backgroundColor: Colors.grey[100],
+                elevation: 0,
+                centerTitle: true,
+                leading: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.green,
+                    size: 27,
+                  ),
+                ),
+                actions: <Widget>[
+                  Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: GestureDetector(
+                          onTap: () {
+                            fetchData();
+                          },
+                          child: Icon(
+                            Icons.sync,
+                            size: 27,
+                            color: Colors.green,
+                          )))
+                ],
+                title: NeumorphicText(
+                  "Rada Information",
+                  style: NeumorphicStyle(
+                    depth: 0, //customize depth here
+                    color: greenAccentColor,
+                    shape: NeumorphicShape.convex, //customize color here
+                  ),
+                  textStyle: NeumorphicTextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold //customize size here
+                      // AND others usual text style properties (fontFamily, fontWeight, ...)
+                      ),
+                ),
+              )
+            : AppBar(
+                backgroundColor: Colors.grey[100],
+                elevation: 0,
+                centerTitle: true,
+                leading: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.green,
+                    size: 27,
+                  ),
+                ),
+                actions: <Widget>[
+                  Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: GestureDetector(
+                          onTap: () {
+                            fetchData();
+                          },
+                          child: Icon(
+                            Icons.sync,
+                            size: 27,
+                            color: Colors.green,
+                          )))
+                ],
+                title: NeumorphicText(
+                  "Rada Information",
+                  style: NeumorphicStyle(
+                    depth: 0, //customize depth here
+                    color: greenAccentColor,
+                    shape: NeumorphicShape.convex, //customize color here
+                  ),
+                  textStyle: NeumorphicTextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold //customize size here
+                      // AND others usual text style properties (fontFamily, fontWeight, ...)
+                      ),
+                ),
+              ),
         body: PersistedStateBuilder(builder:
             (BuildContext context, AsyncSnapshot<PersistedData> snapshot) {
           if (snapshot.hasData) {
@@ -323,8 +327,7 @@ class _InformationState extends State<Information> {
                               child: Text(
                                 "News And Other Announcements",
                                 style: TextStyle(
-                                    fontFamily: 'Raleway-regular',
-                                    color: Colors.white),
+                                    fontFamily: 'Ubuntu', color: Colors.white),
                               )),
                         ),
                       ),
@@ -335,127 +338,127 @@ class _InformationState extends State<Information> {
                     height: 210,
                     child: imgList.isEmpty
                         ? Center(
-                      child: Text("Fetching News ..."),
-                    )
+                            child: Text("Fetching News ..."),
+                          )
                         : CarouselSlider.builder(
-                      itemCount: imgList.length,
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        aspectRatio: 2.0,
-                        enlargeCenterPage: false,
-                        reverse: true,
-                        pauseAutoPlayOnTouch: true,
-                      ),
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            print(imgList[index]["content"]);
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (ctx) => ArticlePage(
-                                      title: imgList[index]["title"],
-                                      image: imgList[index]["image"],
-                                      content: imgList[index]
-                                      ["content"],
-                                    )));
-                          },
-                          child: Padding(
-                            padding: EdgeInsets.only(left: 2, right: 2),
-                            child: Container(
-                              child: Stack(
-                                children: <Widget>[
-                                  CachedNetworkImage(
-                                      imageUrl: imgList[index]["image"],
-                                      imageBuilder:
-                                          (context, imageProvider) =>
-                                          Container(
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: imageProvider,
-                                                fit: BoxFit.cover,
-                                                colorFilter:
-                                                const ColorFilter
-                                                    .mode(
-                                                  Colors.white,
-                                                  BlendMode.colorBurn,
-                                                ),
+                            itemCount: imgList.length,
+                            options: CarouselOptions(
+                              autoPlay: true,
+                              aspectRatio: 2.0,
+                              enlargeCenterPage: false,
+                              reverse: true,
+                              pauseAutoPlayOnTouch: true,
+                            ),
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  print(imgList[index]["content"]);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (ctx) => ArticlePage(
+                                                title: imgList[index]["title"],
+                                                image: imgList[index]["image"],
+                                                content: imgList[index]
+                                                    ["content"],
+                                              )));
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 2, right: 2),
+                                  child: Container(
+                                    child: Stack(
+                                      children: <Widget>[
+                                        CachedNetworkImage(
+                                            imageUrl: imgList[index]["image"],
+                                            imageBuilder:
+                                                (context, imageProvider) =>
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        image: DecorationImage(
+                                                          image: imageProvider,
+                                                          fit: BoxFit.cover,
+                                                          colorFilter:
+                                                              const ColorFilter
+                                                                  .mode(
+                                                            Colors.white,
+                                                            BlendMode.colorBurn,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                            placeholder: (context, url) =>
+                                                Center(
+                                                    child: circularProgress()),
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    const Center(
+                                                      child: Icon(
+                                                        Icons.error,
+                                                        size: 40,
+                                                      ),
+                                                    )),
+                                        Positioned(
+                                          bottom: 0,
+                                          child: Container(
+                                              constraints: new BoxConstraints(
+                                                minHeight: 20.0,
+                                                maxHeight: 60.0,
                                               ),
-                                            ),
-                                          ),
-                                      placeholder: (context, url) =>
-                                          Center(
-                                              child: circularProgress()),
-                                      errorWidget:
-                                          (context, url, error) =>
-                                      const Center(
-                                        child: Icon(
-                                          Icons.error,
-                                          size: 40,
-                                        ),
-                                      )),
-                                  Positioned(
-                                    bottom: 0,
-                                    child: Container(
-                                        constraints: new BoxConstraints(
-                                          minHeight: 20.0,
-                                          maxHeight: 60.0,
-                                        ),
-                                        //height: 50,
-                                        width: MediaQuery.of(context)
-                                            .size
-                                            .width,
-                                        color: Colors.black54,
-                                        child: Padding(
-                                          padding: EdgeInsets.only(
-                                              top: 2,
-                                              right: 50,
-                                              left: 5,
-                                              bottom: 2),
-                                          child: Wrap(
-                                            children: <Widget>[
-                                              Padding(
+                                              //height: 50,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              color: Colors.black54,
+                                              child: Padding(
                                                 padding: EdgeInsets.only(
                                                     top: 2,
-                                                    right: 5,
+                                                    right: 50,
                                                     left: 5,
                                                     bottom: 2),
-                                                child: Text(
-                                                  imgList[index]["title"],
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                      FontWeight.bold,
-                                                      fontFamily:
-                                                      'Raleway-regular'),
+                                                child: Wrap(
+                                                  children: <Widget>[
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                          top: 2,
+                                                          right: 5,
+                                                          left: 5,
+                                                          bottom: 2),
+                                                      child: Text(
+                                                        imgList[index]["title"],
+                                                        style: TextStyle(
+                                                            color: Colors.white,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontFamily:
+                                                                'Ubuntu'),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                              ),
-                                            ],
+                                              )),
+                                        ),
+                                        Positioned(
+                                          bottom: 1,
+                                          right: 5,
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              _shareText(
+                                                  imgList[index]["content"]);
+                                            },
+                                            child: Icon(
+                                              Icons.share,
+                                              size: 25,
+                                              color: Colors.white,
+                                            ),
                                           ),
-                                        )),
-                                  ),
-                                  Positioned(
-                                    bottom: 1,
-                                    right: 5,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        _shareText(
-                                            imgList[index]["content"]);
-                                      },
-                                      child: Icon(
-                                        Icons.share,
-                                        size: 25,
-                                        color: Colors.white,
-                                      ),
+                                        )
+                                      ],
                                     ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    )),
+                                  ),
+                                ),
+                              );
+                            },
+                          )),
                 Padding(
                   padding: EdgeInsets.only(left: 5, top: 5),
                   child: Row(
@@ -470,7 +473,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "Alcohol & Drug Abuse",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -522,7 +525,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "Sexual & Reproductive Health",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -578,7 +581,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "General Health",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -634,7 +637,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "Mental Health",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -690,7 +693,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "Safety",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -718,7 +721,7 @@ class _InformationState extends State<Information> {
                           "5",
                           dsync),
                       listCard(
-                        /*'http://rada.uonbi.ac.ke/radaweb/appimages/dashboard/ccrime.png',*/
+                          /*'http://rada.uonbi.ac.ke/radaweb/appimages/dashboard/ccrime.png',*/
                           "https://1c7fab3im83f5gqiow2qqs2k-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/cybercrimedirectory.jpg",
                           "Cyber Crimes",
                           15,
@@ -753,7 +756,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "HIV & AIDS",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -791,7 +794,7 @@ class _InformationState extends State<Information> {
                                 child: Text(
                                   "Career & Financial Management",
                                   style: TextStyle(
-                                      fontFamily: 'Raleway-regular',
+                                      fontFamily: 'Ubuntu',
                                       color: Colors.white),
                                 )),
                           ),
@@ -848,7 +851,7 @@ class _InformationState extends State<Information> {
                 Text(
                   'Syncing is required the first time to fetch data',
                   style: TextStyle(
-                      fontFamily: 'Raleway-regular',
+                      fontFamily: 'Ubuntu',
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
@@ -902,7 +905,7 @@ class _InformationState extends State<Information> {
       ),
       duration: Duration(seconds: 3),
       isDismissible: false,
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.red,
     )..show(context);
 
     for (var k in categories) {
@@ -925,66 +928,66 @@ class _InformationState extends State<Information> {
       drugsHelper.save({
         'name': data_list[3]["name"],
         "alcoholintroduction": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
         "alcoholismsigns": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]['content'],
         "associatedhealthissues": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
         "alcoholismtreatment": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
         "alcoholismhelp": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
         "alcoholhelpcontacts": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]['content'],
         "alcoholvideo": data_list[3]["category_sub_cat"][0]
-        ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]['content'],
         "heroineintro": data_list[3]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
         "heroineeffects": data_list[3]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]['content'],
         "heroineinjection": data_list[3]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
         "heroinerecovery": data_list[3]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
         "heroinefurtherhelp": data_list[3]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
         "weedintro": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [0]["sub_sub_cat_content"][0]['content'],
+            [0]["sub_sub_cat_content"][0]['content'],
         "weeddyn": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [1]["sub_sub_cat_content"][0]['content'],
+            [1]["sub_sub_cat_content"][0]['content'],
         "weedmyths": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [2]["sub_sub_cat_content"][0]['content'],
+            [2]["sub_sub_cat_content"][0]['content'],
         "weedfacts": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [3]["sub_sub_cat_content"][0]['content'],
+            [3]["sub_sub_cat_content"][0]['content'],
         "quitweed": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [4]["sub_sub_cat_content"][0]['content'],
+            [4]["sub_sub_cat_content"][0]['content'],
         "weednote": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [5]["sub_sub_cat_content"][0]['content'],
+            [5]["sub_sub_cat_content"][0]['content'],
         "weedfaq": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [6]["sub_sub_cat_content"][0]['content'],
+            [6]["sub_sub_cat_content"][0]['content'],
         "weedhelp": data_list[3]["category_sub_cat"][2]["sub_category_sub_cat"]
-        [7]["sub_sub_cat_content"][0]['content'],
+            [7]["sub_sub_cat_content"][0]['content'],
         'created_at': DateTime.now().millisecondsSinceEpoch.toString()
       }).then((value) {
         reproHelper.delete().then((value) {
           reproHelper.save({
             'name': data_list[0]["name"],
             "boyfriend": data_list[0]["category_sub_cat"][0]
-            ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                ['content'],
             "night": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"]
-            [2]["sub_sub_cat_content"][0]['content'],
+                [2]["sub_sub_cat_content"][0]['content'],
             "casual": data_list[0]["category_sub_cat"][0]
-            ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                ['content'],
             "sponsor": data_list[0]["category_sub_cat"][0]
-            ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                ['content'],
             "dyn1": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"]
-            [0]["sub_sub_cat_content"][0]['content'],
+                [0]["sub_sub_cat_content"][0]['content'],
             "sponsorvideo": data_list[0]["category_sub_cat"][0]
-            ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                ['content'],
             "sponsorvideo": "I updated this myself",
 
             //Null values
@@ -1024,32 +1027,32 @@ class _InformationState extends State<Information> {
             reproHelper.save({
               'name': data_list[0]["name"],
               "contraceptionintroduction": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                  ['content'],
               "methods": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                  ['content'],
               "condomswork": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                  ['content'],
               "injectable": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                  ['content'],
               "oralpill": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                  ['content'],
               "iucds": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                  ['content'],
               "implants": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                  ['content'],
               "emergency": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                  ['content'],
               "contraceptionvideo": data_list[0]["category_sub_cat"][1]
-              ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                  ['content'],
 
               //Null fields
               "boyfriend": null,
@@ -1086,32 +1089,32 @@ class _InformationState extends State<Information> {
               reproHelper.save({
                 'name': data_list[0]["name"],
                 "pregnancydyn": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                    ['content'],
                 "pregnancycauses": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                    ['content'],
                 "pregnancysigns": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                    ['content'],
                 "pregnancytest": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                    ['content'],
                 "prenatalcare": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                    ['content'],
                 "antinetalcare": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                    ['content'],
                 "postnatal": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                    ['content'],
                 "pregnancynutrition": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                    ['content'],
                 "pregnancydanger": data_list[0]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]
+                    ['content'],
 
                 //Null values
                 "contraceptionintroduction": null,
@@ -1148,38 +1151,38 @@ class _InformationState extends State<Information> {
                 reproHelper.save({
                   'name': data_list[0]["name"],
                   "stiintroduction": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                      ['content'],
                   "riskfactors": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                      ['content'],
                   "stitypes": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                      ['content'],
                   "stisigns": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                      ['content'],
                   "commonstisigns": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                      ['content'],
                   "treatment": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                      ['content'],
                   "protectiontips": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                      ['content'],
                   "facts": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]
+                      ['content'],
                   "myths": data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][9]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][9]["sub_sub_cat_content"][0]
+                      ['content'],
                   'stisharm': data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][10]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][10]["sub_sub_cat_content"][0]
+                      ['content'],
                   'hivsti': data_list[0]["category_sub_cat"][3]
-                  ["sub_category_sub_cat"][11]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][11]["sub_sub_cat_content"][0]
+                      ['content'],
                   "contraceptionintroduction": null,
                   "methods": null,
                   "condomswork": null,
@@ -1210,127 +1213,127 @@ class _InformationState extends State<Information> {
                     hivHelper.save({
                       'name': data_list[1]["name"],
                       "kenyahiv": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                          [0]['content'],
                       "definition": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                          [0]['content'],
                       "hivsymptoms": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                          [0]['content'],
                       "transmissionmodes": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                          [0]['content'],
                       "nottransmitted": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
+                          [0]['content'],
                       "hivmyths": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][5]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][5]["sub_sub_cat_content"]
+                          [0]['content'],
                       "hivprevention": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][6]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][6]["sub_sub_cat_content"]
+                          [0]['content'],
                       "mothertochild": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][7]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][7]["sub_sub_cat_content"]
+                          [0]['content'],
                       "hivstigma": data_list[1]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][8]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][8]["sub_sub_cat_content"]
+                          [0]['content'],
                       'created_at':
-                      DateTime.now().millisecondsSinceEpoch.toString()
+                          DateTime.now().millisecondsSinceEpoch.toString()
                     }).then((value) {
                       print("Hiv Data Updated");
                       healthHelper.delete().then((value) {
                         healthHelper.save({
                           'name': data_list[5]["name"],
                           "noncommunicableintro": data_list[5]
-                          ["category_sub_cat"][0]
-                          ["sub_category_sub_cat"][0]
-                          ["sub_sub_cat_content"][0]['content'],
+                                      ["category_sub_cat"][0]
+                                  ["sub_category_sub_cat"][0]
+                              ["sub_sub_cat_content"][0]['content'],
                           "keyriskfactors": data_list[5]["category_sub_cat"][0]
-                          ["sub_category_sub_cat"][1]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][1]
+                              ["sub_sub_cat_content"][0]['content'],
                           "poorlifestyles": data_list[5]["category_sub_cat"][0]
-                          ["sub_category_sub_cat"][2]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][2]
+                              ["sub_sub_cat_content"][0]['content'],
                           "healthylifestyles": data_list[5]["category_sub_cat"]
-                          [0]["sub_category_sub_cat"][3]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  [0]["sub_category_sub_cat"][3]
+                              ["sub_sub_cat_content"][0]['content'],
                           "weightobesity": data_list[5]["category_sub_cat"][0]
-                          ["sub_category_sub_cat"][4]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][4]
+                              ["sub_sub_cat_content"][0]['content'],
                           "weightmanagement": data_list[5]["category_sub_cat"]
-                          [0]["sub_category_sub_cat"][4]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  [0]["sub_category_sub_cat"][4]
+                              ["sub_sub_cat_content"][0]['content'],
                           "weightmanagementrecons": data_list[5]
-                          ["category_sub_cat"][0]
-                          ["sub_category_sub_cat"][5]
-                          ["sub_sub_cat_content"][0]['content'],
+                                      ["category_sub_cat"][0]
+                                  ["sub_category_sub_cat"][5]
+                              ["sub_sub_cat_content"][0]['content'],
                           "weightmanagementhelp": data_list[5]
-                          ["category_sub_cat"][0]
-                          ["sub_category_sub_cat"][6]
-                          ["sub_sub_cat_content"][0]['content'],
+                                      ["category_sub_cat"][0]
+                                  ["sub_category_sub_cat"][6]
+                              ["sub_sub_cat_content"][0]['content'],
                           "nutritionintro": data_list[5]["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][0]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][0]
+                              ["sub_sub_cat_content"][0]['content'],
                           "foodproduction": data_list[5]["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][1]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][1]
+                              ["sub_sub_cat_content"][0]['content'],
                           "foodconsumption": data_list[5]["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][2]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][2]
+                              ["sub_sub_cat_content"][0]['content'],
                           "nutrientutilization": data_list[5]
-                          ["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][3]
-                          ["sub_sub_cat_content"][0]['content'],
+                                      ["category_sub_cat"][1]
+                                  ["sub_category_sub_cat"][3]
+                              ["sub_sub_cat_content"][0]['content'],
                           "posthavest": data_list[5]["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][4]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][4]
+                              ["sub_sub_cat_content"][0]['content'],
                           "physicalinactivity": data_list[5]["category_sub_cat"]
-                          [1]["sub_category_sub_cat"][5]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  [1]["sub_category_sub_cat"][5]
+                              ["sub_sub_cat_content"][0]['content'],
                           "nutrientsources": data_list[5]["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][6]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][6]
+                              ["sub_sub_cat_content"][0]['content'],
                           "nutritionandpregnancy": data_list[5]
-                          ["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][7]
-                          ["sub_sub_cat_content"][0]['content'],
+                                      ["category_sub_cat"][1]
+                                  ["sub_category_sub_cat"][7]
+                              ["sub_sub_cat_content"][0]['content'],
                           "nutritionandhiv": data_list[5]["category_sub_cat"][1]
-                          ["sub_category_sub_cat"][8]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][8]
+                              ["sub_sub_cat_content"][0]['content'],
                           "hygieneintro": data_list[5]["category_sub_cat"][2]
-                          ["sub_category_sub_cat"][0]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][0]
+                              ["sub_sub_cat_content"][0]['content'],
                           "hygieneimportance": data_list[5]["category_sub_cat"]
-                          [2]["sub_category_sub_cat"][1]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  [2]["sub_category_sub_cat"][1]
+                              ["sub_sub_cat_content"][0]['content'],
                           "goodhabits": data_list[5]["category_sub_cat"][2]
-                          ["sub_category_sub_cat"][2]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][2]
+                              ["sub_sub_cat_content"][0]['content'],
                           "emergencyplanning": data_list[5]["category_sub_cat"]
-                          [2]["sub_category_sub_cat"][3]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  [2]["sub_category_sub_cat"][3]
+                              ["sub_sub_cat_content"][0]['content'],
                           "selfmaintainace": data_list[5]["category_sub_cat"][2]
-                          ["sub_category_sub_cat"][4]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][4]
+                              ["sub_sub_cat_content"][0]['content'],
                           "offensivehabits": data_list[5]["category_sub_cat"][2]
-                          ["sub_category_sub_cat"][5]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][5]
+                              ["sub_sub_cat_content"][0]['content'],
                           "support": data_list[5]["category_sub_cat"][2]
-                          ["sub_category_sub_cat"][6]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][6]
+                              ["sub_sub_cat_content"][0]['content'],
                           "remember": data_list[5]["category_sub_cat"][2]
-                          ["sub_category_sub_cat"][7]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][7]
+                              ["sub_sub_cat_content"][0]['content'],
                           "physicalintro": data_list[5]["category_sub_cat"][3]
-                          ["sub_category_sub_cat"][0]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][0]
+                              ["sub_sub_cat_content"][0]['content'],
                           "benefits": data_list[5]["category_sub_cat"][3]
-                          ["sub_category_sub_cat"][1]
-                          ["sub_sub_cat_content"][0]['content'],
+                                  ["sub_category_sub_cat"][1]
+                              ["sub_sub_cat_content"][0]['content'],
                           'created_at':
-                          DateTime.now().millisecondsSinceEpoch.toString()
+                              DateTime.now().millisecondsSinceEpoch.toString()
                         }).then((value) {
                           print("Health Saved Successfully");
                           mentalHelper.delete().then((value) {
@@ -1338,56 +1341,56 @@ class _InformationState extends State<Information> {
                             mentalHelper.save({
                               'name': data_list[4]["name"],
                               "mentaldef": data_list[4]["category_sub_cat"][0]
-                              ["sub_category_sub_cat"][0]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][0]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "mentalilldef": data_list[4]["category_sub_cat"]
-                              [0]["sub_category_sub_cat"][1]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      [0]["sub_category_sub_cat"][1]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "riskfactors": data_list[4]["category_sub_cat"][0]
-                              ["sub_category_sub_cat"][2]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][2]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "disorders": data_list[4]["category_sub_cat"][0]
-                              ["sub_category_sub_cat"][3]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][3]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "suicideprevention": data_list[4]
-                              ["category_sub_cat"][1]
-                              ["sub_category_sub_cat"][0]
-                              ["sub_sub_cat_content"][0]['content'],
+                                          ["category_sub_cat"][1]
+                                      ["sub_category_sub_cat"][0]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "suicidehelp": data_list[4]["category_sub_cat"][1]
-                              ["sub_category_sub_cat"][1]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][1]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "suicidevideo": data_list[4]["category_sub_cat"]
-                              [1]["sub_category_sub_cat"][2]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      [1]["sub_category_sub_cat"][2]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "eatingdisordersinto": data_list[4]
-                              ["category_sub_cat"][2]
-                              ["sub_category_sub_cat"][0]
-                              ["sub_sub_cat_content"][0]['content'],
+                                          ["category_sub_cat"][2]
+                                      ["sub_category_sub_cat"][0]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "anorexia": data_list[4]["category_sub_cat"][2]
-                              ["sub_category_sub_cat"][1]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][1]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "bulimia": data_list[4]["category_sub_cat"][2]
-                              ["sub_category_sub_cat"][2]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][2]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "biengeeating": data_list[4]["category_sub_cat"]
-                              [2]["sub_category_sub_cat"][3]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      [2]["sub_category_sub_cat"][3]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "eatinghelp": data_list[4]["category_sub_cat"][2]
-                              ["sub_category_sub_cat"][4]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][4]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "mentalhelpintro": data_list[4]
-                              ["category_sub_cat"][3]
-                              ["sub_category_sub_cat"][0]
-                              ["sub_sub_cat_content"][0]['content'],
+                                          ["category_sub_cat"][3]
+                                      ["sub_category_sub_cat"][0]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "psychotherapy": data_list[4]["category_sub_cat"]
-                              [3]["sub_category_sub_cat"][1]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      [3]["sub_category_sub_cat"][1]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "medication": data_list[4]["category_sub_cat"][3]
-                              ["sub_category_sub_cat"][2]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][2]
+                                  ["sub_sub_cat_content"][0]['content'],
                               "selfhelp": data_list[4]["category_sub_cat"][3]
-                              ["sub_category_sub_cat"][3]
-                              ["sub_sub_cat_content"][0]['content'],
+                                      ["sub_category_sub_cat"][3]
+                                  ["sub_sub_cat_content"][0]['content'],
                               'created_at': DateTime.now()
                                   .millisecondsSinceEpoch
                                   .toString()
@@ -1398,82 +1401,82 @@ class _InformationState extends State<Information> {
                                 safetyHelper.save({
                                   'name': data_list[2]["name"],
                                   "safedating": data_list[2]["category_sub_cat"]
-                                  [0]["sub_category_sub_cat"][0]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          [0]["sub_category_sub_cat"][0]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "datingrules": data_list[2]
-                                  ["category_sub_cat"][0]
-                                  ["sub_category_sub_cat"][1]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][0]
+                                          ["sub_category_sub_cat"][1]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "formen": data_list[2]["category_sub_cat"][0]
-                                  ["sub_category_sub_cat"][2]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          ["sub_category_sub_cat"][2]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "forladies": data_list[2]["category_sub_cat"]
-                                  [0]["sub_category_sub_cat"][3]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          [0]["sub_category_sub_cat"][3]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   //"datingtips":data_list[2]["category_sub_cat"][0]["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
                                   //"cybercrimes":data_list[2]["category_sub_cat"][0]["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]['content'],
                                   "safetytips": data_list[2]["category_sub_cat"]
-                                  [0]["sub_category_sub_cat"][0]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          [0]["sub_category_sub_cat"][0]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "campussafetytips": data_list[2]
-                                  ["category_sub_cat"][4]
-                                  ["sub_category_sub_cat"][1]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][4]
+                                          ["sub_category_sub_cat"][1]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "campussafety": data_list[2]
-                                  ["category_sub_cat"][4]
-                                  ["sub_category_sub_cat"][0]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][4]
+                                          ["sub_category_sub_cat"][0]
+                                      ["sub_sub_cat_content"][0]['content'],
 
                                   "cybercrimesintro": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][0]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][0]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "cybercrimestips": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][2]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][2]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "cybercrimestypes": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][1]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][1]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "cyberlaws": data_list[2]["category_sub_cat"]
-                                  [2]["sub_category_sub_cat"][7]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          [2]["sub_category_sub_cat"][7]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "socialmediabenefits": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][4]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][4]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "socialmediapitfalls": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][5]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][5]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "socialmediarules": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][6]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][6]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "socialmediasafety": data_list[2]
-                                  ["category_sub_cat"][2]
-                                  ["sub_category_sub_cat"][3]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][2]
+                                          ["sub_category_sub_cat"][3]
+                                      ["sub_sub_cat_content"][0]['content'],
 
                                   "gbvintro": data_list[2]["category_sub_cat"]
-                                  [1]["sub_category_sub_cat"][0]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          [1]["sub_category_sub_cat"][0]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "prominentplaces": data_list[2]
-                                  ["category_sub_cat"][1]
-                                  ["sub_category_sub_cat"][1]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][1]
+                                          ["sub_category_sub_cat"][1]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "protectyourself": data_list[2]
-                                  ["category_sub_cat"][1]
-                                  ["sub_category_sub_cat"][2]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][1]
+                                          ["sub_category_sub_cat"][2]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "gbveffects": data_list[2]["category_sub_cat"]
-                                  [1]["sub_category_sub_cat"][3]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                          [1]["sub_category_sub_cat"][3]
+                                      ["sub_sub_cat_content"][0]['content'],
                                   "gettinghelp": data_list[2]
-                                  ["category_sub_cat"][1]
-                                  ["sub_category_sub_cat"][4]
-                                  ["sub_sub_cat_content"][0]['content'],
+                                              ["category_sub_cat"][1]
+                                          ["sub_category_sub_cat"][4]
+                                      ["sub_sub_cat_content"][0]['content'],
 
                                   'created_at': DateTime.now()
                                       .millisecondsSinceEpoch
@@ -1485,60 +1488,60 @@ class _InformationState extends State<Information> {
                                     othersHelper.save({
                                       'name': data_list[6]["name"],
                                       "introduction": data_list[6]
-                                      ["category_sub_cat"][0]
-                                      ["sub_category_sub_cat"][0]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][0]
+                                              ["sub_category_sub_cat"][0]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "seventips": data_list[6]
-                                      ["category_sub_cat"][0]
-                                      ["sub_category_sub_cat"][1]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][0]
+                                              ["sub_category_sub_cat"][1]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "savingmoney": data_list[6]
-                                      ["category_sub_cat"][0]
-                                      ["sub_category_sub_cat"][2]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][0]
+                                              ["sub_category_sub_cat"][2]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "takeaction": data_list[6]
-                                      ["category_sub_cat"][0]
-                                      ["sub_category_sub_cat"][3]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][0]
+                                              ["sub_category_sub_cat"][3]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "moneysavingtips": data_list[6]
-                                      ["category_sub_cat"][0]
-                                      ["sub_category_sub_cat"][4]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][0]
+                                              ["sub_category_sub_cat"][4]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "earnextracoin": data_list[6]
-                                      ["category_sub_cat"][0]
-                                      ["sub_category_sub_cat"][5]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][0]
+                                              ["sub_category_sub_cat"][5]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "gratuationjob": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][0]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][0]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "careerresourses": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][1]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][1]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "internships": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][2]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][2]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "cvletter": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][3]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][3]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "professionaljobs": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][4]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][4]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "alumni": data_list[6]["category_sub_cat"]
-                                      [1]["sub_category_sub_cat"][5]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                              [1]["sub_category_sub_cat"][5]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "recentgratuates": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][6]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][6]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       "createopportunities": data_list[6]
-                                      ["category_sub_cat"][1]
-                                      ["sub_category_sub_cat"][7]
-                                      ["sub_sub_cat_content"][0]['content'],
+                                                  ["category_sub_cat"][1]
+                                              ["sub_category_sub_cat"][7]
+                                          ["sub_sub_cat_content"][0]['content'],
                                       'created_at': DateTime.now()
                                           .millisecondsSinceEpoch
                                           .toString()
@@ -2076,17 +2079,17 @@ class _InformationState extends State<Information> {
     reproHelper.save({
       'name': data_list[0]["name"],
       "boyfriend": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"]
-      [1]["sub_sub_cat_content"][0]['content'],
+          [1]["sub_sub_cat_content"][0]['content'],
       "night": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"][2]
-      ["sub_sub_cat_content"][0]['content'],
+          ["sub_sub_cat_content"][0]['content'],
       "casual": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"][3]
-      ["sub_sub_cat_content"][0]['content'],
+          ["sub_sub_cat_content"][0]['content'],
       "sponsor": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"][4]
-      ["sub_sub_cat_content"][0]['content'],
+          ["sub_sub_cat_content"][0]['content'],
       "dyn1": data_list[0]["category_sub_cat"][0]["sub_category_sub_cat"][0]
-      ["sub_sub_cat_content"][0]['content'],
+          ["sub_sub_cat_content"][0]['content'],
       "sponsorvideo": data_list[0]["category_sub_cat"][0]
-      ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]['content'],
+          ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]['content'],
 
       //Null values
       "contraceptionintroduction": null,
@@ -2126,23 +2129,23 @@ class _InformationState extends State<Information> {
       reproHelper.save({
         'name': data_list[0]["name"],
         "contraceptionintroduction": data_list[0]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
         "methods": data_list[0]["category_sub_cat"][1]["sub_category_sub_cat"]
-        [1]["sub_sub_cat_content"][0]['content'],
+            [1]["sub_sub_cat_content"][0]['content'],
         "condomswork": data_list[0]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
         "injectable": data_list[0]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
         "oralpill": data_list[0]["category_sub_cat"][1]["sub_category_sub_cat"]
-        [4]["sub_sub_cat_content"][0]['content'],
+            [4]["sub_sub_cat_content"][0]['content'],
         "iucds": data_list[0]["category_sub_cat"][1]["sub_category_sub_cat"][5]
-        ["sub_sub_cat_content"][0]['content'],
+            ["sub_sub_cat_content"][0]['content'],
         "implants": data_list[0]["category_sub_cat"][1]["sub_category_sub_cat"]
-        [6]["sub_sub_cat_content"][0]['content'],
+            [6]["sub_sub_cat_content"][0]['content'],
         "emergency": data_list[0]["category_sub_cat"][1]["sub_category_sub_cat"]
-        [7]["sub_sub_cat_content"][0]['content'],
+            [7]["sub_sub_cat_content"][0]['content'],
         "contraceptionvideo": data_list[0]["category_sub_cat"][1]
-        ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]['content'],
+            ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]['content'],
 
         //Null fields
         "boyfriend": null,
@@ -2180,23 +2183,23 @@ class _InformationState extends State<Information> {
         reproHelper.save({
           'name': data_list[0]["name"],
           "pregnancydyn": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]['content'],
           "pregnancycauses": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]['content'],
           "pregnancysigns": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]['content'],
           "pregnancytest": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]['content'],
           "prenatalcare": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
           "antinetalcare": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]['content'],
           "postnatal": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]['content'],
           "pregnancynutrition": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]['content'],
           "pregnancydanger": data_list[0]["category_sub_cat"][2]
-          ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]['content'],
+              ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]['content'],
 
           //Null values
           "contraceptionintroduction": null,
@@ -2234,36 +2237,36 @@ class _InformationState extends State<Information> {
           reproHelper.save({
             'name': data_list[0]["name"],
             "stiintroduction": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                ['content'],
             "riskfactors": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                ['content'],
             "stitypes": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                ['content'],
             "stisigns": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                ['content'],
             "commonstisigns": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                ['content'],
             "treatment": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                ['content'],
             "protectiontips": data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                ['content'],
             "facts": data_list[0]["category_sub_cat"][3]["sub_category_sub_cat"]
-            [8]["sub_sub_cat_content"][0]['content'],
+                [8]["sub_sub_cat_content"][0]['content'],
             "myths": data_list[0]["category_sub_cat"][3]["sub_category_sub_cat"]
-            [9]["sub_sub_cat_content"][0]['content'],
+                [9]["sub_sub_cat_content"][0]['content'],
             'stisharm': data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][10]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][10]["sub_sub_cat_content"][0]
+                ['content'],
             'hivsti': data_list[0]["category_sub_cat"][3]
-            ["sub_category_sub_cat"][11]["sub_sub_cat_content"][0]
-            ['content'],
+                    ["sub_category_sub_cat"][11]["sub_sub_cat_content"][0]
+                ['content'],
             "contraceptionintroduction": null,
             "methods": null,
             "condomswork": null,
@@ -2294,101 +2297,101 @@ class _InformationState extends State<Information> {
             hivHelper.save({
               'name': data_list[1]["name"],
               "kenyahiv": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                  ['content'],
               "definition": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                  ['content'],
               "hivsymptoms": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                  ['content'],
               "transmissionmodes": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                  ['content'],
               "nottransmitted": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                  ['content'],
               "hivmyths": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                  ['content'],
               "hivprevention": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                  ['content'],
               "mothertochild": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                  ['content'],
               "hivstigma": data_list[1]["category_sub_cat"][0]
-              ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]
-              ['content'],
+                      ["sub_category_sub_cat"][8]["sub_sub_cat_content"][0]
+                  ['content'],
               'created_at': DateTime.now().millisecondsSinceEpoch.toString()
             }).then((value) {
               print("Saved HIV Data successfully");
               safetyHelper.save({
                 'name': data_list[2]["name"],
                 "safedating": data_list[2]["category_sub_cat"][0]
-                ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                    ['content'],
                 "datingrules": data_list[2]["category_sub_cat"][0]
-                ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                    ['content'],
                 "formen": data_list[2]["category_sub_cat"][0]
-                ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                    ['content'],
                 "forladies": data_list[2]["category_sub_cat"][0]
-                ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                    ['content'],
                 //"datingtips":data_list[2]["category_sub_cat"][0]["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]['content'],
                 //"cybercrimes":data_list[2]["category_sub_cat"][0]["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]['content'],
                 "safetytips": data_list[2]["category_sub_cat"][0]
-                ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                    ['content'],
                 "campussafetytips": data_list[2]["category_sub_cat"][4]
-                ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                    ['content'],
                 "campussafety": data_list[2]["category_sub_cat"][4]
-                ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                    ['content'],
 
                 "cybercrimesintro": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                    ['content'],
                 "cybercrimestips": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                    ['content'],
                 "cybercrimestypes": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                    ['content'],
                 "cyberlaws": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                    ['content'],
                 "socialmediabenefits": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                    ['content'],
                 "socialmediapitfalls": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                    ['content'],
                 "socialmediarules": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                    ['content'],
                 "socialmediasafety": data_list[2]["category_sub_cat"][2]
-                ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                    ['content'],
 
                 "gbvintro": data_list[2]["category_sub_cat"][1]
-                ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                    ['content'],
                 "prominentplaces": data_list[2]["category_sub_cat"][1]
-                ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                    ['content'],
                 "protectyourself": data_list[2]["category_sub_cat"][1]
-                ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                    ['content'],
                 "gbveffects": data_list[2]["category_sub_cat"][1]
-                ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                    ['content'],
                 "gettinghelp": data_list[2]["category_sub_cat"][1]
-                ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                ['content'],
+                        ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                    ['content'],
 
                 'created_at': DateTime.now().millisecondsSinceEpoch.toString()
               }).then((value) {
@@ -2396,259 +2399,259 @@ class _InformationState extends State<Information> {
                 drugsHelper.save({
                   'name': data_list[3]["name"],
                   "alcoholintroduction": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                      ['content'],
                   "alcoholismsigns": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                      ['content'],
                   "associatedhealthissues": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                      ['content'],
                   "alcoholismtreatment": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                      ['content'],
                   "alcoholismhelp": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                      ['content'],
                   "alcoholhelpcontacts": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                      ['content'],
                   "alcoholvideo": data_list[3]["category_sub_cat"][0]
-                  ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                      ['content'],
                   "heroineintro": data_list[3]["category_sub_cat"][1]
-                  ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                      ['content'],
                   "heroineeffects": data_list[3]["category_sub_cat"][1]
-                  ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                      ['content'],
                   "heroineinjection": data_list[3]["category_sub_cat"][1]
-                  ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                      ['content'],
                   "heroinerecovery": data_list[3]["category_sub_cat"][1]
-                  ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                      ['content'],
                   "heroinefurtherhelp": data_list[3]["category_sub_cat"][1]
-                  ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weedintro": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][0]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weeddyn": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][1]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weedmyths": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][2]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weedfacts": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][3]["sub_sub_cat_content"][0]
+                      ['content'],
                   "quitweed": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][4]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weednote": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][5]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weedfaq": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][6]["sub_sub_cat_content"][0]
+                      ['content'],
                   "weedhelp": data_list[3]["category_sub_cat"][2]
-                  ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
-                  ['content'],
+                          ["sub_category_sub_cat"][7]["sub_sub_cat_content"][0]
+                      ['content'],
                   'created_at': DateTime.now().millisecondsSinceEpoch.toString()
                 }).then((value) {
                   print("Saved Drugs Data successfully");
                   print("Looking for " +
                       data_list[3]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                      [0]['content']);
+                              ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                          [0]['content']);
                   mentalHelper.save({
                     'name': data_list[4]["name"],
                     "mentaldef": data_list[4]["category_sub_cat"][0]
-                    ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                        [0]['content'],
                     "mentalilldef": data_list[4]["category_sub_cat"][0]
-                    ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                        [0]['content'],
                     "riskfactors": data_list[4]["category_sub_cat"][0]
-                    ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                        [0]['content'],
                     "disorders": data_list[4]["category_sub_cat"][0]
-                    ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                        [0]['content'],
                     "suicideprevention": data_list[4]["category_sub_cat"][1]
-                    ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                        [0]['content'],
                     "suicidehelp": data_list[4]["category_sub_cat"][1]
-                    ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                        [0]['content'],
                     "suicidevideo": data_list[4]["category_sub_cat"][1]
-                    ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                        [0]['content'],
                     "eatingdisordersinto": data_list[4]["category_sub_cat"][2]
-                    ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                        [0]['content'],
                     "anorexia": data_list[4]["category_sub_cat"][2]
-                    ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                        [0]['content'],
                     "bulimia": data_list[4]["category_sub_cat"][2]
-                    ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                        [0]['content'],
                     "biengeeating": data_list[4]["category_sub_cat"][2]
-                    ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                        [0]['content'],
                     "eatinghelp": data_list[4]["category_sub_cat"][2]
-                    ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
+                        [0]['content'],
                     "mentalhelpintro": data_list[4]["category_sub_cat"][3]
-                    ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                        [0]['content'],
                     "psychotherapy": data_list[4]["category_sub_cat"][3]
-                    ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                        [0]['content'],
                     "medication": data_list[4]["category_sub_cat"][3]
-                    ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                        [0]['content'],
                     "selfhelp": data_list[4]["category_sub_cat"][3]
-                    ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                    [0]['content'],
+                            ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                        [0]['content'],
                     'created_at':
-                    DateTime.now().millisecondsSinceEpoch.toString()
+                        DateTime.now().millisecondsSinceEpoch.toString()
                   }).then((value) {
                     print("Saved Mental Data successfully");
                     healthHelper.save({
                       'name': data_list[5]["name"],
                       "noncommunicableintro": data_list[5]["category_sub_cat"]
-                      [0]["sub_category_sub_cat"][0]
-                      ["sub_sub_cat_content"][0]['content'],
+                              [0]["sub_category_sub_cat"][0]
+                          ["sub_sub_cat_content"][0]['content'],
                       "keyriskfactors": data_list[5]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                          [0]['content'],
                       "poorlifestyles": data_list[5]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                          [0]['content'],
                       "healthylifestyles": data_list[5]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                          [0]['content'],
                       "weightobesity": data_list[5]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
+                          [0]['content'],
                       "weightmanagement": data_list[5]["category_sub_cat"][0]
-                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
+                          [0]['content'],
                       "weightmanagementrecons": data_list[5]["category_sub_cat"]
-                      [0]["sub_category_sub_cat"][5]
-                      ["sub_sub_cat_content"][0]['content'],
+                              [0]["sub_category_sub_cat"][5]
+                          ["sub_sub_cat_content"][0]['content'],
                       "weightmanagementhelp": data_list[5]["category_sub_cat"]
-                      [0]["sub_category_sub_cat"][6]
-                      ["sub_sub_cat_content"][0]['content'],
+                              [0]["sub_category_sub_cat"][6]
+                          ["sub_sub_cat_content"][0]['content'],
                       "nutritionintro": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                          [0]['content'],
                       "foodproduction": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                          [0]['content'],
                       "foodconsumption": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                          [0]['content'],
                       "nutrientutilization": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                          [0]['content'],
                       "posthavest": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
+                          [0]['content'],
                       "physicalinactivity": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][5]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][5]["sub_sub_cat_content"]
+                          [0]['content'],
                       "nutrientsources": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][6]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][6]["sub_sub_cat_content"]
+                          [0]['content'],
                       "nutritionandpregnancy": data_list[5]["category_sub_cat"]
-                      [1]["sub_category_sub_cat"][7]
-                      ["sub_sub_cat_content"][0]['content'],
+                              [1]["sub_category_sub_cat"][7]
+                          ["sub_sub_cat_content"][0]['content'],
                       "nutritionandhiv": data_list[5]["category_sub_cat"][1]
-                      ["sub_category_sub_cat"][8]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][8]["sub_sub_cat_content"]
+                          [0]['content'],
                       "hygieneintro": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                          [0]['content'],
                       "hygieneimportance": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                          [0]['content'],
                       "goodhabits": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][2]["sub_sub_cat_content"]
+                          [0]['content'],
                       "emergencyplanning": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][3]["sub_sub_cat_content"]
+                          [0]['content'],
                       "selfmaintainace": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][4]["sub_sub_cat_content"]
+                          [0]['content'],
                       "offensivehabits": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][5]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][5]["sub_sub_cat_content"]
+                          [0]['content'],
                       "support": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][6]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][6]["sub_sub_cat_content"]
+                          [0]['content'],
                       "remember": data_list[5]["category_sub_cat"][2]
-                      ["sub_category_sub_cat"][7]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][7]["sub_sub_cat_content"]
+                          [0]['content'],
                       "physicalintro": data_list[5]["category_sub_cat"][3]
-                      ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][0]["sub_sub_cat_content"]
+                          [0]['content'],
                       "benefits": data_list[5]["category_sub_cat"][3]
-                      ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
-                      [0]['content'],
+                              ["sub_category_sub_cat"][1]["sub_sub_cat_content"]
+                          [0]['content'],
                       'created_at':
-                      DateTime.now().millisecondsSinceEpoch.toString()
+                          DateTime.now().millisecondsSinceEpoch.toString()
                     }).then((value) {
                       print("Saved Health Data successfully");
                       othersHelper.save({
                         'name': data_list[6]["name"],
                         "introduction": data_list[6]["category_sub_cat"][0]
-                        ["sub_category_sub_cat"][0]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][0]
+                            ["sub_sub_cat_content"][0]['content'],
                         "seventips": data_list[6]["category_sub_cat"][0]
-                        ["sub_category_sub_cat"][1]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][1]
+                            ["sub_sub_cat_content"][0]['content'],
                         "savingmoney": data_list[6]["category_sub_cat"][0]
-                        ["sub_category_sub_cat"][2]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][2]
+                            ["sub_sub_cat_content"][0]['content'],
                         "takeaction": data_list[6]["category_sub_cat"][0]
-                        ["sub_category_sub_cat"][3]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][3]
+                            ["sub_sub_cat_content"][0]['content'],
                         "moneysavingtips": data_list[6]["category_sub_cat"][0]
-                        ["sub_category_sub_cat"][4]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][4]
+                            ["sub_sub_cat_content"][0]['content'],
                         "earnextracoin": data_list[6]["category_sub_cat"][0]
-                        ["sub_category_sub_cat"][5]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][5]
+                            ["sub_sub_cat_content"][0]['content'],
                         "gratuationjob": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][0]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][0]
+                            ["sub_sub_cat_content"][0]['content'],
                         "careerresourses": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][1]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][1]
+                            ["sub_sub_cat_content"][0]['content'],
                         "internships": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][2]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][2]
+                            ["sub_sub_cat_content"][0]['content'],
                         "cvletter": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][3]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][3]
+                            ["sub_sub_cat_content"][0]['content'],
                         "professionaljobs": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][4]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][4]
+                            ["sub_sub_cat_content"][0]['content'],
                         "alumni": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][5]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][5]
+                            ["sub_sub_cat_content"][0]['content'],
                         "recentgratuates": data_list[6]["category_sub_cat"][1]
-                        ["sub_category_sub_cat"][6]
-                        ["sub_sub_cat_content"][0]['content'],
+                                ["sub_category_sub_cat"][6]
+                            ["sub_sub_cat_content"][0]['content'],
                         "createopportunities": data_list[6]["category_sub_cat"]
-                        [1]["sub_category_sub_cat"][7]
-                        ["sub_sub_cat_content"][0]['content'],
+                                [1]["sub_category_sub_cat"][7]
+                            ["sub_sub_cat_content"][0]['content'],
                         'created_at':
-                        DateTime.now().millisecondsSinceEpoch.toString()
+                            DateTime.now().millisecondsSinceEpoch.toString()
                       }).then((value) {
                         prefs.setInt('synced', 1);
 
@@ -2656,8 +2659,8 @@ class _InformationState extends State<Information> {
                             context,
                             MaterialPageRoute(
                                 builder: (ctx) => Information(
-                                  synced: true,
-                                )));
+                                      synced: true,
+                                    )));
 
                         setState(() {});
 
@@ -2704,17 +2707,17 @@ class _InformationState extends State<Information> {
   Widget listCard(img, name, id, itemkey, synced) {
     return PersistedAppState(child: PersistedStateBuilder(
         builder: (BuildContext context, AsyncSnapshot<PersistedData> snapshot) {
-          return GestureDetector(
-            onTap: () {
-              print("Pressed");
-              //print(snapshot.data["synced"]);
-              /*if(widget.synced==false){*/
-              /*if(snapshot.data["synced"]==false){*/
-              if (synced == 0 || synced == null) {
-                _showMyDialog(itemkey, synced);
+      return GestureDetector(
+        onTap: () {
+          print("Pressed");
+          //print(snapshot.data["synced"]);
+          /*if(widget.synced==false){*/
+          /*if(snapshot.data["synced"]==false){*/
+          if (synced == 0 || synced == null) {
+            _showMyDialog(itemkey, synced);
 
-                //show dialog
-                /*showDialog<void>(
+            //show dialog
+            /*showDialog<void>(
                     context: context,
                     barrierDismissible: false, // user must tap button!
                     builder: (BuildContext context) {
@@ -2725,7 +2728,7 @@ class _InformationState extends State<Information> {
                           child: ListBody(
                             children: <Widget>[
                               //Text('Fetch Data.'),
-                              Text('Syncing is required the first time to fetch data',style: TextStyle(fontFamily: 'Raleway-regular',fontWeight: FontWeight.bold,fontSize: 16),),
+                              Text('Syncing is required the first time to fetch data',style: TextStyle(fontFamily: 'Ubuntu',fontWeight: FontWeight.bold,fontSize: 16),),
                             ],
                           ),
                         ),
@@ -2761,102 +2764,102 @@ class _InformationState extends State<Information> {
                       );
                     },
                   );*/
-                //show Dialog End
+            //show Dialog End
 
-              } else if (synced == 1) {
-                if (itemkey == "3") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => ContentPage(
+          } else if (synced == 1) {
+            if (itemkey == "3") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => ContentPage(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                } else if (itemkey == "4") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => HivContent(
+            } else if (itemkey == "4") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => HivContent(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                } else if (itemkey == "5") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => SafetyContent(
+            } else if (itemkey == "5") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => SafetyContent(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                } else if (itemkey == "6") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => DrugsContent(
+            } else if (itemkey == "6") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => DrugsContent(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                } else if (itemkey == "7") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => MentalContent(
+            } else if (itemkey == "7") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => MentalContent(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                } else if (itemkey == "8") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => HealthContent(
+            } else if (itemkey == "8") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => HealthContent(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                } else if (itemkey == "9") {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => OthersContent(
+            } else if (itemkey == "9") {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (ctx) => OthersContent(
                             id: id,
                             name: name,
                             image: img,
                             itemkey: itemkey,
                           )));
-                }
-              }
-            },
-            child: Padding(
-              padding: EdgeInsets.only(top: 5, left: 5),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                  height: 150,
-                  width: 140,
-                  color: Colors.grey[300],
-                  child: Stack(
-                    children: <Widget>[
-                      /*Image.network(
+            }
+          }
+        },
+        child: Padding(
+          padding: EdgeInsets.only(top: 5, left: 5),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(5),
+            child: Container(
+              height: 150,
+              width: 140,
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  /*Image.network(
                     img,
                     fit: BoxFit.cover,
                     width: 140,
                     height: 170,
                   ),*/
 
-                      CachedNetworkImage(
-                          imageUrl: img,
-                          imageBuilder: (context, imageProvider) => Container(
+                  CachedNetworkImage(
+                      imageUrl: img,
+                      imageBuilder: (context, imageProvider) => Container(
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: imageProvider,
@@ -2868,48 +2871,48 @@ class _InformationState extends State<Information> {
                               ),
                             ),
                           ),
-                          placeholder: (context, url) =>
-                              Center(child: circularProgress()),
-                          errorWidget: (context, url, error) => const Center(
+                      placeholder: (context, url) =>
+                          Center(child: circularProgress()),
+                      errorWidget: (context, url, error) => const Center(
                             child: Icon(
                               Icons.error,
                               size: 40,
                             ),
                           )),
-                      Positioned(
-                        bottom: 0,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 0, right: 0),
-                          child: Container(
-                            height: 20,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [Colors.black45, Colors.brown[400]],
-                                  begin: FractionalOffset(0, 0),
-                                  end: FractionalOffset(0, 1),
-                                  stops: [0.0, 1.0],
-                                  tileMode: TileMode.clamp),
-                            ),
-                            child: Wrap(
-                              children: <Widget>[
-                                Padding(
-                                    padding: EdgeInsets.only(left: 5, top: 2),
-                                    child: Text(
-                                      name,
-                                      style: TextStyle(color: Colors.white),
-                                    ))
-                              ],
-                            ),
-                          ),
+                  Positioned(
+                    bottom: 0,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 0, right: 0),
+                      child: Container(
+                        height: 20,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.black45, Colors.brown[400]],
+                              begin: FractionalOffset(0, 0),
+                              end: FractionalOffset(0, 1),
+                              stops: [0.0, 1.0],
+                              tileMode: TileMode.clamp),
                         ),
-                      )
-                    ],
-                  ),
-                ),
+                        child: Wrap(
+                          children: <Widget>[
+                            Padding(
+                                padding: EdgeInsets.only(left: 5, top: 2),
+                                child: Text(
+                                  name,
+                                  style: TextStyle(color: Colors.white),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-          );
-        }));
+          ),
+        ),
+      );
+    }));
   }
 }
